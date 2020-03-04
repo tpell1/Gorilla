@@ -16,17 +16,17 @@ enum ItemType: String {
 class ItemSprite: SKSpriteNode {
 	private var texture : SKTexture
 
-   init(x: CGFloat, y: CGFloat, itemType: ItemType) {
-        texture = SKTexture(imageNamed: (itemType.rawValue + ".png"))
-        super.init(texture: texture, color: UIColor.clear, size: texture.size())
-		
+  init(x: CGFloat, y: CGFloat, itemType: ItemType) {
+  	texture = SKTexture(imageNamed: (itemType.rawValue + ".png"))
+    super.init(texture: texture, color: UIColor.clear, size: texture.size())
+
 		self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(50.0), height: CGFloat(50.0)))
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
+		self.physicsBody?.usesPreciseCollisionDetection = true
+		self.physicsBody?.allowsRotation = false
 		self.physicsBody?.affectedByGravity = true
-		self.physicsBody?.collisionBitMask = 0b0010
-	}
-	
+		self.physicsBody?.collisionBitMask = 0b0001
+		}
+
 	func move() {
 		self.physicsBody?.velocity! = CGVector(x: 50, y: 0)
 	}

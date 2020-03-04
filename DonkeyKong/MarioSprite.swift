@@ -11,7 +11,8 @@ import SpriteKit
 
 class MarioSprite : SKSpriteNode {
     private var jumpCount = 0
-    
+    private var lives = 1
+
     init(x: CGFloat, y: CGFloat) {
         let texture = SKTexture(imageNamed: "mario.png")
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
@@ -20,12 +21,15 @@ class MarioSprite : SKSpriteNode {
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(100.0), height: CGFloat(100.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
+        self.physicsBody?.collisionBitMask = 0b0001
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
+//================================= Control =====================================================
+
     // Allows single and double jumps
     func jump() {
         print(String(describing: self.physicsBody?.velocity.dy))
@@ -39,5 +43,13 @@ class MarioSprite : SKSpriteNode {
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
             jumpCount += 1
         }
+    }
+
+    func incLives(amountToIncrease: Int) {
+      lives += amountToIncrease
+    }
+
+    func decLives(amountToDecrease: Int) {
+      lives -= amountToDecrease
     }
 }
