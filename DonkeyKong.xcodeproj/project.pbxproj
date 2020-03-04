@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		967C604E23FD8A4E00E14ED4 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C604D23FD8A4E00E14ED4 /* mario.png */; };
+		968ECDB02358D92E0029A1A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ECDAF2358D92E0029A1A9 /* AppDelegate.swift */; };
+		968ECDB22358D92E0029A1A9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 968ECDB12358D92E0029A1A9 /* GameScene.sks */; };
+		968ECDB42358D92E0029A1A9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 968ECDB32358D92E0029A1A9 /* Actions.sks */; };
+		968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ECDB52358D92E0029A1A9 /* GameScene.swift */; };
+		968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ECDB72358D92E0029A1A9 /* GameViewController.swift */; };
+		968ECDBB2358D92E0029A1A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ECDB92358D92E0029A1A9 /* Main.storyboard */; };
+		968ECDBD2358D92E0029A1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 968ECDBC2358D92E0029A1A9 /* Assets.xcassets */; };
+		968ECDC02358D92E0029A1A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ECDBE2358D92E0029A1A9 /* LaunchScreen.storyboard */; };
+		968ECDCB2358D92E0029A1A9 /* DonkeyKongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ECDCA2358D92E0029A1A9 /* DonkeyKongTests.swift */; };
+		968ECDD62358D92E0029A1A9 /* DonkeyKongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ECDD52358D92E0029A1A9 /* DonkeyKongUITests.swift */; };
+		96969402240ED72500A266AB /* BlockSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96969401240ED72500A266AB /* BlockSprite.swift */; };
+		9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699281123FD9DE9008DB379 /* MarioSprite.swift */; };
+		96AB30572399D271006B2AAA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB30562399D271006B2AAA /* Player.swift */; };
+		96AB30592399D339006B2AAA /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB30582399D339006B2AAA /* Entity.swift */; };
+		96AB305B2399D37D006B2AAA /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB305A2399D37D006B2AAA /* Enemy.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		968ECDC72358D92E0029A1A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 968ECDA42358D92D0029A1A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 968ECDAB2358D92D0029A1A9;
+			remoteInfo = DonkeyKong;
+		};
+		968ECDD22358D92E0029A1A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 968ECDA42358D92D0029A1A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 968ECDAB2358D92D0029A1A9;
+			remoteInfo = DonkeyKong;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		967C604D23FD8A4E00E14ED4 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
+		968ECDAC2358D92D0029A1A9 /* DonkeyKong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonkeyKong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		968ECDAF2358D92E0029A1A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		968ECDB12358D92E0029A1A9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		968ECDB32358D92E0029A1A9 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		968ECDB52358D92E0029A1A9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		968ECDB72358D92E0029A1A9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		968ECDBA2358D92E0029A1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		968ECDBC2358D92E0029A1A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		968ECDBF2358D92E0029A1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		968ECDC12358D92E0029A1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968ECDC62358D92E0029A1A9 /* DonkeyKongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonkeyKongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		968ECDCA2358D92E0029A1A9 /* DonkeyKongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongTests.swift; sourceTree = "<group>"; };
+		968ECDCC2358D92E0029A1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968ECDD12358D92E0029A1A9 /* DonkeyKongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonkeyKongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		968ECDD52358D92E0029A1A9 /* DonkeyKongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongUITests.swift; sourceTree = "<group>"; };
+		968ECDD72358D92E0029A1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96969401240ED72500A266AB /* BlockSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSprite.swift; sourceTree = "<group>"; };
+		9699281123FD9DE9008DB379 /* MarioSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarioSprite.swift; sourceTree = "<group>"; };
+		96AB30562399D271006B2AAA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		96AB30582399D339006B2AAA /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		96AB305A2399D37D006B2AAA /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		968ECDA92358D92D0029A1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDC32358D92E0029A1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDCE2358D92E0029A1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		967C604C23FD88BD00E14ED4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		968ECDA32358D92D0029A1A9 = {
+			isa = PBXGroup;
+			children = (
+				968ECDAE2358D92D0029A1A9 /* DonkeyKong */,
+				968ECDC92358D92E0029A1A9 /* DonkeyKongTests */,
+				968ECDD42358D92E0029A1A9 /* DonkeyKongUITests */,
+				968ECDAD2358D92D0029A1A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		968ECDAD2358D92D0029A1A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				968ECDAC2358D92D0029A1A9 /* DonkeyKong.app */,
+				968ECDC62358D92E0029A1A9 /* DonkeyKongTests.xctest */,
+				968ECDD12358D92E0029A1A9 /* DonkeyKongUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		968ECDAE2358D92D0029A1A9 /* DonkeyKong */ = {
+			isa = PBXGroup;
+			children = (
+				967C604C23FD88BD00E14ED4 /* images */,
+				967C604D23FD8A4E00E14ED4 /* mario.png */,
+				96AB30582399D339006B2AAA /* Entity.swift */,
+				96AB305A2399D37D006B2AAA /* Enemy.swift */,
+				96969401240ED72500A266AB /* BlockSprite.swift */,
+				968ECDAF2358D92E0029A1A9 /* AppDelegate.swift */,
+				96AB30562399D271006B2AAA /* Player.swift */,
+				968ECDB12358D92E0029A1A9 /* GameScene.sks */,
+				968ECDB32358D92E0029A1A9 /* Actions.sks */,
+				968ECDB52358D92E0029A1A9 /* GameScene.swift */,
+				9699281123FD9DE9008DB379 /* MarioSprite.swift */,
+				968ECDB72358D92E0029A1A9 /* GameViewController.swift */,
+				968ECDB92358D92E0029A1A9 /* Main.storyboard */,
+				968ECDBC2358D92E0029A1A9 /* Assets.xcassets */,
+				968ECDBE2358D92E0029A1A9 /* LaunchScreen.storyboard */,
+				968ECDC12358D92E0029A1A9 /* Info.plist */,
+			);
+			path = DonkeyKong;
+			sourceTree = "<group>";
+		};
+		968ECDC92358D92E0029A1A9 /* DonkeyKongTests */ = {
+			isa = PBXGroup;
+			children = (
+				968ECDCA2358D92E0029A1A9 /* DonkeyKongTests.swift */,
+				968ECDCC2358D92E0029A1A9 /* Info.plist */,
+			);
+			path = DonkeyKongTests;
+			sourceTree = "<group>";
+		};
+		968ECDD42358D92E0029A1A9 /* DonkeyKongUITests */ = {
+			isa = PBXGroup;
+			children = (
+				968ECDD52358D92E0029A1A9 /* DonkeyKongUITests.swift */,
+				968ECDD72358D92E0029A1A9 /* Info.plist */,
+			);
+			path = DonkeyKongUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		968ECDAB2358D92D0029A1A9 /* DonkeyKong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968ECDDA2358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKong" */;
+			buildPhases = (
+				968ECDA82358D92D0029A1A9 /* Sources */,
+				968ECDA92358D92D0029A1A9 /* Frameworks */,
+				968ECDAA2358D92D0029A1A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DonkeyKong;
+			productName = DonkeyKong;
+			productReference = 968ECDAC2358D92D0029A1A9 /* DonkeyKong.app */;
+			productType = "com.apple.product-type.application";
+		};
+		968ECDC52358D92E0029A1A9 /* DonkeyKongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968ECDDD2358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKongTests" */;
+			buildPhases = (
+				968ECDC22358D92E0029A1A9 /* Sources */,
+				968ECDC32358D92E0029A1A9 /* Frameworks */,
+				968ECDC42358D92E0029A1A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				968ECDC82358D92E0029A1A9 /* PBXTargetDependency */,
+			);
+			name = DonkeyKongTests;
+			productName = DonkeyKongTests;
+			productReference = 968ECDC62358D92E0029A1A9 /* DonkeyKongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		968ECDD02358D92E0029A1A9 /* DonkeyKongUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968ECDE02358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKongUITests" */;
+			buildPhases = (
+				968ECDCD2358D92E0029A1A9 /* Sources */,
+				968ECDCE2358D92E0029A1A9 /* Frameworks */,
+				968ECDCF2358D92E0029A1A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				968ECDD32358D92E0029A1A9 /* PBXTargetDependency */,
+			);
+			name = DonkeyKongUITests;
+			productName = DonkeyKongUITests;
+			productReference = 968ECDD12358D92E0029A1A9 /* DonkeyKongUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		968ECDA42358D92D0029A1A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Travis Pell";
+				TargetAttributes = {
+					968ECDAB2358D92D0029A1A9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					968ECDC52358D92E0029A1A9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 968ECDAB2358D92D0029A1A9;
+					};
+					968ECDD02358D92E0029A1A9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 968ECDAB2358D92D0029A1A9;
+					};
+				};
+			};
+			buildConfigurationList = 968ECDA72358D92D0029A1A9 /* Build configuration list for PBXProject "DonkeyKong" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 968ECDA32358D92D0029A1A9;
+			productRefGroup = 968ECDAD2358D92D0029A1A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				968ECDAB2358D92D0029A1A9 /* DonkeyKong */,
+				968ECDC52358D92E0029A1A9 /* DonkeyKongTests */,
+				968ECDD02358D92E0029A1A9 /* DonkeyKongUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		968ECDAA2358D92D0029A1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967C604E23FD8A4E00E14ED4 /* mario.png in Resources */,
+				968ECDBB2358D92E0029A1A9 /* Main.storyboard in Resources */,
+				968ECDB22358D92E0029A1A9 /* GameScene.sks in Resources */,
+				968ECDBD2358D92E0029A1A9 /* Assets.xcassets in Resources */,
+				968ECDC02358D92E0029A1A9 /* LaunchScreen.storyboard in Resources */,
+				968ECDB42358D92E0029A1A9 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDC42358D92E0029A1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDCF2358D92E0029A1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		968ECDA82358D92D0029A1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
+				96AB30592399D339006B2AAA /* Entity.swift in Sources */,
+				96AB305B2399D37D006B2AAA /* Enemy.swift in Sources */,
+				968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */,
+				96AB30572399D271006B2AAA /* Player.swift in Sources */,
+				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
+				96969402240ED72500A266AB /* BlockSprite.swift in Sources */,
+				968ECDB02358D92E0029A1A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDC22358D92E0029A1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968ECDCB2358D92E0029A1A9 /* DonkeyKongTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968ECDCD2358D92E0029A1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968ECDD62358D92E0029A1A9 /* DonkeyKongUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		968ECDC82358D92E0029A1A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 968ECDAB2358D92D0029A1A9 /* DonkeyKong */;
+			targetProxy = 968ECDC72358D92E0029A1A9 /* PBXContainerItemProxy */;
+		};
+		968ECDD32358D92E0029A1A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 968ECDAB2358D92D0029A1A9 /* DonkeyKong */;
+			targetProxy = 968ECDD22358D92E0029A1A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		968ECDB92358D92E0029A1A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				968ECDBA2358D92E0029A1A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		968ECDBE2358D92E0029A1A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				968ECDBF2358D92E0029A1A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		968ECDD82358D92E0029A1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		968ECDD92358D92E0029A1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		968ECDDB2358D92E0029A1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M4HX28D858;
+				INFOPLIST_FILE = DonkeyKong/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		968ECDDC2358D92E0029A1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M4HX28D858;
+				INFOPLIST_FILE = DonkeyKong/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		968ECDDE2358D92E0029A1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonkeyKongTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKongTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonkeyKong.app/DonkeyKong";
+			};
+			name = Debug;
+		};
+		968ECDDF2358D92E0029A1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonkeyKongTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKongTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonkeyKong.app/DonkeyKong";
+			};
+			name = Release;
+		};
+		968ECDE12358D92E0029A1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonkeyKongUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKongUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonkeyKong;
+			};
+			name = Debug;
+		};
+		968ECDE22358D92E0029A1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonkeyKongUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = travis.DonkeyKongUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonkeyKong;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		968ECDA72358D92D0029A1A9 /* Build configuration list for PBXProject "DonkeyKong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968ECDD82358D92E0029A1A9 /* Debug */,
+				968ECDD92358D92E0029A1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		968ECDDA2358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968ECDDB2358D92E0029A1A9 /* Debug */,
+				968ECDDC2358D92E0029A1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		968ECDDD2358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968ECDDE2358D92E0029A1A9 /* Debug */,
+				968ECDDF2358D92E0029A1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		968ECDE02358D92E0029A1A9 /* Build configuration list for PBXNativeTarget "DonkeyKongUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968ECDE12358D92E0029A1A9 /* Debug */,
+				968ECDE22358D92E0029A1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 968ECDA42358D92D0029A1A9 /* Project object */;
+}
