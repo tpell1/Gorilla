@@ -25,6 +25,8 @@ class MarioSprite : SKSpriteNode {
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
         self.name = "Mario"
+        self.physicsBody?.friction = 0
+        self.physicsBody?.linearDamping = 0
     }
     
     init(x: CGFloat, y: CGFloat, lives: Int) {
@@ -35,6 +37,7 @@ class MarioSprite : SKSpriteNode {
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
+        //self.physicsBody?.linearDamping = 0.0
         self.name = "Mario"
         self.lives = lives
     }
@@ -49,7 +52,6 @@ class MarioSprite : SKSpriteNode {
             let node2 = contact.bodyB.node!
             if node2 is BreakableBlockSprite { // Break block
                 if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
-                    print(self.physicsBody?.velocity.dy)
                     let block = node2 as! BreakableBlockSprite
                     block.breakBlock()
                 }

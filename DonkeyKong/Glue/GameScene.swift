@@ -148,7 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (marioSprite?.contains(pos))! {
             marioSprite?.jump()
         } else if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
+            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
             marioSprite?.physicsBody?.velocity.dx = -MarioSprite.MOVE_SPEED
         } else if (rightArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
@@ -158,7 +158,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchMoved(toPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
+            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
             marioSprite?.physicsBody?.velocity.dx = -MarioSprite.MOVE_SPEED
         } else if (rightArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
@@ -183,7 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        //for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -195,32 +195,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Contact handler
     func didBegin(_ contact: SKPhysicsContact) {
         var item : ItemSprite?
-        let node1 = contact.bodyA.node!
-        
-        if node1 is ItemSprite {
-            let node2 = contact.bodyB.node!
-            if node2 is MarioSprite {
-                let mario = node2 as! MarioSprite
-                item = node1 as! ItemSprite
-                item?.collision(mario: mario)
+        if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
+            if node1 is ItemSprite {
+                let node2 = contact.bodyB.node!
+                if node2 is MarioSprite {
+                    let mario = node2 as! MarioSprite
+                    item = node1 as! ItemSprite
+                    item?.collision(mario: mario)
+                }
+            } else if node1 is BreakableBlockSprite {
+                let node2 = contact.bodyB.node!
+                if node2 is MarioSprite {
+                    let block = node1 as! BreakableBlockSprite
+                    block.breakBlock()
+                }
+            } else if node1 is ItemBlockSprite {
+                let node2 = contact.bodyB.node!
+                if node2 is MarioSprite {
+                    let block = node1 as! ItemBlockSprite
+                    block.spawnItem()
+                }
+            } else if node1 is MarioSprite {
+                let mario = node1 as! MarioSprite
+                mario.collision(contact: contact) // Mario can handle collisions himself
             }
-        } else if node1 is BreakableBlockSprite {
-            let node2 = contact.bodyB.node!
-            if node2 is MarioSprite {
-                let block = node1 as! BreakableBlockSprite
-                block.breakBlock()
-            }
-        } else if node1 is ItemBlockSprite {
-            let node2 = contact.bodyB.node!
-            if node2 is MarioSprite {
-                let block = node1 as! ItemBlockSprite
-                block.spawnItem()
-            }
-        } else if node1 is MarioSprite {
-            let mario = node1 as! MarioSprite
-            mario.collision(contact: contact) // Mario can handle collisions himself
+            livesLbl?.text = String(describing: marioSprite?.getLives())
         }
-        livesLbl?.text = String(describing: marioSprite?.getLives())
     }
     
     
