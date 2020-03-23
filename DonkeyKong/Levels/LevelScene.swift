@@ -10,6 +10,8 @@ import Foundation
 import SpriteKit
 
 class LevelScene: SKNode {
+    static var GROUND_HEIGHT: CGFloat = 40
+    
     private var blockSprite : BlockSprite?
     private var breakableBlock : BreakableBlockSprite?
     private var itemBlock : ItemBlockSprite?
