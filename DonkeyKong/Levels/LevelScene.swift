@@ -2,6 +2,11 @@
 //  Level1Scene.swift
 //  DonkeyKong
 //
+//  Super class for all Levels
+//  All subclasses must override addChildren
+//  Use this to add all nodes in each level
+//  This class also represents level one
+//
 //  Created by Travis Pell on 14/03/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
 //
@@ -32,6 +37,7 @@ class LevelScene: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Add all nodes to the level (Blocks and enemies)
     func addChildren() {
         blockSprite = BlockSprite(x: rect.midX + 50, y: rect.minY + 130, imageNamed: "brickBlock.png")
         self.addChild(blockSprite!)

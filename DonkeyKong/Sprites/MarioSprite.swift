@@ -3,6 +3,9 @@
 //  Represents the Mario character
 //
 //  DonkeyKong
+//  Class representing Mario,
+//  Contains collision logic, and also defines how
+//  Mario jumps and dies
 //
 //  Created by Travis Pell on 19/02/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
@@ -16,8 +19,9 @@ class MarioSprite : SKSpriteNode {
     private var lives = 1
     static var MOVE_SPEED: CGFloat = 200
     
+    // Default constructor, creates a main character with one life
     init(x: CGFloat, y: CGFloat) {
-        let texture = SKTexture(imageNamed: "mario.png")
+        let texture = SKTexture(imageNamed: "mario.png") // Use the mario texture
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: 50, height: 60))
         self.position = CGPoint(x: x, y: y)
@@ -29,6 +33,7 @@ class MarioSprite : SKSpriteNode {
         self.physicsBody?.linearDamping = 0
     }
     
+    // Constructor which gives choice of lives for Mario to be instantiated with
     init(x: CGFloat, y: CGFloat, lives: Int) {
         let texture = SKTexture(imageNamed: "mario.png")
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
@@ -46,7 +51,7 @@ class MarioSprite : SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
-    // Called by game scene
+    // Called by game scene when Mario is node1
     func collision(contact: SKPhysicsContact) {
         if (contact.bodyB.node != nil) {
             let node2 = contact.bodyB.node!
@@ -85,6 +90,7 @@ class MarioSprite : SKSpriteNode {
         }
     }
     
+    // Kill Mario and restart level
     func die() {
         lives -= 1
         if self.scene is GameScene {

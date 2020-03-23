@@ -2,6 +2,9 @@
 //  EndLevelNode.swift
 //  DonkeyKong
 //
+//  End of the level, ends the level when Mario touches it
+//  Represented by a flag and flag pole
+//
 //  Created by Travis Pell on 14/03/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
 //
@@ -28,6 +31,8 @@ class EndLevelNode : SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Gets gamescene and then ends the level
+    // TODO: Implement without getting GameScene
     func endLevel() {
         let lbl = SKLabelNode(attributedText: NSAttributedString(string: "Level Complete!"))
         lbl.position = CGPoint(x: frame.midX, y: frame.midY)

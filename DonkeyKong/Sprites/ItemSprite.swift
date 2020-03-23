@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 
+// List of all item types
 enum ItemType: String {
 	case STAR, FIRE, ONEUP, MUSHROOM
 }
@@ -25,12 +26,15 @@ class ItemSprite: SKSpriteNode {
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
 		self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.linearDamping = 0 // Item should not slow down
+        self.physicsBody?.friction = 0 // Item should not slow down
 		self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Collision handler (if the item is node1)
     func collision(mario: MarioSprite) {
         if(!itemUsed) {
             itemUsed = true

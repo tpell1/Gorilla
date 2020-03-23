@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
                     view.presentScene(sceneNode!)
                     view.ignoresSiblingOrder = true
                     
-                    timer = Timer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+                    timer = Timer(timeInterval: 0.1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                     RunLoop.current.add(timer!, forMode: .commonModes)
                 }
             }
@@ -75,6 +75,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    // Function called by timer ever 0.1s, checks if user has pressed play
     @objc func update() {
         if (sceneNode?.playGame ?? false && sceneNode?.gameLevel == 0) {
             playGame()

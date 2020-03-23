@@ -2,6 +2,8 @@
 //  LevelTwo.swift
 //  DonkeyKong
 //
+//  Class representing Level Two
+//
 //  Created by Travis Pell on 15/03/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
 //
@@ -21,9 +23,9 @@ class LevelTwo: LevelScene {
         let itemBlock = ItemBlockSprite(x: rect.midX + 130, y: rect.minY + 130, imageNamed: "brickBlock.png")
         self.addChild(itemBlock)
         
-        let block1 = BlockSprite(x: rect.midX+200, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
-        let block2 = BlockSprite(x: rect.midX+240, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
-        let block3 = BlockSprite(x: rect.midX+280, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
+        let block1 = BlockSprite(x: rect.midX+240, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
+        let block2 = BlockSprite(x: rect.midX+280, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
+        let block3 = BlockSprite(x: rect.midX+400, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
         let block4 = BlockSprite(x: rect.midX+320, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
         let block5 = BlockSprite(x: rect.midX+360, y: rect.minY+LevelScene.GROUND_HEIGHT, imageNamed: "brickBlock.png")
         self.addChild(block1)

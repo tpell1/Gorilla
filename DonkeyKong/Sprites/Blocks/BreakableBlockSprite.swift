@@ -2,6 +2,9 @@
 //  BreakableBlockSprite.swift
 //  DonkeyKong
 //
+//  Class representing a block which can be broken
+//  by Mario jumping up
+//
 //  Created by Travis Pell on 04/03/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
 //

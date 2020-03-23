@@ -255,16 +255,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdateTime = currentTime
     }
     
+    // Restart level when mario is killed
     func restartLevel(lives: Int) {
-        let groundRectPointer = UnsafeMutablePointer<CGRect>.allocate(capacity: 1)
-        if (ground?.path?.isRect(groundRectPointer))! {
-            marioSprite = MarioSprite(x: groundRectPointer.pointee.minX + 400, y: frame.midY, lives: lives)
+        let groundRectPointer = UnsafeMutablePointer<CGRect>.allocate(capacity: 1) // Get a pointer to the rectangle that represents the ground
+        if (ground?.path?.isRect(groundRectPointer))! { // Makes sure it is a rectangle
+            marioSprite = MarioSprite(x: groundRectPointer.pointee.minX + 400, y: frame.midY, lives: lives) // Reinstantiate mario but with one less life, back at the start of the level
         } else {
             marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
         }
-        self.addChild((marioSprite)!)
+        self.addChild((marioSprite)!) // Spawn mario
     }
     
+    // Reset positions when frame moves
+    // Ensures HUD is at some position of screen at all times
     func setHUD() {
         leftArrow?.position.x = frame.minX + 70
         rightArrow?.position.x = frame.maxX - 60

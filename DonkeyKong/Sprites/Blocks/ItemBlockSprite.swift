@@ -2,6 +2,8 @@
 //  ItemBlockSprite.swift
 //  DonkeyKong
 //
+//  Class representing a block that spawns an item
+//
 //  Created by Travis Pell on 04/03/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
 //
@@ -20,15 +22,17 @@ class ItemBlockSprite: BlockSprite {
         super.init(x: x, y: y, imageNamed: imageNamed)
 	}
 
+    // Constructor with a default item type of OneUp
     convenience override init(x: CGFloat, y: CGFloat, imageNamed: String) {
 		//TODO: random item selection
         self.init(x: x, y: y, imageNamed: imageNamed, itemType: ItemType.ONEUP)
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-	
+	// Spawn an item of the type defined by constructor
 	func spawnItem() {
         if (!itemUsed) {
             itemUsed = true
