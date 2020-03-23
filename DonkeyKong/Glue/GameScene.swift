@@ -206,8 +206,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             } else if node1 is BreakableBlockSprite {
                 let node2 = contact.bodyB.node!
                 if node2 is MarioSprite {
-                    let block = node1 as! BreakableBlockSprite
-                    block.breakBlock()
+                    let mario = node2 as! MarioSprite
+                    if((mario.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
+                        let block = node1 as! BreakableBlockSprite
+                        block.breakBlock()
+                    }
                 }
             } else if node1 is ItemBlockSprite {
                 let node2 = contact.bodyB.node!
