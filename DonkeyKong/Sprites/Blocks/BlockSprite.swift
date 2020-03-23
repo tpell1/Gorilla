@@ -15,11 +15,12 @@ class BlockSprite : SKSpriteNode {
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
 		
-        self.scale(to: CGSize(width: 50, height: 50))
+        self.scale(to: CGSize(width: 40, height: 40))
         self.position = CGPoint(x: x, y: y)
-        self.physicsBody = SKPhysicsBody(edgeChainFrom: self.path!)
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: CGSize(width: 40.0, height: 40.0))
         self.physicsBody?.restitution = 0.4
         self.physicsBody?.isDynamic = false
+        self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
     }
     
     required init?(coder aDecoder: NSCoder) {
