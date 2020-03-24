@@ -14,14 +14,15 @@ import Foundation
 import SpriteKit
 
 class BlockSprite : SKSpriteNode {
+    static var BLOCK_SIZE = 40
     
     init(x: CGFloat, y: CGFloat, imageNamed: String) {
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
 		
-        self.scale(to: CGSize(width: 40, height: 40))
+        self.scale(to: CGSize(width: BlockSprite.BLOCK_SIZE, height: BlockSprite.BLOCK_SIZE))
         self.position = CGPoint(x: x, y: y)
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: CGSize(width: 40.0, height: 40.0))
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: CGSize(width: BlockSprite.BLOCK_SIZE, height: BlockSprite.BLOCK_SIZE))
         self.physicsBody?.restitution = 0.4 // Make Mario bounce when he lands
         self.physicsBody?.isDynamic = false // Stop block from moving
         self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!

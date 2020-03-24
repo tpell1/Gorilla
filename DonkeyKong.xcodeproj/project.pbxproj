@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8B242A119F0006E50D /* MushroomItem.swift */; };
 		96572F8F242A173D0006E50D /* ShellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8E242A173D0006E50D /* ShellItem.swift */; };
+		96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F90242A1BD40006E50D /* KoopaSprite.swift */; };
 		967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 967794EA2428A71B007F1B40 /* LevelSelectScene.sks */; };
 		967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967794EC2428A859007F1B40 /* LevelSelectScene.swift */; };
 		967C604E23FD8A4E00E14ED4 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C604D23FD8A4E00E14ED4 /* mario.png */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		96572F8B242A119F0006E50D /* MushroomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomItem.swift; sourceTree = "<group>"; };
 		96572F8E242A173D0006E50D /* ShellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellItem.swift; sourceTree = "<group>"; };
+		96572F90242A1BD40006E50D /* KoopaSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoopaSprite.swift; sourceTree = "<group>"; };
 		967794EA2428A71B007F1B40 /* LevelSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = LevelSelectScene.sks; path = DonkeyKong/Storyboards/LevelSelectScene.sks; sourceTree = SOURCE_ROOT; };
 		967794EC2428A859007F1B40 /* LevelSelectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectScene.swift; sourceTree = "<group>"; };
 		967C604D23FD8A4E00E14ED4 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -125,12 +127,21 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		96572F92242A1DE40006E50D /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				9699281123FD9DE9008DB379 /* MarioSprite.swift */,
+				96572F90242A1BD40006E50D /* KoopaSprite.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		9682CBE9241E4D5000A0E821 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				96572F92242A1DE40006E50D /* Characters */,
 				96572F8D242A168B0006E50D /* Items */,
 				9682CBEA241E4D6E00A0E821 /* Blocks */,
-				9699281123FD9DE9008DB379 /* MarioSprite.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -405,6 +416,7 @@
 				96969402240ED72500A266AB /* BlockSprite.swift in Sources */,
 				967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */,
 				9682CBE6241D572F00A0E821 /* LevelScene.swift in Sources */,
+				96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */,
 				968ECDB02358D92E0029A1A9 /* AppDelegate.swift in Sources */,
 				96969432241029AC00A266AB /* ItemSprite.swift in Sources */,
 			);
