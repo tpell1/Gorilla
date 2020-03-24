@@ -14,7 +14,7 @@ import Foundation
 import SpriteKit
 
 class BlockSprite : SKSpriteNode {
-    static var BLOCK_SIZE = 40
+    static var BLOCK_SIZE: CGFloat = 40
     
     init(x: CGFloat, y: CGFloat, imageNamed: String) {
         let texture = SKTexture(imageNamed: imageNamed)
