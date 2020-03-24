@@ -60,18 +60,43 @@ class KoopaSprite: SKSpriteNode {
     private func timerWalk(timer: Timer) {
         if(timerBool) {
             walkBack()
+            if canSeeMario() {
+                throwShell()
+            }
         } else {
             walk()
-            throwShell() // For now, will change so only throws when can see player
+            if canSeeMario() {
+                throwShell()
+            }
         }
         timerBool = !timerBool
     }
     
+    func canSeeMario() -> Bool {
+        if let mario = scene?.childNode(withName: "mario") {
+            let marioX = mario.position.x
+            if (timerBool) {
+                return marioX < self.position.x
+            } else {
+                return marioX > self.position.x
+            }
+        }
+        return false
+    }
+    
     // Basic throw shell in a direction
-    // TODO: Throw shell in direction of player
+    // TODO: make more efficient
     func throwShell() {
         let shell = ShellItem(x: self.position.x, y: self.position.y)
         self.addChild(shell)
-        shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+        if let mario = scene?.childNode(withName: "mario") {
+            if mario.position.x < self.position.x {
+                shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+            } else {
+                shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
+            }
+        } else {
+            shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+        }
     }
 }
