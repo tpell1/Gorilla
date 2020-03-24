@@ -149,20 +149,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             marioSprite?.jump()
         } else if (leftArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = -MarioSprite.MOVE_SPEED
+            marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
         } else if (rightArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = MarioSprite.MOVE_SPEED
+            marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
         }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = -MarioSprite.MOVE_SPEED
+            marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
         } else if (rightArrow?.contains(pos))! {
             //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = MarioSprite.MOVE_SPEED
+            marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
         }
     }
     
@@ -194,14 +194,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Contact handler
     func didBegin(_ contact: SKPhysicsContact) {
-        var item : ItemSprite?
         if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
             if node1 is ItemSprite {
                 let node2 = contact.bodyB.node!
                 if node2 is MarioSprite {
                     let mario = node2 as! MarioSprite
-                    item = node1 as! ItemSprite
-                    item?.collision(mario: mario)
+                    let item = node1 as! ItemSprite
+                    item.collision(mario: mario)
                 }
             } else if node1 is BreakableBlockSprite {
                 let node2 = contact.bodyB.node!

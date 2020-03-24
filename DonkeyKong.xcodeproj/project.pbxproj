@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8B242A119F0006E50D /* MushroomItem.swift */; };
 		967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 967794EA2428A71B007F1B40 /* LevelSelectScene.sks */; };
 		967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967794EC2428A859007F1B40 /* LevelSelectScene.swift */; };
 		967C604E23FD8A4E00E14ED4 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C604D23FD8A4E00E14ED4 /* mario.png */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96572F8B242A119F0006E50D /* MushroomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomItem.swift; sourceTree = "<group>"; };
 		967794EA2428A71B007F1B40 /* LevelSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = LevelSelectScene.sks; path = DonkeyKong/Storyboards/LevelSelectScene.sks; sourceTree = SOURCE_ROOT; };
 		967794EC2428A859007F1B40 /* LevelSelectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectScene.swift; sourceTree = "<group>"; };
 		967C604D23FD8A4E00E14ED4 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -111,12 +113,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96572F8D242A168B0006E50D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				9696942D241029AC00A266AB /* ItemSprite.swift */,
+				96572F8B242A119F0006E50D /* MushroomItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		9682CBE9241E4D5000A0E821 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				96572F8D242A168B0006E50D /* Items */,
 				9682CBEA241E4D6E00A0E821 /* Blocks */,
 				9699281123FD9DE9008DB379 /* MarioSprite.swift */,
-				9696942D241029AC00A266AB /* ItemSprite.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 			files = (
 				96969435241029AC00A266AB /* BreakableBlockSprite.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
+				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,
 				968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */,
 				9682CBE0241D3F0C00A0E821 /* EndLevelNode.swift in Sources */,
 				96969434241029AC00A266AB /* ItemBlockSprite.swift in Sources */,

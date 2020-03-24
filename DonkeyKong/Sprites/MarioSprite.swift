@@ -17,13 +17,18 @@ import SpriteKit
 class MarioSprite : SKSpriteNode {
     private var jumpCount = 0
     private var lives = 1
-    static var MOVE_SPEED: CGFloat = 200
+    private var moveSpeedMultiplier: CGFloat = 1
+    private var health = 1
+    private var width = 50
+    private var height = 60
+    private var scale = 1
+    static var DEFAULT_MOVE_SPEED: CGFloat = 200
     
     // Default constructor, creates a main character with one life
     init(x: CGFloat, y: CGFloat) {
         let texture = SKTexture(imageNamed: "mario.png") // Use the mario texture
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
-        self.scale(to: CGSize(width: 50, height: 60))
+        self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
@@ -37,7 +42,7 @@ class MarioSprite : SKSpriteNode {
     init(x: CGFloat, y: CGFloat, lives: Int) {
         let texture = SKTexture(imageNamed: "mario.png")
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
-        self.scale(to: CGSize(width: 50, height: 60))
+        self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
@@ -100,11 +105,33 @@ class MarioSprite : SKSpriteNode {
         self.removeFromParent()
     }
     
+    func grow() {
+        scale = 2
+        reDo()
+    }
+    
+    func shrink() {
+        scale -= 1
+        if (scale < 1) {
+            die()
+        }
+        reDo()
+    }
+    
     func incLives(amountToInc: Int) {
         lives += amountToInc
     }
     
     func getLives() -> Int {
         return lives
+    }
+    
+    func getSpeed() -> CGFloat {
+        return MarioSprite.DEFAULT_MOVE_SPEED * moveSpeedMultiplier
+    }
+    
+    private func reDo() {
+        self.scale(to: CGSize(width: width, height: height))
+        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
     }
 }

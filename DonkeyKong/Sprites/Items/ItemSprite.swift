@@ -16,7 +16,7 @@ enum ItemType: String {
 
 class ItemSprite: SKSpriteNode {
     internal var texture1 : SKTexture?
-    private var itemUsed : Bool = false
+    internal var itemUsed : Bool = false
     
     init(x: CGFloat, y: CGFloat, itemType: ItemType) {
         texture1 = SKTexture(imageNamed: (itemType.rawValue + ".png"))
