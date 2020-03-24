@@ -62,6 +62,16 @@ class KoopaSprite: SKSpriteNode {
             walkBack()
         } else {
             walk()
+            throwShell() // For now, will change so only throws when can see player
         }
+        timerBool = !timerBool
+    }
+    
+    // Basic throw shell in a direction
+    // TODO: Throw shell in direction of player
+    func throwShell() {
+        let shell = ShellItem(x: self.position.x, y: self.position.y)
+        self.addChild(shell)
+        shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
     }
 }
