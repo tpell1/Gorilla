@@ -11,6 +11,7 @@
 		96572F8F242A173D0006E50D /* ShellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8E242A173D0006E50D /* ShellItem.swift */; };
 		96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F90242A1BD40006E50D /* KoopaSprite.swift */; };
 		96572F94242A20B20006E50D /* KoopaPlatformHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F93242A20B20006E50D /* KoopaPlatformHelper.swift */; };
+		96572F96242A30D30006E50D /* LevelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F95242A30D30006E50D /* LevelReader.swift */; };
 		967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 967794EA2428A71B007F1B40 /* LevelSelectScene.sks */; };
 		967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967794EC2428A859007F1B40 /* LevelSelectScene.swift */; };
 		967C604E23FD8A4E00E14ED4 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C604D23FD8A4E00E14ED4 /* mario.png */; };
@@ -60,6 +61,7 @@
 		96572F8E242A173D0006E50D /* ShellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellItem.swift; sourceTree = "<group>"; };
 		96572F90242A1BD40006E50D /* KoopaSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoopaSprite.swift; sourceTree = "<group>"; };
 		96572F93242A20B20006E50D /* KoopaPlatformHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoopaPlatformHelper.swift; sourceTree = "<group>"; };
+		96572F95242A30D30006E50D /* LevelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelReader.swift; sourceTree = "<group>"; };
 		967794EA2428A71B007F1B40 /* LevelSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = LevelSelectScene.sks; path = DonkeyKong/Storyboards/LevelSelectScene.sks; sourceTree = SOURCE_ROOT; };
 		967794EC2428A859007F1B40 /* LevelSelectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectScene.swift; sourceTree = "<group>"; };
 		967C604D23FD8A4E00E14ED4 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				9682CBF1241E4E4B00A0E821 /* Helpers */,
 				9682CBE5241D572F00A0E821 /* LevelScene.swift */,
 				9682CBE7241E489F00A0E821 /* LevelTwo.swift */,
+				96572F95242A30D30006E50D /* LevelReader.swift */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				96572F8F242A173D0006E50D /* ShellItem.swift in Sources */,
 				9682CBE8241E489F00A0E821 /* LevelTwo.swift in Sources */,
 				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
+				96572F96242A30D30006E50D /* LevelReader.swift in Sources */,
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
 				96969402240ED72500A266AB /* BlockSprite.swift in Sources */,
 				967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */,
