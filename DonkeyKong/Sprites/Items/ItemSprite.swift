@@ -11,7 +11,7 @@ import SpriteKit
 
 // List of all item types
 enum ItemType: String {
-	case STAR, FIRE, ONEUP, MUSHROOM
+	case STAR, FIRE, ONEUP, MUSHROOM, SHELL
 }
 
 class ItemSprite: SKSpriteNode {
