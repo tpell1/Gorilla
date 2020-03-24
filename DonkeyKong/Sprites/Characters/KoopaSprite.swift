@@ -60,15 +60,10 @@ class KoopaSprite: SKSpriteNode {
     private func timerWalk(timer: Timer) {
         if(timerBool) {
             walkBack()
-            if canSeeMario() {
-                throwShell()
-            }
         } else {
             walk()
-            if canSeeMario() {
-                throwShell()
-            }
         }
+        if (canSeeMario()) {throwShell()}
         timerBool = !timerBool
     }
     
@@ -85,18 +80,13 @@ class KoopaSprite: SKSpriteNode {
     }
     
     // Basic throw shell in a direction
-    // TODO: make more efficient
     func throwShell() {
         let shell = ShellItem(x: self.position.x, y: self.position.y)
         self.addChild(shell)
-        if let mario = scene?.childNode(withName: "mario") {
-            if mario.position.x < self.position.x {
-                shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-            } else {
-                shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
-            }
-        } else {
+        if (!timerBool) {
             shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+        } else {
+            shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
         }
     }
 }

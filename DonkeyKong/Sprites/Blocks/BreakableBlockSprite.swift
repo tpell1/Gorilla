@@ -29,7 +29,6 @@ class BreakableBlockSprite : BlockSprite {
         fatalError("init(coder:) has not been implemented")
     }
     
-	
 	func breakBlock() {
 		// TODO: ANIMATION
 		self.removeFromParent() // delete block
