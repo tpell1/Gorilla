@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>levels</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<array>
+				<dict>
+					<key>enemyType</key>
+					<string>koopa</string>
+					<key>enemyX</key>
+					<integer>80</integer>
+					<key>enemyY</key>
+					<integer>100</integer>
+				</dict>
+			</array>
+			<key>blocks</key>
+			<array>
+				<dict>
+					<key>blockType</key>
+					<string>solid</string>
+					<key>blockX</key>
+					<integer>80</integer>
+					<key>blockY</key>
+					<integer>100</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -37,6 +37,8 @@
 		96969436241029AC00A266AB /* brickBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 96969431241029AC00A266AB /* brickBlock.png */; };
 		96969438241037F700A266AB /* ONEUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 96969437241037F700A266AB /* ONEUP.png */; };
 		9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699281123FD9DE9008DB379 /* MarioSprite.swift */; };
+		96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A33242B758B00D9FC35 /* PropertyListReader.swift */; };
+		96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A35242B7A3100D9FC35 /* Levels.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		96969431241029AC00A266AB /* brickBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brickBlock.png; sourceTree = "<group>"; };
 		96969437241037F700A266AB /* ONEUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ONEUP.png; sourceTree = "<group>"; };
 		9699281123FD9DE9008DB379 /* MarioSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarioSprite.swift; sourceTree = "<group>"; };
+		96A96A33242B758B00D9FC35 /* PropertyListReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReader.swift; sourceTree = "<group>"; };
+		96A96A35242B7A3100D9FC35 /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,9 +243,11 @@
 		968ECDAE2358D92D0029A1A9 /* DonkeyKong */ = {
 			isa = PBXGroup;
 			children = (
+				96A96A32242B756D00D9FC35 /* Utilities */,
 				9682CBED241E4DE800A0E821 /* Images */,
 				9682CBF0241E4E2E00A0E821 /* Glue */,
 				968ECDBC2358D92E0029A1A9 /* Assets.xcassets */,
+				96A96A35242B7A3100D9FC35 /* Levels.plist */,
 				968ECDC12358D92E0029A1A9 /* Info.plist */,
 				9682CBEB241E4DA700A0E821 /* Levels */,
 				9682CBEC241E4DCB00A0E821 /* Storyboards */,
@@ -266,6 +272,14 @@
 				968ECDD72358D92E0029A1A9 /* Info.plist */,
 			);
 			path = DonkeyKongUITests;
+			sourceTree = "<group>";
+		};
+		96A96A32242B756D00D9FC35 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96A96A33242B758B00D9FC35 /* PropertyListReader.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +391,7 @@
 			files = (
 				967C604E23FD8A4E00E14ED4 /* mario.png in Resources */,
 				967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */,
+				96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */,
 				968ECDBB2358D92E0029A1A9 /* Main.storyboard in Resources */,
 				96969433241029AC00A266AB /* brokenBlock.png in Resources */,
 				96969438241037F700A266AB /* ONEUP.png in Resources */,
@@ -418,6 +433,7 @@
 				96572F8F242A173D0006E50D /* ShellItem.swift in Sources */,
 				9682CBE8241E489F00A0E821 /* LevelTwo.swift in Sources */,
 				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
+				96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */,
 				96572F96242A30D30006E50D /* LevelReader.swift in Sources */,
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
 				96969402240ED72500A266AB /* BlockSprite.swift in Sources */,
