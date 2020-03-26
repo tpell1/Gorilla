@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>currentLevel</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>currentScore</key>
 	<integer>0</integer>
 	<key>currentLives</key>
-	<integer>0</integer>
+	<integer>3</integer>
 </dict>
 </plist>

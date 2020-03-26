@@ -33,9 +33,9 @@ class KoopaSprite: SKSpriteNode {
         RunLoop.current.add(timer!, forMode: .commonModes)
     }
     
-    convenience init(x: CGFloat, y: CGFloat, sizeOfPlatform: CGFloat) {
+    convenience init(x: CGFloat, y: CGFloat, sizeOfPlatform: Int) {
         self.init(x: x, y: y)
-        self.sizeOfPlatform = sizeOfPlatform
+        self.sizeOfPlatform = CGFloat(sizeOfPlatform)
     }
     
     required init?(coder aDecoder: NSCoder) {

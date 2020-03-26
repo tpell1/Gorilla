@@ -122,17 +122,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // Restarts the scene and loads in the next level
-    func nextLevel(level: LevelScene) {
-        setupLevel(lives: (marioSprite?.getLives())!)
-        setLevel(level: level)
-    }
-    
     func nextLevel(index: Int) {
         levelLbl?.removeFromParent()
         self.childNode(withName: "Mario")?.removeFromParent()
         setupLevel(lives: (marioSprite?.getLives())!)
         setLevel(index: index)
         safetyBool = true
+        
+        // Update config and then write to file
+        config?.currentLevel += 1
+        PropertyListWriter.writeConfig(fileName: "config", configData: config!)
     }
     
     // Calculates the next level from a list of levels
@@ -267,6 +266,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
         }
         self.addChild((marioSprite)!) // Spawn mario
+        
+        // Update config and then write to file
+        config?.currentLives = lives
+        PropertyListWriter.writeConfig(fileName: "config", configData: config!)
     }
     
     // Reset positions when frame moves
