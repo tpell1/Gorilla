@@ -39,6 +39,7 @@
 		9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699281123FD9DE9008DB379 /* MarioSprite.swift */; };
 		96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A33242B758B00D9FC35 /* PropertyListReader.swift */; };
 		96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A35242B7A3100D9FC35 /* Levels.plist */; };
+		96A96A38242B91DF00D9FC35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A37242B91DF00D9FC35 /* Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		9699281123FD9DE9008DB379 /* MarioSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarioSprite.swift; sourceTree = "<group>"; };
 		96A96A33242B758B00D9FC35 /* PropertyListReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReader.swift; sourceTree = "<group>"; };
 		96A96A35242B7A3100D9FC35 /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		96A96A37242B91DF00D9FC35 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				968ECDBC2358D92E0029A1A9 /* Assets.xcassets */,
 				96A96A35242B7A3100D9FC35 /* Levels.plist */,
 				968ECDC12358D92E0029A1A9 /* Info.plist */,
+				96A96A37242B91DF00D9FC35 /* Config.plist */,
 				9682CBEB241E4DA700A0E821 /* Levels */,
 				9682CBEC241E4DCB00A0E821 /* Storyboards */,
 				9682CBE9241E4D5000A0E821 /* Sprites */,
@@ -393,6 +396,7 @@
 				967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */,
 				96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */,
 				968ECDBB2358D92E0029A1A9 /* Main.storyboard in Resources */,
+				96A96A38242B91DF00D9FC35 /* Config.plist in Resources */,
 				96969433241029AC00A266AB /* brokenBlock.png in Resources */,
 				96969438241037F700A266AB /* ONEUP.png in Resources */,
 				968ECDB22358D92E0029A1A9 /* GameScene.sks in Resources */,
