@@ -16,9 +16,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     internal var lastUpdateTime : TimeInterval = 0
     internal var marioSprite : MarioSprite?
-    private var blockSprite : BlockSprite?
-    private var breakableBlock : BreakableBlockSprite?
-    private var itemBlock : ItemBlockSprite?
     private var levelArray: [LevelScene]?
     private var level : LevelScene?
     private var levelIndex : Int = 0
@@ -28,17 +25,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var levelLbl : SKLabelNode?
     internal var nameNode : SKNode?
     private var relativeNode : SKNode?
-    private var endNode : EndOfLevelNode?
     private var safetyBool : Bool = true
+    private var config : ConfigStruct?
     internal var ground : SKShapeNode?
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
-        
+        if (config == nil || config?.currentLevel == 0) {
+            config = ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 1)
+            PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
+        }
         physicsWorld.contactDelegate = self
         
-        setupLevel(lives: 1)
+        setupLevel(lives: config!.currentLives)
+        setLevel(index: config!.currentLevel)
     }
     
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
@@ -114,7 +115,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setLevelArray(collection: Array<LevelScene>) {
         self.levelArray = collection
-        setLevel(index: 0)
+    }
+    
+    func setConfigStruct(data: ConfigStruct) {
+        self.config = data
     }
     
     // Restarts the scene and loads in the next level

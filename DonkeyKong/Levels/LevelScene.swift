@@ -49,7 +49,7 @@ class LevelScene: SKNode {
         self.addChild(itemBlock!)
         
         
-        let endNode = EndOfLevelNode(x: rect.maxX + 400, y: rect.minY + 40)
+        let endNode = EndOfLevelNode(x: rect.maxX + 400, y: rect.minY + 40, size: 4)
         self.addChild(endNode)
     }
     
