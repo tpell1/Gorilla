@@ -18,18 +18,18 @@ class EndOfLevelNode: SKNode {
     private var brick2 : BlockSprite?
     private var brick3 : BlockSprite?
     
-    // Initializer for basic 2x2 Pyramid followed by flagpole
-    init(x: CGFloat, y: CGFloat) {
+    // Initializer for basic n.n Pyramid followed by flagpole
+    init(x: CGFloat, y: CGFloat, size: Int) {
         let endNode = EndLevelNode(x: x + 100, y: y)
-        let brick1 = BlockSprite(x: x, y: y, imageNamed: "brickBlock.png")
-        let brick2 = BlockSprite(x: x+40, y: y, imageNamed: "brickBlock.png")
-        let brick3 = BlockSprite(x: x+40, y: y+40, imageNamed: "brickBlock.png")
-        
         super.init()
         self.addChild(endNode)
-        self.addChild(brick1)
-        self.addChild(brick2)
-        self.addChild(brick3)
+        
+        for i in 0...size-1 {
+            self.addChild(BlockSprite(x: x+(i*BlockSprite.BLOCK_SIZE), y: y, imageNamed: "brickBlock.png"))
+            for j in 2...i {
+                self.addChild(BlockSprite(x: x+(i*BlockSprite.BLOCK_SIZE), y: y+(j*BlockSprite.BLOCK_SIZE), imageNamed: "brickBlock.png"))
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

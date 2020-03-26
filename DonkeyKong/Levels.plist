@@ -29,6 +29,58 @@
 					<string></string>
 				</dict>
 			</array>
+			<key>presets</key>
+			<array>
+				<dict>
+					<key>presetType</key>
+					<string></string>
+					<key>presetX</key>
+					<integer>0</integer>
+					<key>presetY</key>
+					<integer>0</integer>
+					<key>presetSize</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<array>
+				<dict>
+					<key>enemyType</key>
+					<string>koopa</string>
+					<key>enemyX</key>
+					<integer>80</integer>
+					<key>enemyY</key>
+					<integer>100</integer>
+				</dict>
+			</array>
+			<key>blocks</key>
+			<array>
+				<dict>
+					<key>blockType</key>
+					<string>solid</string>
+					<key>blockX</key>
+					<integer>80</integer>
+					<key>blockY</key>
+					<integer>100</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+			</array>
+			<key>presets</key>
+			<array>
+				<dict>
+					<key>presetType</key>
+					<string></string>
+					<key>presetX</key>
+					<integer>0</integer>
+					<key>presetY</key>
+					<integer>0</integer>
+					<key>presetSize</key>
+					<integer>0</integer>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>

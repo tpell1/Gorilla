@@ -13,20 +13,37 @@ class LevelReader: LevelScene {
     private var fileName: String = "Levels.plist"
     private var blockArray: [BlockSprite] = []
     private var enemyArray: [KoopaSprite] = []
+    private var presetArray: [SKNode] = []
     private var levelData: LevelStruct
     
-    init(title: String, fileName: String, levelData: LevelStruct) {
+    init(title: String, levelData: LevelStruct) {
         self.levelData = levelData
         super.init(title: title)
+        
+        readInBlocks()
+        readInEnemies()
+        readInPresets()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func addChildren() {
+        for i in 0...(blockArray.count-1) {
+            self.addChild(blockArray[i])
+        }
+        for i in 0...(enemyArray.count-1) {
+            self.addChild(enemyArray[i])
+        }
+        for i in 0...(presetArray.count-1) {
+            self.addChild(presetArray[i])
+        }
+    }
+    
     // Iterate through all blocks in the level, and then convert a BlockStruct instance into a
     // BlockSprite instance, which is then appended to the class' BlockArray
-    func readInBlocks() {
+    private func readInBlocks() {
         let blocks = levelData.blocks
         for i in 0...(blocks.count-1) {
             if blocks[i].blockType == "solid" {
@@ -49,11 +66,20 @@ class LevelReader: LevelScene {
         }
     }
     
-    func readInEnemies() {
+    private func readInEnemies() {
         let enemies = levelData.enemies
         for i in 0...(enemies.count-1) {
             if enemies[i].enemyType == "koopa" {
                 enemyArray.append(KoopaSprite(x: CGFloat(enemies[i].enemyX), y: CGFloat(enemies[i].enemyY)))
+            }
+        }
+    }
+    
+    func readInPresets() {
+        let presets = levelData.presets
+        for i in 0...(presets.count-1) {
+            if presets[i].presetType == "koopa_platform" {
+                presetArray.append(KoopaPlatformHelper(x: CGFloat(presets[i].presetX), y: CGFloat(presets[i].presetY), size: presets[i].presetSize))
             }
         }
     }

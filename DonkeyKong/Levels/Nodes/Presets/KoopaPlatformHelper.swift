@@ -12,11 +12,11 @@ import SpriteKit
 class KoopaPlatformHelper: SKNode {
     private var blockArray: [BlockSprite] 
     
-    init(x: CGFloat, y: CGFloat, size: CGFloat) {
+    init(x: CGFloat, y: CGFloat, size: Int) {
         self.blockArray = []
         super.init()
         
-        for i in 0...Int(size-1) {
+        for i in 0...(size-1) {
             blockArray.append(BlockSprite(x: x+CGFloat(i)*BlockSprite.BLOCK_SIZE, y: y, imageNamed: "block.png"))
             self.addChild(blockArray[i])
         }

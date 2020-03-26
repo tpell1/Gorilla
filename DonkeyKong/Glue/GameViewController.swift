@@ -53,10 +53,17 @@ class GameViewController: UIViewController {
                 // Copy gameplay related content over to the scene
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
+                
+                // First do hardcoded levels
                 let level1 = LevelScene(title: "Level 1")
                 let level2 = LevelTwo(title: "Level 2")
+                var levelArray = [level1, level2]
                 
-                let levelArray = [level1, level2]
+                // Then load in levels from property list
+                let loadedLevels = LevelUtils.getLevelArray(fileName: "Levels.plist")
+                levelArray.append(contentsOf: loadedLevels)
+                
+                // Then send the levels to the scene
                 sceneNode.setLevelArray(collection: levelArray)
                 
                 // Set the scale mode to scale to fit the window

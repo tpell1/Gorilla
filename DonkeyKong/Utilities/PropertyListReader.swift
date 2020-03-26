@@ -20,6 +20,7 @@ struct LevelsStruct: Codable {
 struct LevelStruct: Codable {
     var blocks: [BlockStruct]
     var enemies: [EnemyStruct]
+    var presets: [PresetStruct]
 }
 
 // Block node, splits each block into the required attributes
@@ -35,6 +36,14 @@ struct EnemyStruct: Codable {
     var enemyType: String
     var enemyX: Int
     var enemyY: Int
+}
+
+// Preset node, found in Levels/Nodes/Presets
+struct PresetStruct: Codable {
+    var presetType: String
+    var presetX: Int
+    var presetY: Int
+    var presetSize: Int
 }
 
 ///////////////////// Config //////////////////////////
