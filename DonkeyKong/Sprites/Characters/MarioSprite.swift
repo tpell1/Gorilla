@@ -76,6 +76,8 @@ class MarioSprite : SKSpriteNode {
             } else if node2 is EndLevelNode { // End the level
                 let node = node2 as! EndLevelNode
                 node.endLevel()
+            } else if node2 is KoopaSprite {
+                self.shrink()
             }
         }
     }

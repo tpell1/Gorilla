@@ -67,6 +67,13 @@ class KoopaSprite: SKSpriteNode {
         timerBool = !timerBool
     }
     
+    func collision(contact: SKPhysicsContact) {
+        if (contact.bodyB.node! is MarioSprite) {
+            let mario = contact.bodyB.node as! MarioSprite
+            mario.shrink()
+        }
+    }
+    
     func canSeeMario() -> Bool {
         if let mario = scene?.childNode(withName: "mario") {
             let marioX = mario.position.x

@@ -220,6 +220,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let block = node1 as! ItemBlockSprite
                     block.spawnItem()
                 }
+            } else if node1 is KoopaSprite{
+                let koopa = node1 as! KoopaSprite
+                koopa.collision(contact: contact)
             } else if node1 is MarioSprite {
                 let mario = node1 as! MarioSprite
                 mario.collision(contact: contact) // Mario can handle collisions himself
