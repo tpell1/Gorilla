@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var pauseBtn : SKShapeNode?
     internal var nameNode : SKNode?
     private var relativeNode : SKNode?
-    private var pauseNode : SKNode?
+    private var pauseNode : PauseMenu?
     internal var ground : SKShapeNode?
 
     internal var lastUpdateTime : TimeInterval = 0
@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         relativeNode = SKNode() // Used for centering on Mario
         relativeNode?.position = anchorPoint
         
-        pauseNode = SKNode() // Used for pause menu (contains all required buttons etc.)
+        pauseNode = PauseMenu() // Used for pause menu (contains all required buttons etc.)
         
         // Create the floor
         // TODO: Move into LevelScene class
