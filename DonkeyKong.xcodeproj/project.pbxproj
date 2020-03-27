@@ -42,6 +42,7 @@
 		96A96A38242B91DF00D9FC35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A37242B91DF00D9FC35 /* Config.plist */; };
 		96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3D242CF37100D9FC35 /* LevelUtils.swift */; };
 		96A96A40242CF6E000D9FC35 /* PropertyListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */; };
+		96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A41242E0BEB00D9FC35 /* FireItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		96A96A37242B91DF00D9FC35 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		96A96A3D242CF37100D9FC35 /* LevelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUtils.swift; sourceTree = "<group>"; };
 		96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListWriter.swift; sourceTree = "<group>"; };
+		96A96A41242E0BEB00D9FC35 /* FireItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				9696942D241029AC00A266AB /* ItemSprite.swift */,
 				96572F8B242A119F0006E50D /* MushroomItem.swift */,
+				96A96A41242E0BEB00D9FC35 /* FireItem.swift */,
 				96572F8E242A173D0006E50D /* ShellItem.swift */,
 			);
 			path = Items;
@@ -460,6 +463,7 @@
 				9682CBE8241E489F00A0E821 /* LevelTwo.swift in Sources */,
 				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
 				96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */,
+				96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */,
 				96572F96242A30D30006E50D /* LevelReader.swift in Sources */,
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
 				96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */,

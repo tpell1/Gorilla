@@ -132,6 +132,14 @@ class MarioSprite : SKSpriteNode {
         return MarioSprite.DEFAULT_MOVE_SPEED * moveSpeedMultiplier
     }
     
+    func getWidth() -> Int {
+        return width
+    }
+    
+    func getHeight() -> Int {
+        return height
+    }
+    
     private func reDo() {
         self.scale(to: CGSize(width: width, height: height))
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
