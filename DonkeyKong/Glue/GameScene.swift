@@ -30,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     internal var ground : SKShapeNode?
 
     internal var lastUpdateTime : TimeInterval = 0
+    private var timer : Timer?
     private var safetyBool : Bool = true
     private var gameIsPaused : Bool = false
     private var levelIndex : Int = 0
@@ -102,6 +103,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         level?.addChildren()
         self.addChild(level!)
         levelLbl?.text = "Level: " + (level?.getTitle())!
+        
+        if (level?.name == "boss_level") {
+            timer = Timer(timeInterval: 0.05, target: self, selector: #selector(self.timerUpdate), userInfo: nil, repeats: true)
+            RunLoop.current.add(timer!, forMode: .commonModes)
+        }
+    }
+    
+    @objc func timerUpdate() {
+        if let donkeyKong = level?.childNode(withName: "donkeyKong") as? DonkeyKongSprite {
+            donkeyKong.fightMario(marioPos: marioSprite!.position)
+        }
     }
     
     func getLevel() -> LevelScene? {

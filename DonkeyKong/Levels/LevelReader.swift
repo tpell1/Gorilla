@@ -18,14 +18,17 @@ class LevelReader: LevelScene {
     
     init(title: String, levelData: LevelStruct) {
         self.levelData = levelData
-        super.init(title: title)
         
         if (levelData.levelType == "standard") {
+            super.init(title: title)
             readInBlocks()
             readInPresets()
             readInEnemies()
         } else if (levelData.levelType == "boss") {
+            super.init(title: title, name: "boss_level")
             readInEnemies()
+        } else {
+            super.init(title: title)
         }
     }
     

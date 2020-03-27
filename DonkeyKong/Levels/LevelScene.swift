@@ -33,6 +33,11 @@ class LevelScene: SKNode {
         self.name = "level"
     }
     
+    convenience init(title: String, name: String) {
+        self.init(title: title)
+        self.name = name
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

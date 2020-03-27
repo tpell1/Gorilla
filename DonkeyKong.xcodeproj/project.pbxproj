@@ -45,6 +45,7 @@
 		96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A41242E0BEB00D9FC35 /* FireItem.swift */; };
 		96A96A45242E133F00D9FC35 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A44242E133F00D9FC35 /* PauseMenu.swift */; };
 		96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */; };
+		96A96A49242E35B500D9FC35 /* PhysicsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		96A96A41242E0BEB00D9FC35 /* FireItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireItem.swift; sourceTree = "<group>"; };
 		96A96A44242E133F00D9FC35 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongSprite.swift; sourceTree = "<group>"; };
+		96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			children = (
 				968ECDAF2358D92E0029A1A9 /* AppDelegate.swift */,
 				968ECDB52358D92E0029A1A9 /* GameScene.swift */,
+				96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */,
 				967794EC2428A859007F1B40 /* LevelSelectScene.swift */,
 				968ECDB72358D92E0029A1A9 /* GameViewController.swift */,
 			);
@@ -472,6 +475,7 @@
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,
 				968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */,
+				96A96A49242E35B500D9FC35 /* PhysicsHandler.swift in Sources */,
 				9682CBE0241D3F0C00A0E821 /* EndLevelNode.swift in Sources */,
 				96969434241029AC00A266AB /* ItemBlockSprite.swift in Sources */,
 				96572F8F242A173D0006E50D /* ShellItem.swift in Sources */,

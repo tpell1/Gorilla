@@ -43,11 +43,11 @@ class DonkeyKongSprite: SKSpriteNode {
         }
     }
     
-    func attack(position: CGPoint) {
+    private func attack(position: CGPoint) {
         //TODO
     }
     
-    func walk(to: CGPoint) {
+    private func walk(to: CGPoint) {
         //TODO
     }
 }
