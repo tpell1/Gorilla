@@ -14,20 +14,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    internal var lastUpdateTime : TimeInterval = 0
     internal var marioSprite : MarioSprite?
     private var levelArray: [LevelScene]?
     private var level : LevelScene?
-    private var levelIndex : Int = 0
+    private var config : ConfigStruct?
+    
     internal var leftArrow : SKShapeNode?
     internal var rightArrow : SKShapeNode?
     internal var livesLbl : SKLabelNode?
     private var levelLbl : SKLabelNode?
+    private var pauseBtn : SKShapeNode?
     internal var nameNode : SKNode?
     private var relativeNode : SKNode?
-    private var safetyBool : Bool = true
-    private var config : ConfigStruct?
+    private var pauseNode : SKNode?
     internal var ground : SKShapeNode?
+
+    internal var lastUpdateTime : TimeInterval = 0
+    private var safetyBool : Bool = true
+    private var gameIsPaused : Bool = false
+    private var levelIndex : Int = 0
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
@@ -49,6 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         rightArrow = self.childNode(withName: "//rightArrow") as? SKShapeNode
         livesLbl = self.childNode(withName: "//livesLbl") as? SKLabelNode
         nameNode = self.childNode(withName: "//node")
+        pauseBtn = self.childNode(withName: "//pauseBtn") as? SKShapeNode
         
         print("Frame x: " + String(describing: frame.minX))
         
@@ -59,6 +65,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         anchorPoint = CGPoint(x: 0.5, y: 0.5) // Making the coordinates consistant accross all levels
         relativeNode = SKNode() // Used for centering on Mario
         relativeNode?.position = anchorPoint
+        
+        pauseNode = SKNode() // Used for pause menu (contains all required buttons etc.)
         
         // Create the floor
         // TODO: Move into LevelScene class
@@ -87,15 +95,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // Loads a level into the scene
-    func setLevel(level: LevelScene) {
-        self.levelIndex = 0
-        self.level = level
-        level.setFrame(frameRect: frame)
-        level.addChildren()
-        self.addChild(level)
-        levelLbl?.text = "Level: " + level.getTitle()
-    }
-    
     func setLevel(index: Int) {
         levelIndex = index
         self.level = levelArray?[index]
@@ -148,14 +147,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Called when the user presses down on screen
     func touchDown(atPoint pos : CGPoint) {
-        if (marioSprite?.contains(pos))! {
-            marioSprite?.jump()
-        } else if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
-        } else if (rightArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+        if (!gameIsPaused) {
+            if (marioSprite?.contains(pos))! {
+                marioSprite?.jump()
+            } else if (leftArrow?.contains(pos))! {
+                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
+                marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+            } else if (rightArrow?.contains(pos))! {
+                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+                marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+            } else if (pauseBtn?.contains(pos))! {
+                pauseGame()
+            }
+        } else {
+            if (pauseBtn?.contains(pos))! {
+                resumeGame()
+            }
         }
     }
     
@@ -275,6 +282,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         PropertyListWriter.writeConfig(fileName: "config", configData: config!)
     }
     
+    func pauseGame() {
+        self.addChild(pauseNode!)
+        gameIsPaused = true
+        level?.isPaused = true
+    }
+    
+    func resumeGame() {
+        pauseNode?.removeFromParent()
+        gameIsPaused = false
+        level?.isPaused = false
+    }
+    
     // Reset positions when frame moves
     // Ensures HUD is at some position of screen at all times
     func setHUD() {
@@ -282,5 +301,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         rightArrow?.position.x = frame.maxX - 60
         livesLbl?.position.x = frame.minX + 80
         levelLbl?.position.x = frame.midX
+        pauseBtn?.position.x = frame.minX + 30
     }
 }
