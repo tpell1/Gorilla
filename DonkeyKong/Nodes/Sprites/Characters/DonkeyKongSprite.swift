@@ -32,4 +32,22 @@ class DonkeyKongSprite: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func fightMario(marioPos: CGPoint) {
+        let marioX = marioPos.x
+        let marioY = marioPos.y
+        
+        if (abs(marioX - self.position.x) < 30 && abs(marioY - self.position.y) < 30) {
+            attack(position: marioPos)
+        } else {
+            walk(to: marioPos)
+        }
+    }
+    
+    func attack(position: CGPoint) {
+        //TODO
+    }
+    
+    func walk(to: CGPoint) {
+        //TODO
+    }
 }
