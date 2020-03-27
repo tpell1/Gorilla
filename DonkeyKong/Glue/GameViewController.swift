@@ -86,7 +86,7 @@ class GameViewController: UIViewController {
     @objc func update() {
         if (sceneNode?.playGame ?? false && sceneNode?.gameLevel == 0) {
             playGame()
-            timer?.invalidate()
+            timer?.invalidate() // Remove timer once user has pressed play
         }
     }
     

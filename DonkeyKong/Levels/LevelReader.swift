@@ -12,7 +12,7 @@ import SpriteKit
 class LevelReader: LevelScene {
     private var fileName: String = "Levels.plist"
     private var blockArray: [BlockSprite] = []
-    private var enemyArray: [KoopaSprite] = []
+    private var enemyArray: [SKSpriteNode] = []
     private var presetArray: [SKNode] = []
     private var levelData: LevelStruct
     
@@ -20,9 +20,13 @@ class LevelReader: LevelScene {
         self.levelData = levelData
         super.init(title: title)
         
-        readInBlocks()
-        readInEnemies()
-        readInPresets()
+        if (levelData.levelType == "standard") {
+            readInBlocks()
+            readInPresets()
+            readInEnemies()
+        } else if (levelData.levelType == "boss") {
+            readInEnemies()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

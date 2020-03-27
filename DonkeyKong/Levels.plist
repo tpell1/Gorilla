@@ -5,6 +5,8 @@
 	<key>levels</key>
 	<array>
 		<dict>
+			<key>levelType</key>
+			<string>standard</string>
 			<key>enemies</key>
 			<array>
 				<dict>
@@ -33,17 +35,19 @@
 			<array>
 				<dict>
 					<key>presetType</key>
-					<string></string>
+					<string>endLevel</string>
 					<key>presetX</key>
-					<integer>0</integer>
+					<integer>400</integer>
 					<key>presetY</key>
-					<integer>0</integer>
+					<integer>20</integer>
 					<key>presetSize</key>
-					<integer>0</integer>
+					<integer>3</integer>
 				</dict>
 			</array>
 		</dict>
 		<dict>
+			<key>levelType</key>
+			<string>standard</string>
 			<key>enemies</key>
 			<array>
 				<dict>
@@ -67,18 +71,48 @@
 					<key>itemType</key>
 					<string></string>
 				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>solid</string>
+					<key>blockX</key>
+					<integer>120</integer>
+					<key>blockY</key>
+					<integer>100</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>breakable</string>
+					<key>blockX</key>
+					<integer>160</integer>
+					<key>blockY</key>
+					<integer>100</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>item</string>
+					<key>blockX</key>
+					<integer>200</integer>
+					<key>blockY</key>
+					<integer>100</integer>
+					<key>itemType</key>
+					<string>oneup</string>
+				</dict>
 			</array>
 			<key>presets</key>
 			<array>
 				<dict>
 					<key>presetType</key>
-					<string></string>
+					<string>endLevel</string>
 					<key>presetX</key>
-					<integer>0</integer>
+					<integer>400</integer>
 					<key>presetY</key>
-					<integer>0</integer>
+					<integer>20</integer>
 					<key>presetSize</key>
-					<integer>0</integer>
+					<integer>4</integer>
 				</dict>
 			</array>
 		</dict>

@@ -21,6 +21,7 @@ struct LevelStruct: Codable {
     var blocks: [BlockStruct]
     var enemies: [EnemyStruct]
     var presets: [PresetStruct]
+    var levelType: String
 }
 
 // Block node, splits each block into the required attributes

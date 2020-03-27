@@ -44,6 +44,7 @@
 		96A96A40242CF6E000D9FC35 /* PropertyListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */; };
 		96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A41242E0BEB00D9FC35 /* FireItem.swift */; };
 		96A96A45242E133F00D9FC35 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A44242E133F00D9FC35 /* PauseMenu.swift */; };
+		96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListWriter.swift; sourceTree = "<group>"; };
 		96A96A41242E0BEB00D9FC35 /* FireItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireItem.swift; sourceTree = "<group>"; };
 		96A96A44242E133F00D9FC35 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
+		96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				9699281123FD9DE9008DB379 /* MarioSprite.swift */,
 				96572F90242A1BD40006E50D /* KoopaSprite.swift */,
+				96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96969435241029AC00A266AB /* BreakableBlockSprite.swift in Sources */,
+				96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,
 				968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */,

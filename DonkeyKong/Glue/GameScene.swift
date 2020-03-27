@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         relativeNode = SKNode() // Used for centering on Mario
         relativeNode?.position = anchorPoint
         
-        pauseNode = PauseMenu() // Used for pause menu (contains all required buttons etc.)
+        pauseNode = PauseMenu(phoneFrame: frame) // Used for pause menu (contains all required buttons etc.)
         
         // Create the floor
         // TODO: Move into LevelScene class
