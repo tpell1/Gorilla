@@ -20,14 +20,14 @@ class EndOfLevelNode: SKNode {
     
     // Initializer for basic n.n Pyramid followed by flagpole
     init(x: CGFloat, y: CGFloat, size: Int) {
-        let endNode = EndLevelNode(x: x + 100, y: y)
+        let endNode = EndLevelNode(x: x + CGFloat(size)*BlockSprite.BLOCK_SIZE + 100, y: y)
         super.init()
         self.addChild(endNode)
         
         for i in 0...size-1 {
             self.addChild(BlockSprite(x: x+(CGFloat(i)*BlockSprite.BLOCK_SIZE), y: y, imageNamed: "brickBlock.png"))
-            if (i > 1) {
-                for j in 2...i {
+            if (i > 0) {
+                for j in 1...i {
                     self.addChild(BlockSprite(x: x+(CGFloat(i)*BlockSprite.BLOCK_SIZE), y: y+(CGFloat(j)*BlockSprite.BLOCK_SIZE), imageNamed: "brickBlock.png"))
                 }
             }
