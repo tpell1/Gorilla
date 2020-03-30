@@ -58,41 +58,47 @@ class LevelReader: LevelScene {
     // BlockSprite instance, which is then appended to the class' BlockArray
     private func readInBlocks() {
         let blocks = levelData.blocks
-        for i in 0...(blocks.count-1) {
-            if blocks[i].blockType == "solid" {
-                blockArray.append(BlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png"))
-            } else if blocks[i].blockType == "breakable" {
-                blockArray.append(BreakableBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), texture1Named: "brickBlock.png", texture2Named: "brickBlock.png"))
-            } else if blocks[i].blockType == "item" {
-                var itemType = ItemType.ONEUP
-                if blocks[i].itemType == "oneup" {
-                    // TODO Tidy up
-                } else if blocks[i].itemType == "mushroom" {
-                    itemType = ItemType.MUSHROOM
-                } else if blocks[i].itemType == "star" {
-                    itemType = ItemType.STAR
-                } else if blocks[i].itemType == "fire" {
-                    itemType = ItemType.FIRE
+        if (blocks.count > 0) {
+            for i in 0...(blocks.count-1) {
+                if blocks[i].blockType == "solid" {
+                    blockArray.append(BlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png"))
+                } else if blocks[i].blockType == "breakable" {
+                    blockArray.append(BreakableBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), texture1Named: "brickBlock.png", texture2Named: "brickBlock.png"))
+                } else if blocks[i].blockType == "item" {
+                    var itemType = ItemType.ONEUP
+                    if blocks[i].itemType == "oneup" {
+                        // TODO Tidy up
+                    } else if blocks[i].itemType == "mushroom" {
+                        itemType = ItemType.MUSHROOM
+                    } else if blocks[i].itemType == "star" {
+                        itemType = ItemType.STAR
+                    } else if blocks[i].itemType == "fire" {
+                        itemType = ItemType.FIRE
+                    }
+                    blockArray.append(ItemBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png", itemType: itemType))
                 }
-                blockArray.append(ItemBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: rect.midX+CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png", itemType: itemType))
             }
         }
     }
     
     private func readInEnemies() {
         let enemies = levelData.enemies
-        for i in 0...(enemies.count-1) {
-            if enemies[i].enemyType == "koopa" {
-                enemyArray.append(KoopaSprite(x: rect.midX+CGFloat(enemies[i].enemyX), y: rect.midX+CGFloat(enemies[i].enemyY)))
+        if (enemies.count > 0) {
+            for i in 0...(enemies.count-1) {
+                if enemies[i].enemyType == "koopa" {
+                    enemyArray.append(KoopaSprite(x: rect.midX+CGFloat(enemies[i].enemyX), y: rect.midX+CGFloat(enemies[i].enemyY)))
+                }
             }
         }
     }
     
     func readInPresets() {
         let presets = levelData.presets
-        for i in 0...(presets.count-1) {
-            if presets[i].presetType == "koopa_platform" {
-                presetArray.append(KoopaPlatformHelper(x: rect.midX+CGFloat(presets[i].presetX), y: rect.midX+CGFloat(presets[i].presetY), size: presets[i].presetSize))
+        if (presets.count > 0) {
+            for i in 0...(presets.count-1) {
+                if presets[i].presetType == "koopa_platform" {
+                    presetArray.append(KoopaPlatformHelper(x: rect.midX+CGFloat(presets[i].presetX), y: rect.midX+CGFloat(presets[i].presetY), size: presets[i].presetSize))
+                }
             }
         }
     }

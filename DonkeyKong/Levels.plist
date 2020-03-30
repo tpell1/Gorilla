@@ -8,16 +8,7 @@
 			<key>levelType</key>
 			<string>standard</string>
 			<key>enemies</key>
-			<array>
-				<dict>
-					<key>enemyType</key>
-					<string>koopa</string>
-					<key>enemyX</key>
-					<integer>80</integer>
-					<key>enemyY</key>
-					<integer>100</integer>
-				</dict>
-			</array>
+			<array/>
 			<key>blocks</key>
 			<array>
 				<dict>

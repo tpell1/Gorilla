@@ -15,7 +15,7 @@ class LevelUtils {
         var array: [LevelReader] = []
         for i in 0...((levelsStruct?.levels.count)!-1) {
             guard let level = levelsStruct?.levels[i] else { return array }
-            array.append(LevelReader(title: "level", levelData: level))
+            array.append(LevelReader(title: "level: " + String(i+1), levelData: level))
         }
         return array
     }

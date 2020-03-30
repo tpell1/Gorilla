@@ -44,6 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = physics
     }
 
+    // Called after sceneDidLoad(), allows config to be read and the levels list
     override func didMove(to view: SKView) {
         if (config == nil || config?.currentLevel == 0) {
             config = ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 1)
@@ -52,6 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupLevel(lives: config!.currentLives)
         setLevel(index: config!.currentLevel - 1)
     }
+    
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
     func setupLevel(lives: Int) {
         //Initial HUD, load from sks file

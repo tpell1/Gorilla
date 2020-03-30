@@ -41,6 +41,12 @@ class PhysicsHandler: SKNode, SKPhysicsContactDelegate {
             } else if node1 is MarioSprite {
                 let mario = node1 as! MarioSprite
                 mario.collision(contact: contact) // Mario can handle collisions himself
+            } else if node1 is EndLevelNode {
+                let end = node1 as! EndLevelNode
+                let node2 = contact.bodyB.node!
+                if node2 is MarioSprite {
+                    end.endLevel()
+                }
             }
         }
     }
