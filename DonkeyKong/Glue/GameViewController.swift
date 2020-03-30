@@ -65,6 +65,8 @@ class GameViewController: UIViewController {
                 
                 // Then send the levels to the scene
                 sceneNode.setLevelArray(collection: levelArray)
+                let config = PropertyListReader.readConfigFile(fileName: "Config")
+                sceneNode.setConfigStruct(data: config!)
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill

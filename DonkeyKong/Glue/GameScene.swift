@@ -38,18 +38,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
+
+        let physics = PhysicsHandler()
+        self.addChild(physics)
+        physicsWorld.contactDelegate = physics
+    }
+
+    override func didMove(to view: SKView) {
         if (config == nil || config?.currentLevel == 0) {
             config = ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 1)
             PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
         }
-        let physics = PhysicsHandler()
-        self.addChild(physics)
-        physicsWorld.contactDelegate = physics
-        
         setupLevel(lives: config!.currentLives)
-    }
-
-    override func didMove(to view: SKView) {
         setLevel(index: config!.currentLevel - 1)
     }
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
@@ -146,7 +146,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Update config and then write to file
         config?.currentLevel += 1
-        PropertyListWriter.writeConfig(fileName: "config", configData: config!)
+        PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
     }
     
     // Calculates the next level from a list of levels
@@ -216,43 +216,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
-    // ======== Collision detection =======================
-    
-    // Contact handler
-    func didBegin(_ contact: SKPhysicsContact) {
-        /*if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
-            if node1 is ItemSprite {
-                let node2 = contact.bodyB.node!
-                if node2 is MarioSprite {
-                    let mario = node2 as! MarioSprite
-                    let item = node1 as! ItemSprite
-                    item.collision(mario: mario)
-                }
-            } else if node1 is BreakableBlockSprite {
-                let node2 = contact.bodyB.node!
-                if node2 is MarioSprite {
-                    let mario = node2 as! MarioSprite
-                    if((mario.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
-                        let block = node1 as! BreakableBlockSprite
-                        block.breakBlock()
-                    }
-                }
-            } else if node1 is ItemBlockSprite {
-                let node2 = contact.bodyB.node!
-                if node2 is MarioSprite {
-                    let block = node1 as! ItemBlockSprite
-                    block.spawnItem()
-                }
-            } else if node1 is KoopaSprite{
-                let koopa = node1 as! KoopaSprite
-                koopa.collision(contact: contact)
-            } else if node1 is MarioSprite {
-                let mario = node1 as! MarioSprite
-                mario.collision(contact: contact) // Mario can handle collisions himself
-            }
-        }*/
-    }
-    
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
@@ -295,7 +258,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Update config and then write to file
         config?.currentLives = lives
-        PropertyListWriter.writeConfig(fileName: "config", configData: config!)
+        PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
     }
     
     func pauseGame() {

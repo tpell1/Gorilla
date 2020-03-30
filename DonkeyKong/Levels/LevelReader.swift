@@ -37,14 +37,20 @@ class LevelReader: LevelScene {
     }
     
     override func addChildren() {
-        for i in 0...(blockArray.count-1) {
-            self.addChild(blockArray[i])
+        if (blockArray.count > 0) {
+            for i in 0...(blockArray.count-1) {
+                self.addChild(blockArray[i])
+            }
         }
-        for i in 0...(enemyArray.count-1) {
-            self.addChild(enemyArray[i])
+        if (enemyArray.count > 0) {
+            for i in 0...(enemyArray.count-1) {
+                self.addChild(enemyArray[i])
+            }
         }
-        for i in 0...(presetArray.count-1) {
-            self.addChild(presetArray[i])
+        if (presetArray.count > 0) {
+            for i in 0...(presetArray.count-1) {
+                self.addChild(presetArray[i])
+            }
         }
     }
     
