@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func didMove(to view: SKView) {
-        setLevel(index: config!.currentLevel)
+        setLevel(index: config!.currentLevel - 1)
     }
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
     func setupLevel(lives: Int) {

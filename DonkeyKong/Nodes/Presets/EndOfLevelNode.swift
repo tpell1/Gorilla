@@ -26,8 +26,10 @@ class EndOfLevelNode: SKNode {
         
         for i in 0...size-1 {
             self.addChild(BlockSprite(x: x+(CGFloat(i)*BlockSprite.BLOCK_SIZE), y: y, imageNamed: "brickBlock.png"))
-            for j in 2...i {
-                self.addChild(BlockSprite(x: x+(CGFloat(i)*BlockSprite.BLOCK_SIZE), y: y+(CGFloat(j)*BlockSprite.BLOCK_SIZE), imageNamed: "brickBlock.png"))
+            if (i > 1) {
+                for j in 2...i {
+                    self.addChild(BlockSprite(x: x+(CGFloat(i)*BlockSprite.BLOCK_SIZE), y: y+(CGFloat(j)*BlockSprite.BLOCK_SIZE), imageNamed: "brickBlock.png"))
+                }
             }
         }
     }
