@@ -17,7 +17,7 @@
 					<key>blockX</key>
 					<integer>80</integer>
 					<key>blockY</key>
-					<integer>100</integer>
+					<integer>75</integer>
 					<key>itemType</key>
 					<string></string>
 				</dict>
@@ -30,7 +30,7 @@
 					<key>presetX</key>
 					<integer>400</integer>
 					<key>presetY</key>
-					<integer>20</integer>
+					<integer>0</integer>
 					<key>presetSize</key>
 					<integer>3</integer>
 				</dict>
