@@ -47,9 +47,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = physics
         
         setupLevel(lives: config!.currentLives)
+    }
+
+    override func didMove(to view: SKView) {
         setLevel(index: config!.currentLevel)
     }
-    
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
     func setupLevel(lives: Int) {
         //Initial HUD, load from sks file

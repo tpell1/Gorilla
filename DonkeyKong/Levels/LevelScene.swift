@@ -26,15 +26,18 @@ class LevelScene: SKNode {
     private var complete : Bool = false
     
     // Constructor (Frame is set later)
-    init(title: String) {
+    /*init(title: String) {
         self.title = title
         self.rect = CGRect(x: 0, y: 0, width: 400, height: 200)
         super.init()
         self.name = "level"
-    }
+    }*/
     
-    convenience init(title: String, name: String) {
-        self.init(title: title)
+    init(title: String, name: String) {
+        self.title = title
+        self.rect = CGRect(x: 0, y: 0, width: 400, height: 200)
+        
+        super.init()
         self.name = name
     }
     

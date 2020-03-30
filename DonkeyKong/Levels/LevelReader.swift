@@ -20,7 +20,7 @@ class LevelReader: LevelScene {
         self.levelData = levelData
         
         if (levelData.levelType == "standard") {
-            super.init(title: title)
+            super.init(title: title, name: "level")
             readInBlocks()
             readInPresets()
             readInEnemies()
@@ -28,7 +28,7 @@ class LevelReader: LevelScene {
             super.init(title: title, name: "boss_level")
             readInEnemies()
         } else {
-            super.init(title: title)
+            super.init(title: title, name: "level")
         }
     }
     

@@ -55,12 +55,12 @@ class GameViewController: UIViewController {
                 sceneNode.graphs = scene.graphs
                 
                 // First do hardcoded levels
-                let level1 = LevelScene(title: "Level 1")
-                let level2 = LevelTwo(title: "Level 2")
+                let level1 = LevelScene(title: "Level 1", name: "level")
+                let level2 = LevelTwo(title: "Level 2", name: "level")
                 var levelArray = [level1, level2]
                 
                 // Then load in levels from property list
-                let loadedLevels = LevelUtils.getLevelArray(fileName: "Levels.plist")
+                let loadedLevels = LevelUtils.getLevelArray(fileName: "Levels")
                 levelArray.append(contentsOf: loadedLevels)
                 
                 // Then send the levels to the scene
