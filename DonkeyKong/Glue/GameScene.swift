@@ -42,7 +42,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             config = ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 1)
             PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
         }
-        physicsWorld.contactDelegate = self
+        let physics = PhysicsHandler()
+        self.addChild(physics)
+        physicsWorld.contactDelegate = physics
         
         setupLevel(lives: config!.currentLives)
         setLevel(index: config!.currentLevel)
@@ -216,7 +218,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Contact handler
     func didBegin(_ contact: SKPhysicsContact) {
-        if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
+        /*if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
             if node1 is ItemSprite {
                 let node2 = contact.bodyB.node!
                 if node2 is MarioSprite {
@@ -246,8 +248,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let mario = node1 as! MarioSprite
                 mario.collision(contact: contact) // Mario can handle collisions himself
             }
-            livesLbl?.text = String(describing: marioSprite?.getLives())
-        }
+        }*/
     }
     
     
@@ -277,6 +278,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.anchorPoint.x = -(2*(self.convert((marioSprite?.position)!, to: relativeNode!).x) - self.convert(CGPoint(x: frame.maxX, y: 0), to: relativeNode!).x)/900
         self.setHUD()
         self.lastUpdateTime = currentTime
+        livesLbl?.text = String(describing: marioSprite?.getLives())
     }
     
     // Restart level when mario is killed
