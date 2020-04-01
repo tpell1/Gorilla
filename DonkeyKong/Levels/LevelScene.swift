@@ -56,6 +56,8 @@ class LevelScene: SKNode {
         itemBlock = ItemBlockSprite(x: rect.midX + 130, y: rect.minY + 130, imageNamed: "brickBlock.png")
         self.addChild(itemBlock!)
         
+        let koopaNode = KoopaPlatformHelper(x: rect.maxX + 200, y: rect.minY + 130, size: 4)
+        self.addChild(koopaNode)
         
         let endNode = EndOfLevelNode(x: rect.maxX + 400, y: rect.minY + 40, size: 4)
         self.addChild(endNode)
