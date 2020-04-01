@@ -81,11 +81,11 @@ class PropertyListReader {
     }
     
     static func configExistsInDocs(fileName: String = "Config") -> Bool {
-        return FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").absoluteString)
+        return FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").path)
     }
     
     static func readConfigFromDocs(fileName: String) -> ConfigStruct? {
-        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").absoluteString
+        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").path
         if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
             return config
         } else {
