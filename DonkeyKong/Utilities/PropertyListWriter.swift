@@ -13,14 +13,16 @@ class PropertyListWriter {
     static func writeConfig(fileName: String, configData: ConfigStruct) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
-        
-        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
-        
-        do {
-            let data = try encoder.encode(configData)
-            try data.write(to: file)
-        } catch {
-            print(error)
+        if let fileString = Bundle.main.path(forResource: fileName, ofType: "plist") {
+            let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist") // ERROR HERE
+            //let file = URL(fileURLWithPath: fileString)
+            print(file.absoluteString)
+            do {
+                let data = try encoder.encode(configData)
+                try data.write(to: file)
+            } catch {
+                print(error)
+            }
         }
     }
     

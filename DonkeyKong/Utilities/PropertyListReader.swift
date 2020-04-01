@@ -72,8 +72,21 @@ class PropertyListReader {
         }
     }
     
-    static func readConfigFile(fileName: String) -> ConfigStruct? {
+    static func readConfigFromBundle(fileName: String) -> ConfigStruct? {
         if let file = Bundle.main.path(forResource: fileName, ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
+            return config
+        } else {
+            return nil
+        }
+    }
+    
+    static func configExistsInDocs(fileName: String = "Config") -> Bool {
+        return FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").absoluteString)
+    }
+    
+    static func readConfigFromDocs(fileName: String) -> ConfigStruct? {
+        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").absoluteString
+        if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
             return config
         } else {
             return nil
