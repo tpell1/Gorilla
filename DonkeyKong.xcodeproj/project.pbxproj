@@ -41,11 +41,11 @@
 		96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A35242B7A3100D9FC35 /* Levels.plist */; };
 		96A96A38242B91DF00D9FC35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A37242B91DF00D9FC35 /* Config.plist */; };
 		96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3D242CF37100D9FC35 /* LevelUtils.swift */; };
-		96A96A40242CF6E000D9FC35 /* PropertyListWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */; };
 		96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A41242E0BEB00D9FC35 /* FireItem.swift */; };
 		96A96A45242E133F00D9FC35 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A44242E133F00D9FC35 /* PauseMenu.swift */; };
 		96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */; };
 		96A96A49242E35B500D9FC35 /* PhysicsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */; };
+		96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4A2434C98000D9FC35 /* SaveData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,11 +107,11 @@
 		96A96A35242B7A3100D9FC35 /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		96A96A37242B91DF00D9FC35 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		96A96A3D242CF37100D9FC35 /* LevelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUtils.swift; sourceTree = "<group>"; };
-		96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListWriter.swift; sourceTree = "<group>"; };
 		96A96A41242E0BEB00D9FC35 /* FireItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireItem.swift; sourceTree = "<group>"; };
 		96A96A44242E133F00D9FC35 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
 		96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongSprite.swift; sourceTree = "<group>"; };
 		96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHandler.swift; sourceTree = "<group>"; };
+		96A96A4A2434C98000D9FC35 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,7 +294,7 @@
 			children = (
 				96A96A33242B758B00D9FC35 /* PropertyListReader.swift */,
 				96A96A3D242CF37100D9FC35 /* LevelUtils.swift */,
-				96A96A3F242CF6E000D9FC35 /* PropertyListWriter.swift */,
+				96A96A4A2434C98000D9FC35 /* SaveData.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -472,6 +472,7 @@
 			files = (
 				96969435241029AC00A266AB /* BreakableBlockSprite.swift in Sources */,
 				96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */,
+				96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,
 				968ECDB82358D92E0029A1A9 /* GameViewController.swift in Sources */,
@@ -487,7 +488,6 @@
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
 				96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */,
 				96969402240ED72500A266AB /* BlockSprite.swift in Sources */,
-				96A96A40242CF6E000D9FC35 /* PropertyListWriter.swift in Sources */,
 				967794ED2428A859007F1B40 /* LevelSelectScene.swift in Sources */,
 				9682CBE6241D572F00A0E821 /* LevelScene.swift in Sources */,
 				96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */,

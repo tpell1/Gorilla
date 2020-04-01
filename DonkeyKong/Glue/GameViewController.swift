@@ -66,14 +66,8 @@ class GameViewController: UIViewController {
                 // Then send the levels to the scene
                 sceneNode.setLevelArray(collection: levelArray)
                 
-                var config = ConfigStruct(currentLevel: 0, currentScore: 0, currentLives: 0)
-                if (PropertyListReader.configExistsInDocs()) {
-                    config = PropertyListReader.readConfigFromDocs(fileName: "Config")!
-                } else {
-                    config = PropertyListReader.readConfigFromBundle(fileName: "Config")!
-                    PropertyListWriter.writeConfig(fileName: "Config", configData: config)
-                }
-                sceneNode.setConfigStruct(data: config)
+                var saveData = SaveData()
+                sceneNode.setSave(data: saveData)
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill

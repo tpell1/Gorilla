@@ -47,12 +47,7 @@ struct PresetStruct: Codable {
     var presetSize: Int
 }
 
-///////////////////// Config //////////////////////////
-struct ConfigStruct: Codable {
-    var currentLevel: Int
-    var currentScore: Int
-    var currentLives: Int
-}
+
 
 // ================ Class implementation =================================
 class PropertyListReader {
@@ -72,24 +67,5 @@ class PropertyListReader {
         }
     }
     
-    static func readConfigFromBundle(fileName: String) -> ConfigStruct? {
-        if let file = Bundle.main.path(forResource: fileName, ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
-            return config
-        } else {
-            return nil
-        }
-    }
-    
-    static func configExistsInDocs(fileName: String = "Config") -> Bool {
-        return FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").path)
-    }
-    
-    static func readConfigFromDocs(fileName: String) -> ConfigStruct? {
-        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName + ".plist").path
-        if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
-            return config
-        } else {
-            return nil
-        }
-    }
+
 }

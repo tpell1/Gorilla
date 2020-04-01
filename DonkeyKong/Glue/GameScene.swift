@@ -17,7 +17,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     internal var marioSprite : MarioSprite?
     private var levelArray: [LevelScene]?
     private var level : LevelScene?
-    private var config : ConfigStruct?
+    private var save : SaveData
+    private var config : ConfigStruct
     
     internal var leftArrow : SKShapeNode?
     internal var rightArrow : SKShapeNode?
@@ -46,12 +47,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     // Called after sceneDidLoad(), allows config to be read and the levels list
     override func didMove(to view: SKView) {
-        if (config == nil || config?.currentLevel == 0) {
-            config = ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 1)
-            PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
-        }
-        setupLevel(lives: config!.currentLives)
-        setLevel(index: config!.currentLevel - 1)
+        config = save.read()
+        setupLevel(lives: config.currentLives)
+        setLevel(index: config.currentLevel - 1)
     }
     
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
@@ -134,8 +132,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.levelArray = collection
     }
     
-    func setConfigStruct(data: ConfigStruct) {
-        self.config = data
+    func setSave(data: SaveData) {
+        self.save = data
     }
     
     // Restarts the scene and loads in the next level
@@ -147,8 +145,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         safetyBool = true
         
         // Update config and then write to file
-        config?.currentLevel += 1
-        PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
+        config.currentLevel += 1
+        config.currentLives = (marioSprite?.getLives())!
+        save.writeConfig(configData: config)
     }
     
     // Calculates the next level from a list of levels
@@ -259,8 +258,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild((marioSprite)!) // Spawn mario
         
         // Update config and then write to file
-        config?.currentLives = lives
-        PropertyListWriter.writeConfig(fileName: "Config", configData: config!)
+        config.currentLives = lives
+        save.writeConfig(configData: config)
     }
     
     func pauseGame() {
