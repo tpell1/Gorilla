@@ -17,7 +17,7 @@ class KoopaPlatformHelper: SKNode {
         super.init()
         
         for i in 0...(size-1) {
-            blockArray.append(BlockSprite(x: x+CGFloat(i)*BlockSprite.BLOCK_SIZE, y: y, imageNamed: "block.png"))
+            blockArray.append(BlockSprite(x: x+CGFloat(i)*BlockSprite.BLOCK_SIZE, y: y, imageNamed: "brickBlock.png"))
             self.addChild(blockArray[i])
         }
         

@@ -29,6 +29,7 @@ class KoopaSprite: SKSpriteNode {
         self.name = "Koopa"
         self.physicsBody?.friction = 0
         self.physicsBody?.linearDamping = 0
+        self.physicsBody?.contactTestBitMask = self.physicsBody!.collisionBitMask
         self.timer = Timer(timeInterval: TimeInterval(sizeOfPlatform*0.5), repeats: true, block: timerWalk)
         RunLoop.current.add(timer!, forMode: .commonModes)
     }
