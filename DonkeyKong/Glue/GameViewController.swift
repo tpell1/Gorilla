@@ -60,13 +60,13 @@ class GameViewController: UIViewController {
                 var levelArray = [level1, level2]
                 
                 // Then load in levels from property list
-                let loadedLevels = LevelUtils.getLevelArray(fileName: "Levels")
+                let loadedLevels = LevelUtils.getLevelArray()
                 levelArray.append(contentsOf: loadedLevels)
                 
                 // Then send the levels to the scene
                 sceneNode.setLevelArray(collection: levelArray)
                 
-                var saveData = SaveData()
+                let saveData = SaveData()
                 sceneNode.setSave(data: saveData)
                 
                 // Set the scale mode to scale to fit the window

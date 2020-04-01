@@ -110,4 +110,16 @@ class LevelReader: LevelScene {
             }
         }
     }
+    
+    func readLevelFile(fileName: String = "Levels") -> LevelsStruct? {
+        if let file = Bundle.main.path(forResource: fileName, ofType: "plist") {
+            if let plist = FileManager.default.contents(atPath: file), let levels = try? PropertyListDecoder().decode(LevelsStruct.self, from: plist) {
+                return levels
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
 }

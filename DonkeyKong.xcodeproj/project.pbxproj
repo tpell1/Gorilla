@@ -37,7 +37,6 @@
 		96969436241029AC00A266AB /* brickBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 96969431241029AC00A266AB /* brickBlock.png */; };
 		96969438241037F700A266AB /* ONEUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 96969437241037F700A266AB /* ONEUP.png */; };
 		9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699281123FD9DE9008DB379 /* MarioSprite.swift */; };
-		96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A33242B758B00D9FC35 /* PropertyListReader.swift */; };
 		96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A35242B7A3100D9FC35 /* Levels.plist */; };
 		96A96A38242B91DF00D9FC35 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96A96A37242B91DF00D9FC35 /* Config.plist */; };
 		96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A3D242CF37100D9FC35 /* LevelUtils.swift */; };
@@ -103,7 +102,6 @@
 		96969431241029AC00A266AB /* brickBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brickBlock.png; sourceTree = "<group>"; };
 		96969437241037F700A266AB /* ONEUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ONEUP.png; sourceTree = "<group>"; };
 		9699281123FD9DE9008DB379 /* MarioSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarioSprite.swift; sourceTree = "<group>"; };
-		96A96A33242B758B00D9FC35 /* PropertyListReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReader.swift; sourceTree = "<group>"; };
 		96A96A35242B7A3100D9FC35 /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		96A96A37242B91DF00D9FC35 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		96A96A3D242CF37100D9FC35 /* LevelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUtils.swift; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 		96A96A32242B756D00D9FC35 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				96A96A33242B758B00D9FC35 /* PropertyListReader.swift */,
 				96A96A3D242CF37100D9FC35 /* LevelUtils.swift */,
 				96A96A4A2434C98000D9FC35 /* SaveData.swift */,
 			);
@@ -482,7 +479,6 @@
 				96572F8F242A173D0006E50D /* ShellItem.swift in Sources */,
 				9682CBE8241E489F00A0E821 /* LevelTwo.swift in Sources */,
 				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
-				96A96A34242B758B00D9FC35 /* PropertyListReader.swift in Sources */,
 				96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */,
 				96572F96242A30D30006E50D /* LevelReader.swift in Sources */,
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
