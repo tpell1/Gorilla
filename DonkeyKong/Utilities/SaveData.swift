@@ -17,6 +17,7 @@ struct ConfigStruct: Codable {
 
 class SaveData {
     private var name: String
+    private var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("configs/")
     
     init(saveName: String = "Config") {
         name = saveName
@@ -33,7 +34,7 @@ class SaveData {
     }
     
     private func readConfigFromBundle() -> ConfigStruct? {
-        if let file = Bundle.main.path(forResource: name, ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
+        if let file = Bundle.main.path(forResource: "Config", ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
             return config
         } else {
             return nil
@@ -41,11 +42,11 @@ class SaveData {
     }
     
     private func configExistsInDocs() -> Bool {
-        return FileManager.default.fileExists(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name + ".plist").path)
+        return FileManager.default.fileExists(atPath: configFolder.appendingPathComponent(name + ".plist").path)
     }
     
     private func readConfigFromDocs() -> ConfigStruct? {
-        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name + ".plist").path
+        let file = configFolder.appendingPathComponent(name + ".plist").path
         if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
             return config
         } else {
@@ -56,9 +57,20 @@ class SaveData {
     func writeConfig(configData: ConfigStruct) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
-        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name + ".plist") // ERROR HERE
+        let file = configFolder.appendingPathComponent(name + ".plist") // ERROR HERE
 
         print(file.absoluteString)
+        
+        if !FileManager.default.fileExists(atPath: configFolder.path) {
+            if ((try? FileManager.default.createDirectory(at: configFolder, withIntermediateDirectories: true, attributes: nil)) != nil) {
+                
+            } else {
+                print ("Couldnt create folder")
+            }
+        } else {
+            print("Folder already created.")
+        }
+        
         do {
             let data = try encoder.encode(configData)
             try data.write(to: file)
@@ -70,5 +82,13 @@ class SaveData {
     func writeConfig(level: Int, lives: Int, score: Int) {
         let config = ConfigStruct(currentLevel: level, currentScore: score, currentLives: lives)
         writeConfig(configData: config)
+    }
+    
+    static func getNumberOfSaves() -> Int{
+        if let contents =  try? FileManager.default.contentsOfDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("configs/").path) {
+            return contents.count
+        } else {
+            return 0
+        }
     }
 }

@@ -42,7 +42,7 @@ class GameViewController: UIViewController {
         timer?.invalidate() // Memory management
     }
 
-    func playGame() {
+    func playGame(newGame: Bool = false) {
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
@@ -66,8 +66,14 @@ class GameViewController: UIViewController {
                 // Then send the levels to the scene
                 sceneNode.setLevelArray(collection: levelArray)
                 
-                let saveData = SaveData()
-                sceneNode.setSave(data: saveData)
+                if (newGame) {
+                    let saveData = SaveData(saveName: "Config" + String(SaveData.getNumberOfSaves()))
+                    sceneNode.setSave(data: saveData)
+                } else {
+                    let saveData = SaveData()
+                    sceneNode.setSave(data: saveData)
+                }
+                
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
@@ -87,8 +93,12 @@ class GameViewController: UIViewController {
     
     // Function called by timer ever 0.1s, checks if user has pressed play
     @objc func update() {
-        if (sceneNode?.playGame ?? false && sceneNode?.gameLevel == 0) {
-            playGame()
+        if (sceneNode?.playGame != -1 && sceneNode?.gameLevel == 0) {
+            if (sceneNode?.playGame == 10) {
+                playGame(newGame: true)
+            } else {
+                playGame()
+            }
             timer?.invalidate() // Remove timer once user has pressed play
         }
     }

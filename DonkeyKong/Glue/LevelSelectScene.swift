@@ -14,16 +14,18 @@ class LevelSelectScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    var playGame: Bool = false
+    var playGame: Int = -1
     var gameLevel: Int = 0
     private var lastUpdateTime: TimeInterval = 0
     private var playLbl: SKLabelNode?
+    private var newGameLbl: SKLabelNode?
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
         
         playLbl = self.childNode(withName: "//PlayLbl") as? SKLabelNode
+        newGameLbl = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -48,7 +50,10 @@ class LevelSelectScene: SKScene {
     // Called when the user presses down on screen
     func touchDown(atPoint pos : CGPoint) {
         if (playLbl?.contains(pos) ?? false) {
-            playGame = true
+            playGame = 0
+            gameLevel = 0
+        } else if (newGameLbl?.contains(pos) ?? false) {
+            playGame = 10
             gameLevel = 0
         }
     }
