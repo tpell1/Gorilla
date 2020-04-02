@@ -15,6 +15,7 @@ class KoopaSprite: SKSpriteNode {
     private var sizeOfPlatform: CGFloat = 3
     private var timer: Timer?
     private var timerBool = false
+    private var shellArray: [ShellItem] = []
     
     // Default constructor, creates a koopa character with one life
     init(x: CGFloat, y: CGFloat) {
@@ -89,18 +90,24 @@ class KoopaSprite: SKSpriteNode {
     
     // Basic throw shell in a direction
     func throwShell() {
+        let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
         if (!timerBool) {
-            let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.addChild(shell)
             shell.move(toParent: self.scene!)
             shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
         } else {
-            let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.addChild(shell)
             shell.move(toParent: self.scene!)
             shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
         }
+        
+        // Only allow three shells to exist at one point
+        if (shellArray.count > 3) {
+            shellArray[0].removeFromParent()
+            shellArray.remove(at: 0)
+        }
+        shellArray.append(shell)
     }
 }
