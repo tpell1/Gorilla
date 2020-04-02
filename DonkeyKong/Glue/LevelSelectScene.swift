@@ -19,13 +19,24 @@ class LevelSelectScene: SKScene {
     private var lastUpdateTime: TimeInterval = 0
     private var playLbl: SKLabelNode?
     private var newGameLbl: SKLabelNode?
+    private var saveArray: [SKLabelNode] = []
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
         
         playLbl = self.childNode(withName: "//PlayLbl") as? SKLabelNode
+        playLbl?.text = "Play last save"
+        
         newGameLbl = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
+        
+        for i in 1...SaveData.getNumberOfSaves() {
+            let saveLbl = SKLabelNode(text: "Save " + String(i))
+            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-30*CGFloat(i))
+            saveLbl.name = String(i)
+            self.addChild(saveLbl)
+            saveArray.append(saveLbl)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -55,6 +66,12 @@ class LevelSelectScene: SKScene {
         } else if (newGameLbl?.contains(pos) ?? false) {
             playGame = 10
             gameLevel = 0
+        }
+        
+        for i in 0...(saveArray.count-1) {
+            if (saveArray[i].contains(pos)) {
+                playGame = i
+            }
         }
     }
     
