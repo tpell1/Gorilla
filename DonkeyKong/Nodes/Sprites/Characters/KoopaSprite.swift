@@ -76,7 +76,7 @@ class KoopaSprite: SKSpriteNode {
     }
     
     func canSeeMario() -> Bool {
-        if let mario = scene?.childNode(withName: "mario") {
+        if let mario = scene?.childNode(withName: "Mario") {
             let marioX = mario.position.x
             if (timerBool) {
                 return marioX < self.position.x
@@ -89,11 +89,17 @@ class KoopaSprite: SKSpriteNode {
     
     // Basic throw shell in a direction
     func throwShell() {
-        let shell = ShellItem(x: self.position.x, y: self.position.y)
-        self.addChild(shell)
         if (!timerBool) {
+            let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
+            shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.addChild(shell)
+            shell.move(toParent: self.scene!)
             shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
         } else {
+            let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
+            shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.addChild(shell)
+            shell.move(toParent: self.scene!)
             shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
         }
     }

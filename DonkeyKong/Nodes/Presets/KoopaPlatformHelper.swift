@@ -21,7 +21,7 @@ class KoopaPlatformHelper: SKNode {
             self.addChild(blockArray[i])
         }
         
-        let koopaSprite = KoopaSprite(x: x, y: y, sizeOfPlatform: size)
+        let koopaSprite = KoopaSprite(x: x, y: y+20, sizeOfPlatform: size)
         self.addChild(koopaSprite)
     }
     
