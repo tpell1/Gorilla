@@ -12,6 +12,8 @@ import SpriteKit
 class MenuButton: SKNode {
     private var buttonSprite: SKSpriteNode
     private var buttonLbl: SKLabelNode
+    static var HEIGHT : CGFloat = 50
+    static var WIDTH : CGFloat = 300
     
     init(textForButton text: String) {
         self.buttonSprite = SKSpriteNode(imageNamed: "buttonImage.png")
@@ -19,7 +21,7 @@ class MenuButton: SKNode {
         super.init()
         
         self.buttonSprite.zPosition = 1
-        self.buttonSprite.scale(to: CGSize(width: 300, height: 50))
+        self.buttonSprite.scale(to: CGSize(width: MenuButton.WIDTH, height: MenuButton.HEIGHT))
         self.buttonLbl.zPosition = 2
         self.buttonLbl.position.y -= 15
         

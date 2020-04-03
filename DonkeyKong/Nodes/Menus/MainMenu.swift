@@ -14,18 +14,18 @@ class MainMenu: SKNode {
     var gameLevel: Int = 0
     private var playLbl: SKLabelNode?
     private var newGameLbl: SKLabelNode?
-    private var saveArray: [SKLabelNode] = []
+    private var saveArray: [MenuButton] = []
     
     init(playGameLabel play : SKLabelNode, newGameLabel new : SKLabelNode) {
         super.init()
         
         playLbl = play
         playLbl?.text = "Play last save"
-        
+        newGameLbl = new
         
         for i in 1...SaveData.getNumberOfSaves() {
-            let saveLbl = SKLabelNode(text: "Save " + String(i))
-            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-40*CGFloat(i))
+            let saveLbl = MenuButton(textForButton: "Save " + String(i))
+            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-(MenuButton.HEIGHT+15)*CGFloat(i))
             saveLbl.name = String(i)
             self.addChild(saveLbl)
             saveArray.append(saveLbl)

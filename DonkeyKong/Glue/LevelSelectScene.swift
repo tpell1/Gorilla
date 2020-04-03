@@ -27,7 +27,7 @@ class LevelSelectScene: SKScene {
         let new = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
 
         menu = MainMenu(playGameLabel: play!, newGameLabel: new!)
-        menu?.position.y += 0.5*frame.maxY
+        menu?.position.y += 0.8*frame.maxY
         self.addChild(menu!)
     }
     
