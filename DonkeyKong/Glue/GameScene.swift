@@ -9,8 +9,11 @@
 import SpriteKit
 import GameplayKit
 
+public enum GameStatus {
+     case PLAYING, PAUSED, EXIT
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -33,7 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     internal var lastUpdateTime : TimeInterval = 0
     private var timer : Timer?
     private var safetyBool : Bool = true
-    private var gameIsPaused : Bool = false
+    private var gameStatus : GameStatus = GameStatus.PLAYING
     private var levelIndex : Int = 0
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
@@ -41,6 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdateTime = 0
 
         let physics = PhysicsHandler()
+        gameStatus = GameStatus.PLAYING
         self.addChild(physics)
         physicsWorld.contactDelegate = physics
     }
@@ -72,6 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         relativeNode?.position = anchorPoint
         
         pauseNode = PauseMenu(phoneFrame: frame) // Used for pause menu (contains all required buttons etc.)
+        pauseNode?.zPosition = 10
         
         // Create the floor
         // TODO: Move into LevelScene class
@@ -164,7 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Called when the user presses down on screen
     func touchDown(atPoint pos : CGPoint) {
-        if (!gameIsPaused) {
+        if (gameStatus == GameStatus.PLAYING) {
             if (marioSprite?.contains(pos))! {
                 marioSprite?.jump()
             } else if (leftArrow?.contains(pos))! {
@@ -179,17 +184,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             if (pauseBtn?.contains(pos))! {
                 resumeGame()
+            } else if let mainBtn = pauseNode?.childNode(withName: "MainMenu") as! MenuButton? {
+                if (mainBtn.contains(pos)) {
+                    gameStatus = GameStatus.EXIT
+                }
             }
         }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
-        } else if (rightArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-            marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+        if (gameStatus == GameStatus.PLAYING) {
+            if (leftArrow?.contains(pos))! {
+                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
+                marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+            } else if (rightArrow?.contains(pos))! {
+                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+                marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+            }
+        } else {
+            /*if (pauseBtn?.contains(pos))! {
+                resumeGame()
+            } else if let mainBtn = self.childNode(withName: "MainMenu") as! MenuButton? {
+                if (mainBtn.contains(pos)) {
+                    gameStatus = GameStatus.EXIT
+                }
+            }*/
         }
     }
     
@@ -262,16 +281,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         save?.writeConfig(configData: config!)
     }
     
+    func getStatus() -> GameStatus {
+        return gameStatus
+    }
+    
     func pauseGame() {
         self.addChild(pauseNode!)
-        gameIsPaused = true
+        self.isPaused = true
         level?.isPaused = true
+        gameStatus = GameStatus.PAUSED
     }
     
     func resumeGame() {
         pauseNode?.removeFromParent()
-        gameIsPaused = false
+        self.isPaused = false
         level?.isPaused = false
+        gameStatus = GameStatus.PLAYING
     }
     
     // Reset positions when frame moves
@@ -282,5 +307,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         livesLbl?.position.x = frame.minX + 80
         levelLbl?.position.x = frame.midX
         pauseBtn?.position.x = frame.minX + 30
+        //if (gameStatus == GameStatus.PAUSED) {
+            pauseNode?.update(phoneFrame: frame)
+        //}
     }
 }

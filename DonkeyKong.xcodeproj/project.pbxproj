@@ -45,6 +45,7 @@
 		96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */; };
 		96A96A49242E35B500D9FC35 /* PhysicsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */; };
 		96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4A2434C98000D9FC35 /* SaveData.swift */; };
+		96A96A4E243765FA00D9FC35 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4D243765FA00D9FC35 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		96A96A46242E2FF900D9FC35 /* DonkeyKongSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyKongSprite.swift; sourceTree = "<group>"; };
 		96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHandler.swift; sourceTree = "<group>"; };
 		96A96A4A2434C98000D9FC35 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		96A96A4D243765FA00D9FC35 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,9 +321,18 @@
 		96A96A43242E12E300D9FC35 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				96A96A4C243765DB00D9FC35 /* MenuItems */,
 				96A96A44242E133F00D9FC35 /* PauseMenu.swift */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		96A96A4C243765DB00D9FC35 /* MenuItems */ = {
+			isa = PBXGroup;
+			children = (
+				96A96A4D243765FA00D9FC35 /* MenuButton.swift */,
+			);
+			path = MenuItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +500,7 @@
 				96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */,
 				96572F94242A20B20006E50D /* KoopaPlatformHelper.swift in Sources */,
 				968ECDB02358D92E0029A1A9 /* AppDelegate.swift in Sources */,
+				96A96A4E243765FA00D9FC35 /* MenuButton.swift in Sources */,
 				96A96A45242E133F00D9FC35 /* PauseMenu.swift in Sources */,
 				96969432241029AC00A266AB /* ItemSprite.swift in Sources */,
 			);

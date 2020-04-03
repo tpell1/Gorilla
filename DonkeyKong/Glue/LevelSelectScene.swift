@@ -32,7 +32,7 @@ class LevelSelectScene: SKScene {
         
         for i in 1...SaveData.getNumberOfSaves() {
             let saveLbl = SKLabelNode(text: "Save " + String(i))
-            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-30*CGFloat(i))
+            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-40*CGFloat(i))
             saveLbl.name = String(i)
             self.addChild(saveLbl)
             saveArray.append(saveLbl)

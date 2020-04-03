@@ -12,7 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     var timer: Timer?
+    var timer1: Timer?
     var sceneNode: LevelSelectScene?
+    var gameNode: GameScene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +52,10 @@ class GameViewController: UIViewController {
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
                 
+                gameNode = sceneNode
                 // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
+                gameNode?.entities = scene.entities
+                gameNode?.graphs = scene.graphs
                 
                 // First do hardcoded levels
                 let level1 = LevelScene(title: "Level 1", name: "level")
@@ -64,18 +67,21 @@ class GameViewController: UIViewController {
                 levelArray.append(contentsOf: loadedLevels)
                 
                 // Then send the levels to the scene
-                sceneNode.setLevelArray(collection: levelArray)
+                gameNode?.setLevelArray(collection: levelArray)
+                
+                timer1 = Timer(timeInterval: 0.1, target: self, selector: #selector(self.updateGame), userInfo: nil, repeats: true)
+                RunLoop.current.add(timer1!, forMode: .commonModes)
                 
                 if (newGame) {
                     let saveData = SaveData(saveName: "Config" + String(SaveData.getNumberOfSaves()))
-                    sceneNode.setSave(data: saveData)
+                    gameNode?.setSave(data: saveData)
                 } else {
                     if (saveGame == 0) {
                         let saveData = SaveData()
-                        sceneNode.setSave(data: saveData)
+                        gameNode?.setSave(data: saveData)
                     } else {
                         let saveData = SaveData(saveName: "Config" + String(saveGame))
-                        sceneNode.setSave(data: saveData)
+                        gameNode?.setSave(data: saveData)
                     }
                     
                 }
@@ -106,6 +112,13 @@ class GameViewController: UIViewController {
                 playGame(newGame: false, saveGame: sceneNode?.playGame ?? 0)
             }
             timer?.invalidate() // Remove timer once user has pressed play
+        }
+    }
+    
+    @objc func updateGame() {
+        if (gameNode?.getStatus() == GameStatus.EXIT) {
+            viewDidLoad()
+            timer1?.invalidate()
         }
     }
     

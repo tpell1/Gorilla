@@ -70,9 +70,11 @@ class KoopaSprite: SKSpriteNode {
     }
     
     func collision(contact: SKPhysicsContact) {
-        if (contact.bodyB.node! is MarioSprite) {
-            let mario = contact.bodyB.node as! MarioSprite
-            mario.shrink()
+        if let node = contact.bodyB.node {
+            if (node is MarioSprite) {
+                let mario = contact.bodyB.node as! MarioSprite
+                mario.shrink()
+            }
         }
     }
     
