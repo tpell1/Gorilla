@@ -46,6 +46,7 @@
 		96A96A49242E35B500D9FC35 /* PhysicsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */; };
 		96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4A2434C98000D9FC35 /* SaveData.swift */; };
 		96A96A4E243765FA00D9FC35 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4D243765FA00D9FC35 /* MenuButton.swift */; };
+		96A96A50243774FD00D9FC35 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4F243774FD00D9FC35 /* MainMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		96A96A48242E35B500D9FC35 /* PhysicsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHandler.swift; sourceTree = "<group>"; };
 		96A96A4A2434C98000D9FC35 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		96A96A4D243765FA00D9FC35 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		96A96A4F243774FD00D9FC35 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 			children = (
 				96A96A4C243765DB00D9FC35 /* MenuItems */,
 				96A96A44242E133F00D9FC35 /* PauseMenu.swift */,
+				96A96A4F243774FD00D9FC35 /* MainMenu.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				9682CBE8241E489F00A0E821 /* LevelTwo.swift in Sources */,
 				9699281223FD9DE9008DB379 /* MarioSprite.swift in Sources */,
 				96A96A42242E0BEB00D9FC35 /* FireItem.swift in Sources */,
+				96A96A50243774FD00D9FC35 /* MainMenu.swift in Sources */,
 				96572F96242A30D30006E50D /* LevelReader.swift in Sources */,
 				9682CBE4241D536F00A0E821 /* EndOfLevelNode.swift in Sources */,
 				96A96A3E242CF37100D9FC35 /* LevelUtils.swift in Sources */,

@@ -17,26 +17,18 @@ class LevelSelectScene: SKScene {
     var playGame: Int = -1
     var gameLevel: Int = 0
     private var lastUpdateTime: TimeInterval = 0
-    private var playLbl: SKLabelNode?
-    private var newGameLbl: SKLabelNode?
-    private var saveArray: [SKLabelNode] = []
-    
+    private var menu : MainMenu?
+
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
         
-        playLbl = self.childNode(withName: "//PlayLbl") as? SKLabelNode
-        playLbl?.text = "Play last save"
-        
-        newGameLbl = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
-        
-        for i in 1...SaveData.getNumberOfSaves() {
-            let saveLbl = SKLabelNode(text: "Save " + String(i))
-            saveLbl.position = CGPoint(x: frame.midX, y: (frame.midY + 0.3*frame.height)-40*CGFloat(i))
-            saveLbl.name = String(i)
-            self.addChild(saveLbl)
-            saveArray.append(saveLbl)
-        }
+        let play = self.childNode(withName: "//PlayLbl") as? SKLabelNode
+        let new = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
+
+        menu = MainMenu(playGameLabel: play!, newGameLabel: new!)
+        menu?.position.y += 0.5*frame.maxY
+        self.addChild(menu!)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -50,6 +42,9 @@ class LevelSelectScene: SKScene {
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
+        playGame = menu?.playGame ?? -1
+        gameLevel = menu?.gameLevel ?? 0
+        
         // Update entities
         for entity in self.entities {
             entity.update(deltaTime: dt)
@@ -60,19 +55,7 @@ class LevelSelectScene: SKScene {
     
     // Called when the user presses down on screen
     func touchDown(atPoint pos : CGPoint) {
-        if (playLbl?.contains(pos) ?? false) {
-            playGame = 0
-            gameLevel = 0
-        } else if (newGameLbl?.contains(pos) ?? false) {
-            playGame = 10
-            gameLevel = 0
-        }
-        
-        for i in 0...(saveArray.count-1) {
-            if (saveArray[i].contains(pos)) {
-                playGame = i
-            }
-        }
+        menu?.touchDown(atPoint: pos)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
