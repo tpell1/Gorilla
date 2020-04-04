@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 
 public enum GameStatus {
-     case PLAYING, PAUSED, EXIT
+     case PLAYING, PAUSED, QUIT, FINISHED
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -158,9 +158,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Calculates the next level from a list of levels
     // if no list then return to main menu
     func loadNextLevel() {
-        if ((levelArray?.count)! > levelIndex) {
+        if ((levelArray!.count-1) > levelIndex) {
             nextLevel(index: levelIndex + 1)
         } else {
+            gameStatus = GameStatus.FINISHED
             // TODO: Main menu
         }
     }
@@ -186,7 +187,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 resumeGame()
             } else if let mainBtn = pauseNode?.childNode(withName: "MainMenu") as! MenuButton? {
                 if (mainBtn.contains(pos)) {
-                    gameStatus = GameStatus.EXIT
+                    gameStatus = GameStatus.QUIT
                 }
             }
         }

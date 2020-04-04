@@ -74,6 +74,7 @@ class GameViewController: UIViewController {
                 
                 if (newGame) {
                     let saveData = SaveData(saveName: "Config" + String(SaveData.getNumberOfSaves()))
+                    saveData.writeConfig(level: 1, lives: 3, score: 0)
                     gameNode?.setSave(data: saveData)
                 } else {
                     if (saveGame == 0) {
@@ -106,17 +107,30 @@ class GameViewController: UIViewController {
     // Function called by timer ever 0.1s, checks if user has pressed play
     @objc func update() {
         if (sceneNode?.playGame != -1 && sceneNode?.gameLevel == 0) {
-            if (sceneNode?.playGame == 10) {
-                playGame(newGame: true)
+            if (sceneNode!.playGame == 10) {
+                if (SaveData.getNumberOfSaves()<5) {
+                    playGame(newGame: true)
+                    timer?.invalidate() // Remove timer once user has pressed play
+                } else {
+                    //TODO: Replace_save menu
+                    sceneNode?.replaceSave()
+                }
+            } else if (sceneNode!.playGame == 20) {
+                let i = sceneNode!.gameLevel - 20
+                playGame(newGame: true, saveGame: i)
+                timer?.invalidate() // Remove timer once user has pressed play
             } else {
                 playGame(newGame: false, saveGame: sceneNode?.playGame ?? 0)
+                timer?.invalidate() // Remove timer once user has pressed play
             }
-            timer?.invalidate() // Remove timer once user has pressed play
         }
     }
     
     @objc func updateGame() {
-        if (gameNode?.getStatus() == GameStatus.EXIT) {
+        if (gameNode?.getStatus() == GameStatus.QUIT) {
+            viewDidLoad()
+            timer1?.invalidate()
+        } else if (gameNode?.getStatus() == GameStatus.FINISHED) {
             viewDidLoad()
             timer1?.invalidate()
         }
