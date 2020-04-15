@@ -10,12 +10,22 @@ import Foundation
 import SpriteKit
 
 class ReplaceSaveMenu: MainMenu {
+        
+    override init() {
+        super.init()
+        
+        status = LevelSelectStatus.NEW_GAME_WAITING
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func touchDown(atPoint pos : CGPoint) {
         for i in 0...(saveArray.count-1) {
             if (saveArray[i].contains((scene?.convert(pos, to: self))!)) {
-                playGame = 20
-                gameLevel = 20+i
+                status = LevelSelectStatus.REPLACE_SAVE
+                saveNumber = i
             }
         }
     }

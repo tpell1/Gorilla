@@ -196,10 +196,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func touchMoved(toPoint pos : CGPoint) {
         if (gameStatus == GameStatus.PLAYING) {
             if (leftArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
                 marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
             } else if (rightArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
                 marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
             }
         } else {
@@ -215,9 +213,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchUp(atPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
-            marioSprite?.physicsBody?.velocity.dx = 0
+            //marioSprite?.physicsBody?.velocity.dx = 0
         } else if (rightArrow?.contains(pos))! {
-            marioSprite?.physicsBody?.velocity.dx = 0
+            //marioSprite?.physicsBody?.velocity.dx = 0
         }
     }
     
@@ -253,14 +251,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             loadNextLevel()
         }
         
+        // Check if Mario is below ground level
         if ((marioSprite?.position.y)! < frame.minY) {
             marioSprite?.die()
         }
+        
         // Update entities
         for entity in self.entities {
             entity.update(deltaTime: dt)
         }
         
+        // Forces camera to move with Mario (Allows scrolling)
         self.anchorPoint.x = -(2*(self.convert((marioSprite?.position)!, to: relativeNode!).x) - self.convert(CGPoint(x: frame.maxX, y: 0), to: relativeNode!).x)/900
         self.setHUD()
         self.lastUpdateTime = currentTime
@@ -286,17 +287,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return gameStatus
     }
     
+    // Show pause menu and stop all movement in level
     func pauseGame() {
         self.addChild(pauseNode!)
         self.isPaused = true
-        level?.isPaused = true
+        level?.isPaused = true // Stops movement in level
         gameStatus = GameStatus.PAUSED
     }
     
+    // Hide pause menu and resume all movement in level
     func resumeGame() {
         pauseNode?.removeFromParent()
         self.isPaused = false
-        level?.isPaused = false
+        level?.isPaused = false // Restarts movement in level
         gameStatus = GameStatus.PLAYING
     }
     

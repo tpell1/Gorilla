@@ -16,6 +16,7 @@ struct ConfigStruct: Codable {
 }
 
 class SaveData {
+    static var MAX_AMOUNT_OF_SAVES: Int = 5
     private var name: String
     private var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("configs/")
     
