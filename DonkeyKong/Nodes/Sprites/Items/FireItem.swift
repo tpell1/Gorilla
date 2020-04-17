@@ -18,9 +18,7 @@ class FireItem: ItemSprite {
     override func collision(mario: MarioSprite) {
         if(!itemUsed) {
             itemUsed = true
-            mario.grow()
-            mario.texture = SKTexture(imageNamed: "marioFire.png")
-            mario.scale(to: CGSize(width: mario.getWidth(), height: mario.getHeight()))
+            mario.fireItem()
         }
         self.removeFromParent()
     }

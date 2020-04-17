@@ -22,6 +22,7 @@ class MarioSprite : SKSpriteNode {
     private var width = 50
     private var height = 60
     private var scale = 1
+    private var shootable = true
     static var DEFAULT_MOVE_SPEED: CGFloat = 200
     
     // Default constructor, creates a main character with one life
@@ -97,6 +98,13 @@ class MarioSprite : SKSpriteNode {
         }
     }
     
+    func shoot(direction dir: CGVector) {
+        
+        let fire = FireEntityItem(x: getPositionInScene().x, y: getPositionInScene().y)
+        self.addChild(fire)
+        fire.shoot(inDirection: dir, toNode: (scene)!)
+    }
+    
     // Kill Mario and restart level
     func die() {
         lives -= 1
@@ -105,6 +113,17 @@ class MarioSprite : SKSpriteNode {
             game.restartLevel(lives: lives)
         }
         self.removeFromParent()
+    }
+    
+    func getPositionInScene() -> CGPoint {
+        return self.convert(self.position, to: scene!)
+    }
+    
+    func fireItem() {
+        grow()
+        self.texture = SKTexture(imageNamed: "marioFire.png")
+        self.scale(to: CGSize(width: width, height: height))
+        shootable = true
     }
     
     func grow() {
@@ -143,5 +162,9 @@ class MarioSprite : SKSpriteNode {
     private func reDo() {
         self.scale(to: CGSize(width: width, height: height))
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
+    }
+    
+    func isShootable() -> Bool {
+        return shootable
     }
 }

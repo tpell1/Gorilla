@@ -181,6 +181,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
             } else if (pauseBtn?.contains(pos))! {
                 pauseGame()
+            } else {
+                if (marioSprite?.isShootable() ?? false) {
+                    marioSprite?.shoot(direction: CGVector(dx: pos.x/abs(pos.x), dy: pos.y/abs(pos.x)))
+                
+                }
             }
         } else {
             if (pauseBtn?.contains(pos))! {
