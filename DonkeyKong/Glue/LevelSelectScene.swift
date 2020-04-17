@@ -19,12 +19,13 @@ class LevelSelectScene: SKScene {
     var graphs = [String : GKGraph]()
     
     var levelStatus: LevelSelectStatus = LevelSelectStatus.WAITING
-    var gameLevel: Int = -1
+    private var previousState : LevelSelectStatus = LevelSelectStatus.WAITING
+
     var saveNumber: Int = -1
     private var lastUpdateTime: TimeInterval = 0
+    
     private var menu : MainMenu?
     private var replace : ReplaceSaveMenu?
-    private var previousState : LevelSelectStatus = LevelSelectStatus.WAITING
     internal var playLbl: SKLabelNode?
     internal var newGameLbl: SKLabelNode?
 
@@ -104,12 +105,10 @@ class LevelSelectScene: SKScene {
                 mainMenu()
             } else {
                 levelStatus = LevelSelectStatus.CONTINUE_SAVE
-                gameLevel = 0
             }
         } else if (newGameLbl?.contains(pos) ?? false) {
             if (SaveData.getNumberOfSaves() >= SaveData.MAX_AMOUNT_OF_SAVES) {
                 levelStatus = LevelSelectStatus.NEW_GAME_WAITING
-                gameLevel = 0
             } else {
                 levelStatus = LevelSelectStatus.NEW_SAVE
             }
