@@ -92,6 +92,8 @@ class LevelReader: LevelScene {
             for i in 0...(enemies.count-1) {
                 if enemies[i].enemyType == "koopa" {
                     enemyArray.append(KoopaSprite(x: rect.midX+CGFloat(enemies[i].enemyX), y: zeroY + CGFloat(enemies[i].enemyY)))
+                } else if enemies[i].enemyType == "donkeykong" {
+                    enemyArray.append(DonkeyKongSprite(x: rect.midX+CGFloat(enemies[i].enemyX), y: zeroY + CGFloat(enemies[i].enemyY)))
                 }
             }
         }
