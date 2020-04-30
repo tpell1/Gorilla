@@ -40,16 +40,9 @@ class MarioSprite : SKSpriteNode {
     }
     
     // Constructor which gives choice of lives for Mario to be instantiated with
-    init(x: CGFloat, y: CGFloat, lives: Int) {
-        let texture = SKTexture(imageNamed: "mario.png")
-        super.init(texture: texture, color: UIColor.clear, size: texture.size())
-        self.scale(to: CGSize(width: width, height: height))
-        self.position = CGPoint(x: x, y: y)
-        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
-        //self.physicsBody?.linearDamping = 0.0
-        self.name = "Mario"
+    convenience init(x: CGFloat, y: CGFloat, lives: Int) {
+        self.init(x: x, y: y)
+
         self.lives = lives
     }
     
@@ -85,6 +78,7 @@ class MarioSprite : SKSpriteNode {
     
     // Allows single and double jumps
     func jump() {
+        let playJumpSound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
         print(String(describing: self.physicsBody?.velocity.dy))
         if ((self.physicsBody?.velocity.dy.isLessThanOrEqualTo(CGFloat(0.1)))!) {
             jumpCount = 0
@@ -92,9 +86,11 @@ class MarioSprite : SKSpriteNode {
         if (jumpCount == 0 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
             jumpCount += 1
+            self.run(playJumpSound)
         } else if (jumpCount == 1 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
             jumpCount += 1
+            self.run(playJumpSound)
         }
     }
     
@@ -102,7 +98,7 @@ class MarioSprite : SKSpriteNode {
         
         let fire = FireEntityItem(x: getPositionInScene().x, y: getPositionInScene().y)
         self.addChild(fire)
-        fire.shoot(inDirection: dir, toNode: (scene)!)
+        fire.shoot(inDirection: dir, toNode: (self.parent)!)
     }
     
     // Kill Mario and restart level

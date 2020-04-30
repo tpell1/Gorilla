@@ -48,6 +48,8 @@
 		96A96A4E243765FA00D9FC35 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4D243765FA00D9FC35 /* MenuButton.swift */; };
 		96A96A50243774FD00D9FC35 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4F243774FD00D9FC35 /* MainMenu.swift */; };
 		96A96A522437857800D9FC35 /* ReplaceSaveMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A512437857800D9FC35 /* ReplaceSaveMenu.swift */; };
+		96D03DA22449BCF700E05CF1 /* FireEntityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D03DA12449BCF700E05CF1 /* FireEntityItem.swift */; };
+		96EE2064245ACAD40015D154 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2063245ACAD40015D154 /* jump.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		96A96A4D243765FA00D9FC35 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		96A96A4F243774FD00D9FC35 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		96A96A512437857800D9FC35 /* ReplaceSaveMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceSaveMenu.swift; sourceTree = "<group>"; };
+		96D03DA12449BCF700E05CF1 /* FireEntityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireEntityItem.swift; sourceTree = "<group>"; };
+		96EE2063245ACAD40015D154 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = jump.wav; path = "../../../../DonkeyKong-master/DonkeyKong/jump.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				96572F8B242A119F0006E50D /* MushroomItem.swift */,
 				96A96A41242E0BEB00D9FC35 /* FireItem.swift */,
 				96572F8E242A173D0006E50D /* ShellItem.swift */,
+				96D03DA12449BCF700E05CF1 /* FireEntityItem.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 		968ECDAE2358D92D0029A1A9 /* DonkeyKong */ = {
 			isa = PBXGroup;
 			children = (
+				96EE2062245ACA7D0015D154 /* Sound */,
 				968ECDBC2358D92E0029A1A9 /* Assets.xcassets */,
 				96A96A37242B91DF00D9FC35 /* Config.plist */,
 				9682CBF0241E4E2E00A0E821 /* Glue */,
@@ -339,6 +345,14 @@
 				96A96A4D243765FA00D9FC35 /* MenuButton.swift */,
 			);
 			path = MenuItems;
+			sourceTree = "<group>";
+		};
+		96EE2062245ACA7D0015D154 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				96EE2063245ACAD40015D154 /* jump.wav */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				967C604E23FD8A4E00E14ED4 /* mario.png in Resources */,
+				96EE2064245ACAD40015D154 /* jump.wav in Resources */,
 				967794EB2428A71B007F1B40 /* LevelSelectScene.sks in Resources */,
 				96A96A36242B7A3100D9FC35 /* Levels.plist in Resources */,
 				968ECDBB2358D92E0029A1A9 /* Main.storyboard in Resources */,
@@ -509,6 +524,7 @@
 				96572F94242A20B20006E50D /* KoopaPlatformHelper.swift in Sources */,
 				968ECDB02358D92E0029A1A9 /* AppDelegate.swift in Sources */,
 				96A96A4E243765FA00D9FC35 /* MenuButton.swift in Sources */,
+				96D03DA22449BCF700E05CF1 /* FireEntityItem.swift in Sources */,
 				96A96A45242E133F00D9FC35 /* PauseMenu.swift in Sources */,
 				96969432241029AC00A266AB /* ItemSprite.swift in Sources */,
 			);

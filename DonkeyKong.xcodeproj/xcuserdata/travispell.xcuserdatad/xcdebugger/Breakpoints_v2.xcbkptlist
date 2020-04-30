@@ -541,7 +541,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8437BBB7-DF4E-488D-85BD-491ACF582DDD"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
@@ -549,8 +549,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "shrink()"
-            landmarkType = "7">
+            landmarkName = "MarioSprite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -565,7 +565,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "collision(contact:)"
+            landmarkName = "jump()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1165,7 +1165,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9DF8BA1F-6688-4353-A27D-A5C53D39DED5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift"
@@ -1178,7 +1178,7 @@
             <Locations>
                <Location
                   uuid = "9DF8BA1F-6688-4353-A27D-A5C53D39DED5 - 27f48cc4d5b31bf7"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "DonkeyKong.ReplaceSaveMenu.touchDown(atPoint: __C.CGPoint) -&gt; ()"
@@ -1193,7 +1193,7 @@
                </Location>
                <Location
                   uuid = "9DF8BA1F-6688-4353-A27D-A5C53D39DED5 - 27f48cc4d5b31bf7"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "DonkeyKong.ReplaceSaveMenu.touchDown(atPoint: __C.CGPoint) -&gt; ()"
@@ -1229,7 +1229,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "40C07BEC-6E3D-4CE8-9E1D-9C2556691044"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift"
@@ -1325,7 +1325,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "87859813-B998-4E82-A3C3-C54400BE7076"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/LevelSelectScene.swift"
@@ -1341,7 +1341,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "495C8760-8301-4D0C-BE32-D60DF175578E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/LevelSelectScene.swift"
@@ -1357,7 +1357,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D7DCFC1B-9FB0-4E1A-8300-A59392AEA3CB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/LevelSelectScene.swift"
@@ -1373,7 +1373,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C42BCB8B-86C7-4153-91F8-E8BF1331AF1A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift"
@@ -1389,7 +1389,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "ECFF1A11-F56B-476B-87EB-9221FBCBD3B2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/GameViewController.swift"
@@ -1405,7 +1405,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CF92355E-89CC-4DC6-9F42-8A88A91C6B77"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/GameViewController.swift"
@@ -1421,7 +1421,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0CFDE8A3-660E-4C2E-AEE7-966FD4005212"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DonkeyKong/Glue/GameViewController.swift"
@@ -1430,6 +1430,54 @@
             startingLineNumber = "114"
             endingLineNumber = "114"
             landmarkName = "update()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82F57BAA-A8FA-42E5-8BB0-1B692D058C6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DonkeyKong/Glue/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "touchUp(atPoint:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E8897FE-9DF9-4170-B164-CA30AB5297D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DonkeyKong/Glue/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "touchUp(atPoint:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32C3802-C4E7-4D6B-AEAF-58F1C723A79E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DonkeyKong/Glue/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "touchUp(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

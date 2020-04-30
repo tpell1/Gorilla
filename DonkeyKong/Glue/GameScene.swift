@@ -39,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var gameStatus : GameStatus = GameStatus.PLAYING
     private var levelIndex : Int = 0
     
+    
     // Initial loading of scene, sets up HUD and loads in mario Sprite
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
@@ -218,9 +219,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchUp(atPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.velocity.dx = 0
+            marioSprite?.physicsBody?.velocity.dx = 0
         } else if (rightArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.velocity.dx = 0
+            marioSprite?.physicsBody?.velocity.dx = 0
         }
     }
     
@@ -233,7 +234,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
