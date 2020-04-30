@@ -14,7 +14,7 @@ class ReplaceSaveMenu: MainMenu {
     override init() {
         super.init()
         
-        status = LevelSelectStatus.NEW_GAME_WAITING
+        status = MenuStatus.NEW_GAME_WAITING
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class ReplaceSaveMenu: MainMenu {
     override func touchDown(atPoint pos : CGPoint) {
         for i in 0...(saveArray.count-1) {
             if (saveArray[i].contains((scene?.convert(pos, to: self))!)) {
-                status = LevelSelectStatus.REPLACE_SAVE
+                status = MenuStatus.REPLACE_SAVE
                 saveNumber = i
             }
         }

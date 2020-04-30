@@ -20,8 +20,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     internal var marioSprite : MarioSprite?
     private var levelArray: [LevelScene]?
     private var level : LevelScene?
-    private var save : SaveData?
-    private var config : ConfigStruct?
+    private var saveData : SaveData?
+    private var save : SaveStruct?
     
     internal var leftArrow : SKShapeNode?
     internal var rightArrow : SKShapeNode?
@@ -52,9 +52,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     // Called after sceneDidLoad(), allows config to be read and the levels list
     override func didMove(to view: SKView) {
-        config = save?.read()
-        setupLevel(lives: config!.currentLives)
-        setLevel(index: (config?.currentLevel)! - 1)
+        save = saveData?.read()
+        setupLevel(lives: save!.currentLives)
+        setLevel(index: (save?.currentLevel)! - 1)
     }
     
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
@@ -139,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setSave(data: SaveData) {
-        self.save = data
+        self.saveData = data
     }
     
     // Restarts the scene and loads in the next level
@@ -151,9 +151,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         safetyBool = true
         
         // Update config and then write to file
-        config!.currentLevel += 1
-        config!.currentLives = (marioSprite?.getLives())!
-        save?.writeConfig(configData: config!)
+        save!.currentLevel += 1
+        save!.currentLives = (marioSprite?.getLives())!
+        saveData?.writeSave(saveData: save!)
     }
     
     // Calculates the next level from a list of levels
@@ -285,8 +285,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild((marioSprite)!) // Spawn mario
         
         // Update config and then write to file
-        config!.currentLives = lives
-        save?.writeConfig(configData: config!)
+        save!.currentLives = lives
+        saveData?.writeSave(saveData: save!)
     }
     
     func getStatus() -> GameStatus {

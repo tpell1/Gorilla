@@ -2,9 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SoundOn</key>
-	<true/>
-	<key>MusicOn</key>
-	<true/>
+	<key>currentLevel</key>
+	<integer>1</integer>
+	<key>currentScore</key>
+	<integer>0</integer>
+	<key>currentLives</key>
+	<integer>3</integer>
 </dict>
 </plist>

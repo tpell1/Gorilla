@@ -10,22 +10,23 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-enum LevelSelectStatus {
-    case NEW_SAVE, NEW_GAME_WAITING, CONTINUE_SAVE, REPLACE_SAVE, WAITING
+enum MenuStatus {
+    case NEW_SAVE, NEW_GAME_WAITING, CONTINUE_SAVE, REPLACE_SAVE, WAITING, OPTIONS
 }
 
-class LevelSelectScene: SKScene {
+class MenuScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    var levelStatus: LevelSelectStatus = LevelSelectStatus.WAITING
-    private var previousState : LevelSelectStatus = LevelSelectStatus.WAITING
+    var menuStatus: MenuStatus = MenuStatus.WAITING
+    private var previousState : MenuStatus = MenuStatus.WAITING
 
     var saveNumber: Int = -1
     private var lastUpdateTime: TimeInterval = 0
     
     private var menu : MainMenu?
     private var replace : ReplaceSaveMenu?
+    private var options : OptionsMenu?
     internal var playLbl: SKLabelNode?
     internal var newGameLbl: SKLabelNode?
 
@@ -36,6 +37,10 @@ class LevelSelectScene: SKScene {
         playLbl = self.childNode(withName: "//PlayLbl") as? SKLabelNode
         newGameLbl = self.childNode(withName: "//NewGameLbl") as? SKLabelNode
         
+        playLbl?.text = "Options"
+        menu = MainMenu()
+        menu?.position.y += 0.8*frame.maxY
+
         mainMenu()
     }
     
@@ -57,20 +62,22 @@ class LevelSelectScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        if (levelStatus != previousState) {
-            previousState = levelStatus
+        if (menuStatus != previousState) {
+            previousState = menuStatus
             
-            if (levelStatus == LevelSelectStatus.WAITING) {
+            if (menuStatus == MenuStatus.WAITING) {
                 mainMenu()
-            } else if (levelStatus == LevelSelectStatus.NEW_GAME_WAITING) {
+            } else if (menuStatus == MenuStatus.NEW_GAME_WAITING) {
                 replaceSave()
+            } else if (menuStatus == MenuStatus.OPTIONS) {
+                optionsMenu()
             }
         } else {
-            if (levelStatus == LevelSelectStatus.WAITING) {
-                levelStatus = menu?.status ?? LevelSelectStatus.WAITING
+            if (menuStatus == MenuStatus.WAITING) {
+                menuStatus = menu?.status ?? MenuStatus.WAITING
                 saveNumber = menu?.saveNumber ?? -1
-            } else if (levelStatus == LevelSelectStatus.NEW_GAME_WAITING) {
-                levelStatus = replace?.status ?? LevelSelectStatus.NEW_GAME_WAITING
+            } else if (menuStatus == MenuStatus.NEW_GAME_WAITING) {
+                menuStatus = replace?.status ?? MenuStatus.NEW_GAME_WAITING
                 saveNumber = replace?.saveNumber ?? -1
             }
         }
@@ -81,7 +88,7 @@ class LevelSelectScene: SKScene {
         menu?.removeFromParent()
         newGameLbl?.isHidden = true
         playLbl?.text = "Back"
-        levelStatus = LevelSelectStatus.NEW_GAME_WAITING
+        menuStatus = MenuStatus.NEW_GAME_WAITING
         replace = ReplaceSaveMenu()
         replace?.position.y += 0.8*frame.maxY
         self.addChild(replace!)
@@ -89,11 +96,23 @@ class LevelSelectScene: SKScene {
     
     // Show the main menu
     func mainMenu() {
-        playLbl?.text = "Play Game"
+        options?.removeFromParent()
+        replace?.removeFromParent()
+        menu?.removeFromParent()
+        playLbl?.text = "Options"
         newGameLbl?.isHidden = false
-        menu = MainMenu()
-        menu?.position.y += 0.8*frame.maxY
+        menuStatus = MenuStatus.WAITING
         self.addChild(menu!)
+    }
+    
+    func optionsMenu() {
+        menu?.removeFromParent()
+        newGameLbl?.isHidden = true
+        playLbl?.text = "Back"
+        menuStatus = MenuStatus.OPTIONS
+        options = OptionsMenu()
+        //options?.position.y += 0.8*frame.maxY
+        self.addChild(options!)
     }
     
     // ======== Touchscreen event handling ================================
@@ -102,21 +121,26 @@ class LevelSelectScene: SKScene {
     func touchDown(atPoint pos : CGPoint) {
         if (playLbl?.contains(pos) ?? false) {
             if (playLbl?.text == "Back") {
+                if (menuStatus == MenuStatus.OPTIONS) {
+                    options?.writeConfig()
+                }
                 mainMenu()
             } else {
-                levelStatus = LevelSelectStatus.CONTINUE_SAVE
+                menuStatus = MenuStatus.OPTIONS
             }
         } else if (newGameLbl?.contains(pos) ?? false) {
             if (SaveData.getNumberOfSaves() >= SaveData.MAX_AMOUNT_OF_SAVES) {
-                levelStatus = LevelSelectStatus.NEW_GAME_WAITING
+                menuStatus = MenuStatus.NEW_GAME_WAITING
             } else {
-                levelStatus = LevelSelectStatus.NEW_SAVE
+                menuStatus = MenuStatus.NEW_SAVE
             }
         } else { // Checks through currently used menu if user did not press on the button
-            if menu?.parent is LevelSelectScene {
+            if menu?.parent is MenuScene {
                 menu?.touchDown(atPoint: pos)
-            } else if replace?.parent is LevelSelectScene {
+            } else if replace?.parent is MenuScene {
                 replace?.touchDown(atPoint: pos)
+            } else if options?.parent is MenuScene {
+                options?.touchDown(atPoint: pos)
             }
         }
     }

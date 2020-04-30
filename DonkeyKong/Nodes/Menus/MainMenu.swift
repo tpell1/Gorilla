@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class MainMenu: SKNode {
-    var status: LevelSelectStatus = LevelSelectStatus.WAITING
+    var status: MenuStatus = MenuStatus.WAITING
     var saveNumber: Int = -1
     
     internal var saveArray: [MenuButton] = []
@@ -43,7 +43,7 @@ class MainMenu: SKNode {
         if numberOfSaves != 0 {
             for i in 0...(saveArray.count-1) {
                 if (saveArray[i].contains((scene?.convert(pos, to: self))!)) { // TODO: pos must be replaced with pos relative to grandparent node (aka scene)
-                    status = LevelSelectStatus.CONTINUE_SAVE
+                    status = MenuStatus.CONTINUE_SAVE
                     saveNumber = i
                     print(i)
                 }

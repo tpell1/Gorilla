@@ -8,8 +8,8 @@
 
 import Foundation
 
-///////////////////// Config //////////////////////////
-struct ConfigStruct: Codable {
+///////////////////// Save //////////////////////////
+struct SaveStruct: Codable {
     var currentLevel: Int
     var currentScore: Int
     var currentLives: Int
@@ -18,44 +18,44 @@ struct ConfigStruct: Codable {
 class SaveData {
     static var MAX_AMOUNT_OF_SAVES: Int = 5
     private var name: String
-    private var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("configs/")
+    private var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("saves/")
     
-    init(saveName: String = "Config") {
+    init(saveName: String = "Save") {
         name = saveName
     }
     
-    func read() -> ConfigStruct {
-        if (configExistsInDocs()) {
-            return readConfigFromDocs() ?? ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 3)
+    func read() -> SaveStruct {
+        if (saveExistsInDocs()) {
+            return readSaveFromDocs() ?? SaveStruct(currentLevel: 1, currentScore: 0, currentLives: 3)
         } else {
-            let config = readConfigFromBundle() ?? ConfigStruct(currentLevel: 1, currentScore: 0, currentLives: 3)
-            writeConfig(configData: config)
+            let config = readSaveFromBundle() ?? SaveStruct(currentLevel: 1, currentScore: 0, currentLives: 3)
+            writeSave(saveData: config)
             return config
         }
     }
     
-    private func readConfigFromBundle() -> ConfigStruct? {
-        if let file = Bundle.main.path(forResource: "Config", ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
+    private func readSaveFromBundle() -> SaveStruct? {
+        if let file = Bundle.main.path(forResource: "Config", ofType: "plist"), let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(SaveStruct.self, from: plist) {
             return config
         } else {
             return nil
         }
     }
     
-    private func configExistsInDocs() -> Bool {
+    private func saveExistsInDocs() -> Bool {
         return FileManager.default.fileExists(atPath: configFolder.appendingPathComponent(name + ".plist").path)
     }
     
-    private func readConfigFromDocs() -> ConfigStruct? {
+    private func readSaveFromDocs() -> SaveStruct? {
         let file = configFolder.appendingPathComponent(name + ".plist").path
-        if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(ConfigStruct.self, from: plist) {
+        if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(SaveStruct.self, from: plist) {
             return config
         } else {
             return nil
         }
     }
     
-    func writeConfig(configData: ConfigStruct) {
+    func writeSave(saveData: SaveStruct) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         let file = configFolder.appendingPathComponent(name + ".plist") // ERROR HERE
@@ -73,16 +73,16 @@ class SaveData {
         }
         
         do {
-            let data = try encoder.encode(configData)
+            let data = try encoder.encode(saveData)
             try data.write(to: file)
         } catch {
             print(error)
         }
     }
     
-    func writeConfig(level: Int, lives: Int, score: Int) {
-        let config = ConfigStruct(currentLevel: level, currentScore: score, currentLives: lives)
-        writeConfig(configData: config)
+    func writeSave(level: Int, lives: Int, score: Int) {
+        let config = SaveStruct(currentLevel: level, currentScore: score, currentLives: lives)
+        writeSave(saveData: config)
     }
     
     static func getNumberOfSaves() -> Int{

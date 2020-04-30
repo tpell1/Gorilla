@@ -13,16 +13,16 @@ import GameplayKit
 class GameViewController: UIViewController {
     var timer: Timer?
     var timer1: Timer?
-    var sceneNode: LevelSelectScene?
+    var sceneNode: MenuScene?
     var gameNode: GameScene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = GKScene(fileNamed: "LevelSelectScene") {
+        if let scene = GKScene(fileNamed: "MenuScene") {
             
-            if scene.rootNode is LevelSelectScene? {
-                sceneNode = scene.rootNode as! LevelSelectScene?
+            if scene.rootNode is MenuScene? {
+                sceneNode = scene.rootNode as! MenuScene?
                 sceneNode?.entities = scene.entities
                 sceneNode?.graphs = scene.graphs
                 
@@ -77,16 +77,16 @@ class GameViewController: UIViewController {
                 // Loads or creates new game
                 if (newGame) {
                     if (saveGame == -1) {
-                        let saveData = SaveData(saveName: "Config" + String(SaveData.getNumberOfSaves()))
-                        saveData.writeConfig(level: 1, lives: 3, score: 0)
+                        let saveData = SaveData(saveName: "Save" + String(SaveData.getNumberOfSaves()))
+                        saveData.writeSave(level: 1, lives: 3, score: 0)
                         gameNode?.setSave(data: saveData)
                     } else {
-                        let saveData = SaveData(saveName: "Config" + String(saveGame))
-                        saveData.writeConfig(level: 1, lives: 3, score: 0)
+                        let saveData = SaveData(saveName: "Save" + String(saveGame))
+                        saveData.writeSave(level: 1, lives: 3, score: 0)
                         gameNode?.setSave(data: saveData)
                     }
                 } else {
-                    let saveData = SaveData(saveName: "Config" + String(saveGame))
+                    let saveData = SaveData(saveName: "Save" + String(saveGame))
                     gameNode?.setSave(data: saveData)
                 }
                 
@@ -108,21 +108,21 @@ class GameViewController: UIViewController {
     
     // Function called by timer ever 0.1s, checks if user has pressed play
     @objc func update() {
-        let status = sceneNode?.levelStatus
-        if (status != LevelSelectStatus.WAITING && status != LevelSelectStatus.NEW_GAME_WAITING) {
-            if (status == LevelSelectStatus.CONTINUE_SAVE) {
+        let status = sceneNode?.menuStatus
+        if (status != MenuStatus.WAITING && status != MenuStatus.NEW_GAME_WAITING && status != MenuStatus.OPTIONS) {
+            if (status == MenuStatus.CONTINUE_SAVE) {
                 playGame(newGame: false, saveGame: sceneNode?.saveNumber ?? 0)
                 timer?.invalidate()
-            } else if (status == LevelSelectStatus.NEW_SAVE) {
+            } else if (status == MenuStatus.NEW_SAVE) {
                 playGame(newGame: true)
                 timer?.invalidate()
-            } else if (status == LevelSelectStatus.REPLACE_SAVE) {
+            } else if (status == MenuStatus.REPLACE_SAVE) {
                 playGame(newGame: true, saveGame: sceneNode?.saveNumber ?? 0)
                 timer?.invalidate()
             } else {
                 return
             }
-            sceneNode?.levelStatus = LevelSelectStatus.WAITING
+            sceneNode?.menuStatus = MenuStatus.WAITING
         }
     }
     

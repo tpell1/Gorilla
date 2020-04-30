@@ -23,6 +23,7 @@ class MarioSprite : SKSpriteNode {
     private var height = 60
     private var scale = 1
     private var shootable = true
+    private var jumpSound = true
     static var DEFAULT_MOVE_SPEED: CGFloat = 200
     
     // Default constructor, creates a main character with one life
@@ -37,6 +38,7 @@ class MarioSprite : SKSpriteNode {
         self.name = "Mario"
         self.physicsBody?.friction = 0
         self.physicsBody?.linearDamping = 0
+        jumpSound = ConfigData.read().SoundOn
     }
     
     // Constructor which gives choice of lives for Mario to be instantiated with
@@ -84,13 +86,17 @@ class MarioSprite : SKSpriteNode {
             jumpCount = 0
         }
         if (jumpCount == 0 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
+            if (jumpSound) {
+                self.run(playJumpSound)
+            }
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
             jumpCount += 1
-            self.run(playJumpSound)
         } else if (jumpCount == 1 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
+            if (jumpSound) {
+                self.run(playJumpSound)
+            }
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
             jumpCount += 1
-            self.run(playJumpSound)
         }
     }
     
