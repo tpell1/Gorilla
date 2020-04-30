@@ -15,11 +15,17 @@ class MushroomItem: ItemSprite {
         self.init(x: x, y: y, itemType: ItemType.MUSHROOM)
     }
     
-    override func collision(mario: MarioSprite) {
-        if(!itemUsed) {
-            itemUsed = true
-            mario.grow()
+    // Collision handler (if the item is node1)
+    override func collision(node: SKNode) {
+        if node is MarioSprite {
+            let mario = node as! MarioSprite
+            if(!itemUsed) {
+                itemUsed = true
+                mario.grow()
+            }
+            self.removeFromParent()
+        } else {
+            move()
         }
-        self.removeFromParent()
     }
 }

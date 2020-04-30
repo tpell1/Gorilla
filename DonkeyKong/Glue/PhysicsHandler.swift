@@ -15,11 +15,8 @@ class PhysicsHandler: SKNode, SKPhysicsContactDelegate {
         if let node1 = contact.bodyA.node { // Prevents an error from being called with sprites that remove themselves from parent
             if node1 is ItemSprite {
                 if let node2 = contact.bodyB.node {
-                    if node2 is MarioSprite {
-                        let mario = node2 as! MarioSprite
-                        let item = node1 as! ItemSprite
-                        item.collision(mario: mario)
-                    }
+                    let item = node1 as! ItemSprite
+                    item.collision(node: node2)
                 }
             } else if node1 is BreakableBlockSprite {
                 let node2 = contact.bodyB.node ?? nil

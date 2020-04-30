@@ -17,6 +17,8 @@ enum ItemType: String {
 class ItemSprite: SKSpriteNode {
     internal var texture1 : SKTexture?
     internal var itemUsed : Bool = false
+    static var ITEM_SPEED = 50
+    internal var direction : CGFloat = 1
     
     init(x: CGFloat, y: CGFloat, itemType: ItemType) {
         texture1 = SKTexture(imageNamed: (itemType.rawValue + ".png"))
@@ -30,20 +32,35 @@ class ItemSprite: SKSpriteNode {
         self.physicsBody?.friction = 0 // Item should not slow down
 		self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // Collision handler (if the item is node1)
-    func collision(mario: MarioSprite) {
-        if(!itemUsed) {
-            itemUsed = true
-            mario.incLives(amountToInc: 1)
+    func collision(node: SKNode) {
+        if node is MarioSprite {
+            let mario = node as! MarioSprite
+            if(!itemUsed) {
+                itemUsed = true
+                mario.incLives(amountToInc: 1)
+            }
+            self.removeFromParent()
         }
-        self.removeFromParent()
     }
     
-	func move() {
-        self.physicsBody?.velocity = CGVector(dx: 50, dy: 0)
+    func reverseDirection() {
+        direction = -direction
+        self.physicsBody?.velocity.dx = direction*(self.physicsBody?.velocity.dx ?? CGFloat(ItemSprite.ITEM_SPEED))
+    }
+    
+    
+    func move() {
+        self.physicsBody?.velocity = CGVector(dx: ItemSprite.ITEM_SPEED, dy: 0)
+    }
+    
+	func startMove(direction dir : CGFloat) {
+        direction = dir
+        self.physicsBody?.velocity = CGVector(dx: CGFloat(ItemSprite.ITEM_SPEED)*direction, dy: 0)
     }
 }

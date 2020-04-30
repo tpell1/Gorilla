@@ -15,11 +15,17 @@ class FireItem: ItemSprite {
         self.init(x: x, y: y, itemType: ItemType.FIRE)
     }
     
-    override func collision(mario: MarioSprite) {
-        if(!itemUsed) {
-            itemUsed = true
-            mario.fireItem()
+    // Collision handler (if the item is node1)
+    override func collision(node: SKNode) {
+        if node is MarioSprite {
+            let mario = node as! MarioSprite
+            if(!itemUsed) {
+                itemUsed = true
+                mario.fireItem()
+            }
+            self.removeFromParent()
+        } else {
+            move()
         }
-        self.removeFromParent()
     }
 }

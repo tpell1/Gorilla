@@ -16,6 +16,7 @@ class KoopaSprite: SKSpriteNode {
     private var timer: Timer?
     private var timerBool = false
     private var shellArray: [ShellItem] = []
+    private var iteration = 0
     
     // Default constructor, creates a koopa character with one life
     init(x: CGFloat, y: CGFloat) {
@@ -65,8 +66,9 @@ class KoopaSprite: SKSpriteNode {
         } else {
             walk()
         }
-        if (canSeeMario()) {throwShell()}
+        if (canSeeMario() && iteration%3==0) {throwShell()}
         timerBool = !timerBool
+        iteration = iteration + 1
     }
     
     func collision(contact: SKPhysicsContact) {
@@ -95,14 +97,16 @@ class KoopaSprite: SKSpriteNode {
         let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
         if (!timerBool) {
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            shell.position.x += 5
             self.addChild(shell)
             shell.move(toParent: self.scene!)
-            shell.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+            shell.startMove(direction: 1)
         } else {
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            shell.position.x -= 5
             self.addChild(shell)
             shell.move(toParent: self.scene!)
-            shell.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
+            shell.startMove(direction: -1)
         }
         
         // Only allow three shells to exist at one point

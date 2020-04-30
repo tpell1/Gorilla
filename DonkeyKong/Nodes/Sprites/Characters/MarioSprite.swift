@@ -63,7 +63,7 @@ class MarioSprite : SKSpriteNode {
                 }
             } else if node2 is ItemSprite { // Use item and then remove item
                 let item = node2 as! ItemSprite
-                item.collision(mario: self)
+                item.collision(node: self)
             } else if node2 is ItemBlockSprite { // Spawn an item
                 if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) {
                     let block = node2 as! ItemBlockSprite
