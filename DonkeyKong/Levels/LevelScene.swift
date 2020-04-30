@@ -46,14 +46,15 @@ class LevelScene: SKNode {
     }
     
     // Add all nodes to the level (Blocks and enemies)
+    // Example level (not added to game anymore)
     func addChildren() {
-        blockSprite = BlockSprite(x: rect.midX + 50, y: rect.minY + 130, imageNamed: "brickBlock.png")
+        blockSprite = BlockSprite(x: rect.midX + 50, y: rect.minY + 130, imageNamed: "solidBlock.png")
         self.addChild(blockSprite!)
         
         breakableBlock = BreakableBlockSprite(x: rect.midX + 90, y: rect.minY + 130, texture1Named: "brickBlock.png", texture2Named: "brokenBlock.png")
         self.addChild(breakableBlock!)
         
-        itemBlock = ItemBlockSprite(x: rect.midX + 130, y: rect.minY + 130, imageNamed: "brickBlock.png")
+        itemBlock = ItemBlockSprite(x: rect.midX + 130, y: rect.minY + 130, imageNamed: "itemBlock.png")
         self.addChild(itemBlock!)
         
         let koopaNode = KoopaPlatformHelper(x: rect.maxX + 200, y: rect.minY + 130, size: 4)

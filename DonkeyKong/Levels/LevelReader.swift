@@ -66,7 +66,7 @@ class LevelReader: LevelScene {
         if (blocks.count > 0) {
             for i in 0...(blocks.count-1) {
                 if blocks[i].blockType == "solid" {
-                    blockArray.append(BlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: zeroY + CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png"))
+                    blockArray.append(BlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: zeroY + CGFloat(blocks[i].blockY), imageNamed: "solidBlock.png"))
                 } else if blocks[i].blockType == "breakable" {
                     blockArray.append(BreakableBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: zeroY + CGFloat(blocks[i].blockY), texture1Named: "brickBlock.png", texture2Named: "brickBlock.png"))
                 } else if blocks[i].blockType == "item" {
@@ -80,7 +80,7 @@ class LevelReader: LevelScene {
                     } else if blocks[i].itemType == "fire" {
                         itemType = ItemType.FIRE
                     }
-                    blockArray.append(ItemBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: zeroY + CGFloat(blocks[i].blockY), imageNamed: "brickBlock.png", itemType: itemType))
+                    blockArray.append(ItemBlockSprite(x: rect.midX+CGFloat(blocks[i].blockX), y: zeroY + CGFloat(blocks[i].blockY), imageNamed: "itemBlock.png", itemType: itemType))
                 }
             }
         }

@@ -98,7 +98,7 @@
 			<array>
 				<dict>
 					<key>presetType</key>
-					<string>koopa</string>
+					<string>koopa_platform</string>
 					<key>presetX</key>
 					<integer>250</integer>
 					<key>presetY</key>
@@ -122,16 +122,7 @@
 			<key>levelType</key>
 			<string>standard</string>
 			<key>enemies</key>
-			<array>
-				<dict>
-					<key>enemyType</key>
-					<string>koopa</string>
-					<key>enemyX</key>
-					<integer>80</integer>
-					<key>enemyY</key>
-					<integer>100</integer>
-				</dict>
-			</array>
+			<array/>
 			<key>blocks</key>
 			<array>
 				<dict>
@@ -186,6 +177,16 @@
 					<integer>20</integer>
 					<key>presetSize</key>
 					<integer>4</integer>
+				</dict>
+				<dict>
+					<key>presetType</key>
+					<string>koopa_platform</string>
+					<key>presetX</key>
+					<integer>250</integer>
+					<key>presetY</key>
+					<integer>100</integer>
+					<key>presetSize</key>
+					<integer>5</integer>
 				</dict>
 			</array>
 		</dict>

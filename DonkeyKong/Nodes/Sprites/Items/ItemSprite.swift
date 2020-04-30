@@ -21,8 +21,8 @@ class ItemSprite: SKSpriteNode {
     init(x: CGFloat, y: CGFloat, itemType: ItemType) {
         texture1 = SKTexture(imageNamed: (itemType.rawValue + ".png"))
         super.init(texture: texture1, color: UIColor.clear, size: (texture1?.size())!)
-        super.scale(to: CGSize(width: 70, height: 70))
-        self.physicsBody = SKPhysicsBody(texture: (self.texture1)!, size: CGSize(width: CGFloat(30.0), height: CGFloat(30.0)))
+        super.scale(to: CGSize(width: 20, height: 20))
+        self.physicsBody = SKPhysicsBody(texture: (self.texture1)!, size: CGSize(width: CGFloat(20.0), height: CGFloat(20.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
 		self.physicsBody?.affectedByGravity = true

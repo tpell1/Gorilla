@@ -59,16 +59,16 @@ class GameViewController: UIViewController {
                 gameNode?.graphs = scene.graphs
                 
                 // First do hardcoded levels
-                let level1 = LevelScene(title: "Level 1", name: "level")
-                let level2 = LevelTwo(title: "Level 2", name: "level")
-                var levelArray = [level1, level2]
+                //let level1 = LevelScene(title: "Level 1", name: "level")
+                //let level2 = LevelTwo(title: "Level 2", name: "level")
+                //var levelArray = [] // Not using hardcoded levels anymore
                 
                 // Then load in levels from property list
                 let loadedLevels = LevelUtils.getLevelArray()
-                levelArray.append(contentsOf: loadedLevels)
+                //levelArray.append(contentsOf: loadedLevels)
                 
                 // Then send the levels to the scene
-                gameNode?.setLevelArray(collection: levelArray)
+                gameNode?.setLevelArray(collection: loadedLevels)
                 
                 // Starts game update loop, called every 10th of a second, used to process and evaluate current game state
                 timer1 = Timer(timeInterval: 0.1, target: self, selector: #selector(self.updateGame), userInfo: nil, repeats: true)

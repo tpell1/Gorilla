@@ -24,6 +24,12 @@ class OptionsMenu : SKNode {
         
         musicButton.position = CGPoint(x: frame.midX, y: frame.midY - 80)
         self.addChild(musicButton)
+        
+        let data = ConfigData.read()
+        sound = data.SoundOn
+        music = data.MusicOn
+        
+        updateText()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,18 +39,23 @@ class OptionsMenu : SKNode {
     func touchDown(atPoint pos : CGPoint) {
         if (soundFxButton.contains(pos)) {
             sound = !sound
-            if (sound) {
-                soundFxButton.setText(text: "Sound: On")
-            } else {
-                soundFxButton.setText(text: "Sound: Off")
-            }
+            updateText()
         } else if (musicButton.contains(pos)) {
             music = !music
-            if (music) {
-                musicButton.setText(text: "Music: On")
-            } else {
-                musicButton.setText(text: "Music: Off")
-            }
+            updateText()
+        }
+    }
+    
+    private func updateText() {
+        if (sound) {
+            soundFxButton.setText(text: "Sound: On")
+        } else {
+            soundFxButton.setText(text: "Sound: Off")
+        }
+        if (music) {
+            musicButton.setText(text: "Music: On")
+        } else {
+            musicButton.setText(text: "Music: Off")
         }
     }
     

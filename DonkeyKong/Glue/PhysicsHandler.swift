@@ -22,7 +22,7 @@ class PhysicsHandler: SKNode, SKPhysicsContactDelegate {
                     }
                 }
             } else if node1 is BreakableBlockSprite {
-                let node2 = contact.bodyB.node!
+                let node2 = contact.bodyB.node ?? nil
                 if node2 is MarioSprite {
                     let mario = node2 as! MarioSprite
                     if((mario.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
@@ -31,7 +31,7 @@ class PhysicsHandler: SKNode, SKPhysicsContactDelegate {
                     }
                 }
             } else if node1 is ItemBlockSprite {
-                let node2 = contact.bodyB.node!
+                let node2 = contact.bodyB.node ?? nil
                 if node2 is MarioSprite {
                     let block = node1 as! ItemBlockSprite
                     block.spawnItem()
@@ -44,7 +44,7 @@ class PhysicsHandler: SKNode, SKPhysicsContactDelegate {
                 mario.collision(contact: contact) // Mario can handle collisions himself
             } else if node1 is EndLevelNode {
                 let end = node1 as! EndLevelNode
-                let node2 = contact.bodyB.node!
+                let node2 = contact.bodyB.node ?? nil
                 if node2 is MarioSprite {
                     end.endLevel()
                 }
