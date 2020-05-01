@@ -98,13 +98,13 @@ class KoopaSprite: SKSpriteNode {
         if (!timerBool) {
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x += 5
-            self.addChild(shell)
+            self.parent?.addChild(shell)
             shell.move(toParent: self.scene!)
             shell.startMove(direction: 1)
         } else {
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x -= 5
-            self.addChild(shell)
+            self.parent?.addChild(shell)
             shell.move(toParent: self.scene!)
             shell.startMove(direction: -1)
         }

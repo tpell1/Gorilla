@@ -39,17 +39,20 @@ class LevelReader: LevelScene {
         readInEnemies()
         if (blockArray.count > 0) {
             for i in 0...(blockArray.count-1) {
-                self.addChild(blockArray[i])
+                self.parent?.addChild(blockArray[i])
             }
         }
         if (enemyArray.count > 0) {
             for i in 0...(enemyArray.count-1) {
-                self.addChild(enemyArray[i])
+                self.parent?.addChild(enemyArray[i])
             }
         }
         if (presetArray.count > 0) {
             for i in 0...(presetArray.count-1) {
-                self.addChild(presetArray[i])
+                self.parent?.addChild(presetArray[i])
+                for j in 0...(presetArray[i].children.count-1) {
+                    presetArray[i].children[j].move(toParent: (self.parent)!)
+                }
             }
         }
     }

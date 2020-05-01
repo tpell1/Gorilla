@@ -11,14 +11,15 @@ import SpriteKit
 
 class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
-    private var timer : Timer?
+    //private var timer : Timer?
     
     init() {
-        timer = Timer(timeInterval: 0.03, target: self, selector: #selector(self.updatePhysics), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer!, forMode: .commonModes)
+        /*timer = Timer(timeInterval: 0.03, target: self, selector: #selector(self.updatePhysics), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer!, forMode: .commonModes)*/
         physicsObjects = []
     }
     
+    // simulate will be called by GameScene Object
     @objc func updatePhysics() {
         simulate()
     }
