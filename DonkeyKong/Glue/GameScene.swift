@@ -45,9 +45,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
 
-        let physics = PhysicsHandler()
+        let physicsHandler = PhysicsHandler()
         gameStatus = GameStatus.PLAYING
-        self.addChild(physics)
+        self.addChild(physicsHandler)
         physicsWorld.contactDelegate = physics
     }
 

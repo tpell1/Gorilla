@@ -60,7 +60,7 @@ class KoopaSprite: SKSpriteNode {
         timer?.invalidate() // Memory management
     }
     
-    private func timerWalk(timer: Timer) {
+    func timerWalk(timer: Timer) {
         if(timerBool) {
             walkBack()
         } else {
@@ -105,7 +105,7 @@ class KoopaSprite: SKSpriteNode {
             shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x -= 5
             self.parent?.addChild(shell)
-            shell.move(toParent: self.scene!)
+            shell.move(toParent: self.parent!)
             shell.startMove(direction: -1)
         }
         
