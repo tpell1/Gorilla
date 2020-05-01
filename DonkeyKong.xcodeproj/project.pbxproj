@@ -57,6 +57,8 @@
 		96EE2072245AF9950015D154 /* SHELL.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2071245AF9950015D154 /* SHELL.png */; };
 		96EE2074245AFD880015D154 /* solidBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2073245AFD870015D154 /* solidBlock.png */; };
 		96EE2076245AFF730015D154 /* itemBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2075245AFF720015D154 /* itemBlock.png */; };
+		96EE2079245B14EA0015D154 /* PhysicsWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE2078245B14EA0015D154 /* PhysicsWorld.swift */; };
+		96EE207B245B15500015D154 /* PhysicsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE207A245B15500015D154 /* PhysicsObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		96EE2071245AF9950015D154 /* SHELL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SHELL.png; sourceTree = "<group>"; };
 		96EE2073245AFD870015D154 /* solidBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solidBlock.png; sourceTree = "<group>"; };
 		96EE2075245AFF720015D154 /* itemBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itemBlock.png; sourceTree = "<group>"; };
+		96EE2078245B14EA0015D154 /* PhysicsWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsWorld.swift; sourceTree = "<group>"; };
+		96EE207A245B15500015D154 /* PhysicsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +288,7 @@
 		968ECDAE2358D92D0029A1A9 /* DonkeyKong */ = {
 			isa = PBXGroup;
 			children = (
+				96EE2077245B14C60015D154 /* Physics */,
 				96EE2062245ACA7D0015D154 /* Sound */,
 				968ECDBC2358D92E0029A1A9 /* Assets.xcassets */,
 				96A96A37242B91DF00D9FC35 /* Save.plist */,
@@ -374,6 +379,15 @@
 				96EE2063245ACAD40015D154 /* jump.wav */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		96EE2077245B14C60015D154 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				96EE2078245B14EA0015D154 /* PhysicsWorld.swift */,
+				96EE207A245B15500015D154 /* PhysicsObject.swift */,
+			);
+			path = Physics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +542,8 @@
 			files = (
 				96969435241029AC00A266AB /* BreakableBlockSprite.swift in Sources */,
 				96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */,
+				96EE207B245B15500015D154 /* PhysicsObject.swift in Sources */,
+				96EE2079245B14EA0015D154 /* PhysicsWorld.swift in Sources */,
 				96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,

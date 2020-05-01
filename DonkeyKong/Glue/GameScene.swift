@@ -38,6 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var safetyBool : Bool = true
     private var gameStatus : GameStatus = GameStatus.PLAYING
     private var levelIndex : Int = 0
+    private var physics : PhysicsWorld?
     
     
     // Initial loading of scene, sets up HUD and loads in mario Sprite
