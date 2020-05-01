@@ -13,7 +13,7 @@ class LevelReader: LevelScene {
     private var fileName: String = "Levels.plist"
     private var blockArray: [BlockSprite] = []
     private var enemyArray: [SKSpriteNode] = []
-    private var presetArray: [SKNode] = []
+    private var presetArray: [PresetNode] = []
     private var levelData: LevelStruct
     private var zeroY: CGFloat = 0
     
@@ -39,20 +39,22 @@ class LevelReader: LevelScene {
         readInEnemies()
         if (blockArray.count > 0) {
             for i in 0...(blockArray.count-1) {
-                self.parent?.addChild(blockArray[i])
+                self.addChild(blockArray[i])
             }
         }
         if (enemyArray.count > 0) {
             for i in 0...(enemyArray.count-1) {
-                self.parent?.addChild(enemyArray[i])
+                self.addChild(enemyArray[i])
             }
         }
         if (presetArray.count > 0) {
             for i in 0...(presetArray.count-1) {
-                self.parent?.addChild(presetArray[i])
-                for j in 0...(presetArray[i].children.count-1) {
+                self.addChild(presetArray[i])
+                presetArray[i].moveAllChildren(toNode: self)
+                
+                /*for j in 0...(presetArray[i].children.count-1) {
                     presetArray[i].children[j].move(toParent: (self.parent)!)
-                }
+                }*/
             }
         }
     }

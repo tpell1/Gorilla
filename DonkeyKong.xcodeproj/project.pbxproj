@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9635DE68245C18B000405AFE /* PresetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635DE67245C18AF00405AFE /* PresetNode.swift */; };
 		96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8B242A119F0006E50D /* MushroomItem.swift */; };
 		96572F8F242A173D0006E50D /* ShellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F8E242A173D0006E50D /* ShellItem.swift */; };
 		96572F91242A1BD40006E50D /* KoopaSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96572F90242A1BD40006E50D /* KoopaSprite.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9635DE67245C18AF00405AFE /* PresetNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetNode.swift; sourceTree = "<group>"; };
 		96572F8B242A119F0006E50D /* MushroomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomItem.swift; sourceTree = "<group>"; };
 		96572F8E242A173D0006E50D /* ShellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellItem.swift; sourceTree = "<group>"; };
 		96572F90242A1BD40006E50D /* KoopaSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoopaSprite.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				9682CBE3241D536E00A0E821 /* EndOfLevelNode.swift */,
 				96572F93242A20B20006E50D /* KoopaPlatformHelper.swift */,
+				9635DE67245C18AF00405AFE /* PresetNode.swift */,
 			);
 			path = Presets;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				96A96A47242E2FF900D9FC35 /* DonkeyKongSprite.swift in Sources */,
 				96EE207B245B15500015D154 /* PhysicsObject.swift in Sources */,
 				96EE2079245B14EA0015D154 /* PhysicsWorld.swift in Sources */,
+				9635DE68245C18B000405AFE /* PresetNode.swift in Sources */,
 				96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class KoopaPlatformHelper: SKNode {
+class KoopaPlatformHelper: PresetNode {
     private var blockArray: [BlockSprite] 
     
     init(x: CGFloat, y: CGFloat, size: Int) {

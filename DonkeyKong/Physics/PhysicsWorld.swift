@@ -48,6 +48,6 @@ class PhysicsWorld {
     }
     
     private func collision(i : Int, j : Int) -> Bool {
-        
+        return false
     }
 }

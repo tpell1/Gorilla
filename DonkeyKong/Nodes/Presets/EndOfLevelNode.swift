@@ -12,7 +12,7 @@
 import Foundation
 import SpriteKit
 
-class EndOfLevelNode: SKNode {
+class EndOfLevelNode: PresetNode {
     private var endNode : EndLevelNode?
     private var brick1 : BlockSprite?
     private var brick2 : BlockSprite?
