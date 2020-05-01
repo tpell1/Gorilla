@@ -22,7 +22,7 @@ class BreakableBlockSprite : BlockSprite {
         
         super.init(x: x, y: y, imageNamed: texture1Named)
         
-        self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
+        //self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
     }
     
     required init?(coder aDecoder: NSCoder) {

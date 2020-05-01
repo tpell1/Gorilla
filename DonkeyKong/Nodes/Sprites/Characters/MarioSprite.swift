@@ -32,12 +32,19 @@ class MarioSprite : SKSpriteNode {
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
+        
+        //////// SpriteKit Physics //////////
+        /*
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
         self.name = "Mario"
         self.physicsBody?.friction = 0
         self.physicsBody?.linearDamping = 0
+        */
+        ////////// My Physics /////////////
+        physicsObj = PhysicsObject(withNode: self)
+        
         jumpSound = ConfigData.read().SoundOn
     }
     

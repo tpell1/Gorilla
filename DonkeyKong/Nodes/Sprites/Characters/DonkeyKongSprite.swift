@@ -16,16 +16,21 @@ class DonkeyKongSprite: SKSpriteNode {
     // Default constructor, creates a koopa character with one life
     init(x: CGFloat, y: CGFloat) {
         let texture = SKTexture(imageNamed: "donkeyKong.png") // Use the mario texture
-        
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
+        
+        //////// SpriteKit Physics ///////////////
+        /*
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(width+5), height: CGFloat(height)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
         self.name = "DonkeyKong"
         self.physicsBody?.friction = 0
         self.physicsBody?.linearDamping = 0
+        */
+        ///////// My physics //////////
+        physicsObj = PhysicsObject(withNode: self)
     }
     
     required init?(coder aDecoder: NSCoder) {

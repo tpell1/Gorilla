@@ -9,6 +9,20 @@
 import Foundation
 import SpriteKit
 
+extension SKNode {
+    struct container {
+        static var physics : PhysicsObject?
+    }
+    var physicsObj : PhysicsObject? {
+        get {
+            return container.physics
+        }
+        set(newObject) {
+            container.physics = newObject
+        }
+    }
+}
+
 class PhysicsBody {
     var min : CGPoint
     var max : CGPoint
@@ -28,7 +42,7 @@ class PhysicsBody {
 
 class PhysicsObject {
     var index : Int
-    private var node : SKNode?
+    private var node : SKNode
     var physicsBody : PhysicsBody
     
     init(withNode node: SKNode) {
@@ -46,11 +60,14 @@ class PhysicsObject {
     }
     
     func getPosition() -> CGPoint {
-        return node?.position ?? CGPoint(x: 0, y: 0)
+        return node.position
     }
     
     func setPosition(x: CGFloat, y: CGFloat) {
-        node?.position = CGPoint(x: x, y: y)
+        node.position = CGPoint(x: x, y: y)
+        let boundingBox = node.calculateAccumulatedFrame()
+        physicsBody.min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
+        physicsBody.max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
     }
     
     func applyImpulse(dx: CGFloat, dy : CGFloat) {

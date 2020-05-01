@@ -25,6 +25,9 @@ class ItemSprite: SKSpriteNode {
         super.init(texture: texture1, color: UIColor.clear, size: (texture1?.size())!)
         super.scale(to: CGSize(width: 20, height: 20))
         self.position = CGPoint(x: x, y: y)
+        
+        ////////// SpriteKit Physics ////////////////
+        /*
         self.physicsBody = SKPhysicsBody(texture: (self.texture1)!, size: CGSize(width: CGFloat(20.0), height: CGFloat(20.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
@@ -32,6 +35,10 @@ class ItemSprite: SKSpriteNode {
         self.physicsBody?.linearDamping = 0 // Item should not slow down
         self.physicsBody?.friction = 0 // Item should not slow down
 		self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
+        */
+        //////// My Physics ////////////
+        physicsObj = PhysicsObject(withNode: self)
+
     }
     
     required init?(coder aDecoder: NSCoder) {

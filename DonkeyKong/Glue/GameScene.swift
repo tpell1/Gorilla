@@ -48,7 +48,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let physicsHandler = PhysicsHandler()
         gameStatus = GameStatus.PLAYING
         self.addChild(physicsHandler)
-        physicsWorld.contactDelegate = physics
+        physicsWorld.contactDelegate = physicsHandler
+        physics = PhysicsWorld()
     }
 
     // Called after sceneDidLoad(), allows config to be read and the levels list
@@ -112,6 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.level = levelArray?[index]
         level?.setFrame(frameRect: frame)
         level?.addChildren()
+        physics?.addNodes(collection: level!.children)
         self.addChild(level!)
         levelLbl?.text = "Level: " + (level?.getTitle())!
         
@@ -257,6 +259,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             safetyBool = false
             loadNextLevel()
         }
+        
+        physics?.simulate(TimeSinceLastUpdate: dt)
         
         // Check if Mario is below ground level
         if ((marioSprite?.position.y)! < frame.minY) {

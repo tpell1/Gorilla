@@ -27,16 +27,11 @@ class PhysicsWorld {
         physicsObjects = []
     }
     
-    // simulate will be called by GameScene Object
-    @objc func updatePhysics() {
-        //ssimulate()
-    }
-    
     func simulate(TimeSinceLastUpdate dt : TimeInterval) {
         for obj in physicsObjects {
             integrateForces(forBody: obj.physicsBody, timeInterval: dt)
         }
-        for i in 0...(physicsObjects.count-1) {
+        for i in 0...(physicsObjects.count-2) {
             for j in i+1...(physicsObjects.count-1) {
                 if (i != j) {
                     if (collision(withObject1: i, object2: j)) {
@@ -57,6 +52,12 @@ class PhysicsWorld {
         let i = physicsObjects.count-1
         physicsObjects[i].setIndex(index: i)
         return i
+    }
+    
+    func addNodes(collection : [SKNode]) {
+        for i in 0...collection.count-1 {
+            physicsObjects.append(collection[i].physicsObj!)
+        }
     }
     
     func removeObject(Object obj : PhysicsObject) {

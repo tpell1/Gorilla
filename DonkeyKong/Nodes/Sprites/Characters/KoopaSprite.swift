@@ -25,6 +25,9 @@ class KoopaSprite: SKSpriteNode {
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
+        
+        /////////// SpriteKit Physics /////////////////
+        /*
         self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.allowsRotation = false
@@ -32,6 +35,11 @@ class KoopaSprite: SKSpriteNode {
         self.physicsBody?.friction = 0
         self.physicsBody?.linearDamping = 0
         self.physicsBody?.contactTestBitMask = self.physicsBody!.collisionBitMask
+        */
+        
+        ////////////// My Physics ////////
+        physicsObj = PhysicsObject(withNode: self)
+        
         self.timer = Timer(timeInterval: TimeInterval(sizeOfPlatform*0.5), repeats: true, block: timerWalk)
         RunLoop.current.add(timer!, forMode: .commonModes)
     }
