@@ -31,7 +31,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     internal var nameNode : SKNode?
     private var relativeNode : SKNode?
     private var pauseNode : PauseMenu?
-    internal var ground : SKShapeNode?
 
     internal var lastUpdateTime : TimeInterval = 0
     private var timer : Timer?
@@ -71,7 +70,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Frame x: " + String(describing: frame.minX))
         
         // Remove all parts of previous level (no error if level one)
-        self.childNode(withName: "ground")?.removeFromParent()
         level?.removeFromParent()
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5) // Making the coordinates consistant accross all levels
@@ -80,20 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         pauseNode = PauseMenu(phoneFrame: frame) // Used for pause menu (contains all required buttons etc.)
         pauseNode?.zPosition = 10
-        
-        // Create the floor
-        // TODO: Move into LevelScene class
-        ground = SKShapeNode()
-        ground?.path = UIBezierPath(roundedRect: CGRect(x: frame.minX - frame.maxX, y: 0, width: frame.maxX * 5, height: 20), cornerRadius: 1).cgPath
-        ground?.position = CGPoint(x: frame.midX, y: frame.minY)
-        ground?.fillColor = UIColor.green
-        ground?.lineWidth = 5
-        ground?.physicsBody = SKPhysicsBody(edgeChainFrom: (ground?.path!)!)
-        ground?.physicsBody?.restitution = 0.2
-        ground?.physicsBody?.isDynamic = false
-        ground?.name = "ground"
-        self.addChild(ground!)
-        
+
         // Spawn in mario
         marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
         self.addChild((marioSprite)!)
@@ -113,7 +98,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.level = levelArray?[index]
         level?.setFrame(frameRect: frame)
         level?.addChildren()
-        physics?.addNodes(collection: level!.children)
+        marioSprite?.move(toParent: level!)
+        for child in level!.children {
+            if child.physicsObj != nil {
+                physics?.addObject(object: child.physicsObj!)
+            }
+            print(child.physicsObj?.index)
+        }
+        //physics?.addNodes(collection: level!.children)
         self.addChild(level!)
         levelLbl?.text = "Level: " + (level?.getTitle())!
         
@@ -178,11 +170,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (marioSprite?.contains(pos))! {
                 marioSprite?.jump()
             } else if (leftArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: -1, dy: 0))
-                marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+                //marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+                marioSprite?.physicsObj?.applyImpulse(dx: -(marioSprite?.getSpeed())!, dy: 0)
             } else if (rightArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-                marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+                //marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+                marioSprite?.physicsObj?.applyImpulse(dx: (marioSprite?.getSpeed())!, dy: 0)
             } else if (pauseBtn?.contains(pos))! {
                 pauseGame()
             } else {
@@ -205,9 +197,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func touchMoved(toPoint pos : CGPoint) {
         if (gameStatus == GameStatus.PLAYING) {
             if (leftArrow?.contains(pos))! {
-                marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+                //marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
+                marioSprite?.physicsObj?.applyImpulse(dx: -(marioSprite?.getSpeed())!, dy: 0)
             } else if (rightArrow?.contains(pos))! {
-                marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+                //marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
+                marioSprite?.physicsObj?.applyImpulse(dx: (marioSprite?.getSpeed())!, dy: 0)
+
             }
         } else {
             /*if (pauseBtn?.contains(pos))! {
@@ -222,9 +217,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchUp(atPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
-            marioSprite?.physicsBody?.velocity.dx = 0
+            //marioSprite?.physicsBody?.velocity.dx = 0
+            marioSprite?.physicsObj?.physicsBody.velocity.dx = 0
         } else if (rightArrow?.contains(pos))! {
-            marioSprite?.physicsBody?.velocity.dx = 0
+            //marioSprite?.physicsBody?.velocity.dx = 0
+            marioSprite?.physicsObj?.physicsBody.velocity.dx = 0
         }
     }
     
@@ -281,12 +278,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Restart level when mario is killed
     func restartLevel(lives: Int) {
-        let groundRectPointer = UnsafeMutablePointer<CGRect>.allocate(capacity: 1) // Get a pointer to the rectangle that represents the ground
-        if (ground?.path?.isRect(groundRectPointer))! { // Makes sure it is a rectangle
-            marioSprite = MarioSprite(x: groundRectPointer.pointee.minX + 400, y: frame.midY, lives: lives) // Reinstantiate mario but with one less life, back at the start of the level
-        } else {
-            marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
-        }
+        marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
+
         self.addChild((marioSprite)!) // Spawn mario
         
         // Update config and then write to file

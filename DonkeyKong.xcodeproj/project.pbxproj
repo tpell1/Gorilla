@@ -49,6 +49,7 @@
 		96A96A50243774FD00D9FC35 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A4F243774FD00D9FC35 /* MainMenu.swift */; };
 		96A96A522437857800D9FC35 /* ReplaceSaveMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A96A512437857800D9FC35 /* ReplaceSaveMenu.swift */; };
 		96D03DA22449BCF700E05CF1 /* FireEntityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D03DA12449BCF700E05CF1 /* FireEntityItem.swift */; };
+		96E3B74A245EF137003F8F52 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3B749245EF137003F8F52 /* PhysicsCollision.swift */; };
 		96EE2064245ACAD40015D154 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2063245ACAD40015D154 /* jump.wav */; };
 		96EE2066245ACF9E0015D154 /* buttonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2065245ACF9E0015D154 /* buttonImage.png */; };
 		96EE2068245AD1780015D154 /* OptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE2067245AD1780015D154 /* OptionsMenu.swift */; };
@@ -129,6 +130,7 @@
 		96A96A4F243774FD00D9FC35 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		96A96A512437857800D9FC35 /* ReplaceSaveMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceSaveMenu.swift; sourceTree = "<group>"; };
 		96D03DA12449BCF700E05CF1 /* FireEntityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireEntityItem.swift; sourceTree = "<group>"; };
+		96E3B749245EF137003F8F52 /* PhysicsCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCollision.swift; sourceTree = "<group>"; };
 		96EE2063245ACAD40015D154 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = jump.wav; path = "../../../../DonkeyKong-master/DonkeyKong/jump.wav"; sourceTree = "<group>"; };
 		96EE2065245ACF9E0015D154 /* buttonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonImage.png; sourceTree = "<group>"; };
 		96EE2067245AD1780015D154 /* OptionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenu.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				96EE2078245B14EA0015D154 /* PhysicsWorld.swift */,
 				96EE207A245B15500015D154 /* PhysicsObject.swift */,
+				96E3B749245EF137003F8F52 /* PhysicsCollision.swift */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				96EE207B245B15500015D154 /* PhysicsObject.swift in Sources */,
 				96EE2079245B14EA0015D154 /* PhysicsWorld.swift in Sources */,
 				9635DE68245C18B000405AFE /* PresetNode.swift in Sources */,
+				96E3B74A245EF137003F8F52 /* PhysicsCollision.swift in Sources */,
 				96A96A4B2434C98000D9FC35 /* SaveData.swift in Sources */,
 				968ECDB62358D92E0029A1A9 /* GameScene.swift in Sources */,
 				96572F8C242A119F0006E50D /* MushroomItem.swift in Sources */,

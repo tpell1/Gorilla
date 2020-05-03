@@ -57,6 +57,21 @@ class LevelReader: LevelScene {
                 }*/
             }
         }
+        let ground = SKSpriteNode(imageNamed: "ground.png")
+        ground.scale(to: CGSize(width: rect.maxX*5, height: 20))
+        ground.position = CGPoint(x: rect.midX, y: rect.minY)
+        ground.physicsObj = PhysicsObject(withNode: ground, mass: -1)
+        
+        /*
+        ground?.physicsBody = SKPhysicsBody(edgeChainFrom: (ground?.path!)!)
+        ground?.physicsBody?.restitution = 0.2
+        ground?.physicsBody?.isDynamic = false
+        */
+        
+        
+        
+        ground.name = "ground"
+        self.addChild(ground)
     }
     
     override func setFrame(frameRect: CGRect) {

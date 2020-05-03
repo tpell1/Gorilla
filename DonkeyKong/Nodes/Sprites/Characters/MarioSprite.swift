@@ -64,10 +64,13 @@ class MarioSprite : SKSpriteNode {
         if (contact.bodyB.node != nil) {
             let node2 = contact.bodyB.node!
             if node2 is BreakableBlockSprite { // Break block
-                if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
+                if(((self.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-20)) {
+                    let block = node2 as! BreakableBlockSprite
+                }
+                /*if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
                     let block = node2 as! BreakableBlockSprite
                     block.breakBlock()
-                }
+                }*/
             } else if node2 is ItemSprite { // Use item and then remove item
                 let item = node2 as! ItemSprite
                 item.collision(node: self)
@@ -88,7 +91,26 @@ class MarioSprite : SKSpriteNode {
     // Allows single and double jumps
     func jump() {
         let playJumpSound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
-        print(String(describing: self.physicsBody?.velocity.dy))
+        //print(String(describing: self.physicsBody?.velocity.dy))
+        let physics = self.physicsObj
+        if((((physics?.physicsBody.velocity.dy.isLessThanOrEqualTo(CGFloat(0.1)))!))) {
+            jumpCount = 0
+        }
+        if (jumpCount == 0 && (physicsObj?.velocityIsZero())!) {
+            if (jumpSound) {
+                self.run(playJumpSound)
+            }
+            self.physicsObj?.applyImpulse(dx: 0, dy: 100)
+            jumpCount += 1
+        } else if (jumpCount == 1 && (physicsObj?.velocityIsZero())!) {
+            if (jumpSound) {
+                self.run(playJumpSound)
+            }
+            self.physicsObj?.applyImpulse(dx: 0, dy: 200)
+            jumpCount += 1
+        }
+        
+        /* SpriteKit code
         if ((self.physicsBody?.velocity.dy.isLessThanOrEqualTo(CGFloat(0.1)))!) {
             jumpCount = 0
         }
@@ -105,6 +127,7 @@ class MarioSprite : SKSpriteNode {
             self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
             jumpCount += 1
         }
+         */
     }
     
     func shoot(direction dir: CGVector) {
@@ -170,7 +193,7 @@ class MarioSprite : SKSpriteNode {
     
     private func reDo() {
         self.scale(to: CGSize(width: width, height: height))
-        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
+        //self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
     }
     
     func isShootable() -> Bool {

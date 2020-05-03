@@ -22,10 +22,11 @@ class BlockSprite : SKSpriteNode {
 		
         self.scale(to: CGSize(width: BlockSprite.BLOCK_SIZE, height: BlockSprite.BLOCK_SIZE))
         self.position = CGPoint(x: x, y: y)
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: CGSize(width: BlockSprite.BLOCK_SIZE, height: BlockSprite.BLOCK_SIZE))
+        /*self.physicsBody = SKPhysicsBody(texture: self.texture!, size: CGSize(width: BlockSprite.BLOCK_SIZE, height: BlockSprite.BLOCK_SIZE))
         self.physicsBody?.restitution = 0.4 // Make Mario bounce when he lands
         self.physicsBody?.isDynamic = false // Stop block from moving
-        self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
+        self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!*/
+        self.physicsObj = PhysicsObject(withNode: self, mass: -1)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -15,7 +15,7 @@
 					<key>blockType</key>
 					<string>solid</string>
 					<key>blockX</key>
-					<integer>80</integer>
+					<integer>-350</integer>
 					<key>blockY</key>
 					<integer>75</integer>
 					<key>itemType</key>
@@ -47,7 +47,7 @@
 					<key>blockType</key>
 					<string>solid</string>
 					<key>blockX</key>
-					<integer>200</integer>
+					<integer>0</integer>
 					<key>blockY</key>
 					<integer>150</integer>
 					<key>itemType</key>

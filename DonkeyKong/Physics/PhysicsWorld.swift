@@ -18,7 +18,7 @@ struct ManifoldStruct {
 
 class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
-    var gravity : CGFloat = 9.8
+    static var GRAVITY : CGFloat = 98
     //private var timer : Timer?
     
     init() {
@@ -28,21 +28,33 @@ class PhysicsWorld {
     }
     
     func simulate(TimeSinceLastUpdate dt : TimeInterval) {
+        var collisions : [PhysicsCollision] = []
         for obj in physicsObjects {
-            integrateForces(forBody: obj.physicsBody, timeInterval: dt)
+            obj.updatePosition()
         }
         for i in 0...(physicsObjects.count-2) {
             for j in i+1...(physicsObjects.count-1) {
                 if (i != j) {
                     if (collision(withObject1: i, object2: j)) {
                         let m = overlapAABB(withObject1: i, object2: j)
-                        resolveCollision(withObject1: i, object2: j, usingManifold: m)
+                        collisions.append(m)
                     }
                 }
             }
         }
         for obj in physicsObjects {
-            integrateVelocity(forObj: obj, timeInterval: dt)
+            obj.integrateForces(timeInterval: dt)
+        }
+        for collision in collisions {
+            collision.resolve()
+        }
+        for obj in physicsObjects {
+            obj.integrateVelocity(timeInterval: dt)
+        }
+        for collision in collisions {
+            collision.positionalCorrection()
+        }
+        for obj in physicsObjects {
             obj.physicsBody.force = CGVector(dx: 0, dy: 0)
         }
     }
@@ -77,61 +89,8 @@ class PhysicsWorld {
             return true
         }
     }
-    
-    private func integrateForces(forBody b : PhysicsBody, timeInterval t : TimeInterval) {
-        if (b.mass == 0) {
-            return
-        }
-        b.velocity.dx = (b.force.dx/b.mass)*CGFloat(t/2.0)
-        b.velocity.dy = ((b.force.dy/b.mass) + gravity)*CGFloat(t/2.0)
-    }
-    
-    private func integrateVelocity(forObj obj : PhysicsObject, timeInterval t : TimeInterval) {
-        let b = obj.physicsBody
-        if (b.mass == 0) {
-            return
-        }
-        obj.setPosition(x: obj.getPosition().x + b.velocity.dx*CGFloat(t), y: obj.getPosition().y + b.velocity.dy*CGFloat(t))
-        integrateForces(forBody: b, timeInterval: t)
-    }
-    
-    private func resolveCollision(withObject1 i : Int, object2 j : Int, usingManifold m : ManifoldStruct) {
-        let a = physicsObjects[i].physicsBody
-        let b = physicsObjects[j].physicsBody
-        let normal = m.normal
         
-        let rv = CGVector(dx: b.velocity.dx-a.velocity.dx, dy: b.velocity.dy-a.velocity.dy)
-        
-        let vecAlongNormal = rv.dx*normal.dx + rv.dy*normal.dy
-        
-        if (vecAlongNormal > 0) {
-            return;
-        }
-        
-        let e = min(a.restitution, b.restitution)
-        
-        var aInvertedMass = CGFloat(1)
-        var bInvertedMass = CGFloat(1)
-        if (a.mass == -1) {
-            aInvertedMass = 0
-        } else {
-            aInvertedMass = 1/a.mass
-        }
-        if (b.mass == -1) {
-            bInvertedMass = 0
-        } else {
-            bInvertedMass = 1/b.mass
-        }
-        
-        var j = -(1 + e) * vecAlongNormal
-        j = j / (aInvertedMass + bInvertedMass)
-        
-        let impulse = CGVector(dx: j*normal.dx, dy: 0) //dy is 0 because we dont want any bounce vertically!
-        a.velocity = CGVector(dx: a.velocity.dx-((aInvertedMass)*impulse.dx), dy: a.velocity.dy-((aInvertedMass)*impulse.dy))
-        b.velocity = CGVector(dx: b.velocity.dx-((bInvertedMass)*impulse.dx), dy: b.velocity.dy-((bInvertedMass)*impulse.dy))
-    }
-    
-    private func overlapAABB(withObject1 i : Int, object2 j : Int) -> ManifoldStruct{
+    private func overlapAABB(withObject1 i : Int, object2 j : Int) -> PhysicsCollision{
         let a = physicsObjects[i].physicsBody
         let b = physicsObjects[j].physicsBody
         let aPos = physicsObjects[i].getPosition()
@@ -149,23 +108,23 @@ class PhysicsWorld {
             let yOverlap = aExtent+bExtent - abs(n.dy)
             
             if (yOverlap>0) {
-                if (xOverlap>yOverlap) {
+                if (xOverlap<yOverlap) {
                     if(n.dx<0) {
-                        m.normal = CGVector(dx: -1, dy: 0)
-                    } else {
                         m.normal = CGVector(dx: 1, dy: 0)
+                    } else {
+                        m.normal = CGVector(dx: -1, dy: 0)
                     }
                     m.penetration = xOverlap
                 } else {
                     if(n.dy<0) {
-                        m.normal = CGVector(dx: 0, dy: -1)
-                    } else {
                         m.normal = CGVector(dx: 0, dy: 1)
+                    } else {
+                        m.normal = CGVector(dx: 0, dy: -1)
                     }
                     m.penetration = yOverlap
                 }
             }
         }
-        return m
+        return PhysicsCollision(withManifold: m)
     }
 }
