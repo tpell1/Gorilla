@@ -32,4 +32,9 @@ class BlockSprite : SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    override func removeFromParent() {
+        super.removeFromParent()
+        physicsObj?.index = -1
+    }
 }

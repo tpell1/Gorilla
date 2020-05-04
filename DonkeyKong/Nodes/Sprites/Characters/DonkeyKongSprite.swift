@@ -55,4 +55,9 @@ class DonkeyKongSprite: SKSpriteNode {
     private func walk(to: CGPoint) {
         //TODO
     }
+    
+    override func removeFromParent() {
+        super.removeFromParent()
+        physicsObj?.index = -1
+    }
 }

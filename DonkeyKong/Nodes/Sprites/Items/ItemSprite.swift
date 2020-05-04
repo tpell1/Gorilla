@@ -45,6 +45,11 @@ class ItemSprite: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func removeFromParent() {
+        super.removeFromParent()
+        physicsObj?.index = -1
+    }
+    
     // Collision handler (if the item is node1)
     func collision(node: SKNode) {
         if node is MarioSprite {
@@ -59,16 +64,16 @@ class ItemSprite: SKSpriteNode {
     
     func reverseDirection() {
         direction = -direction
-        self.physicsBody?.velocity.dx = direction*(self.physicsBody?.velocity.dx ?? CGFloat(ItemSprite.ITEM_SPEED))
+        //self.physicsBody?.velocity.dx = direction*(self.physicsBody?.velocity.dx ?? CGFloat(ItemSprite.ITEM_SPEED))
     }
     
     
     func move() {
-        self.physicsBody?.velocity = CGVector(dx: ItemSprite.ITEM_SPEED, dy: 0)
+        //self.physicsBody?.velocity = CGVector(dx: ItemSprite.ITEM_SPEED, dy: 0)
     }
     
 	func startMove(direction dir : CGFloat) {
         direction = dir
-        self.physicsBody?.velocity = CGVector(dx: CGFloat(ItemSprite.ITEM_SPEED)*direction, dy: 0)
+        //self.physicsBody?.velocity = CGVector(dx: CGFloat(ItemSprite.ITEM_SPEED)*direction, dy: 0)
     }
 }

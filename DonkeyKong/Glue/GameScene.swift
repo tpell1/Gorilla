@@ -44,11 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
 
-        let physicsHandler = PhysicsHandler()
         gameStatus = GameStatus.PLAYING
-        self.addChild(physicsHandler)
-        physicsWorld.contactDelegate = physicsHandler
-        physics = PhysicsWorld()
     }
 
     // Called after sceneDidLoad(), allows config to be read and the levels list
@@ -94,16 +90,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Loads a level into the scene
     func setLevel(index: Int) {
+        let physicsHandler = PhysicsHandler()
+        physics = PhysicsWorld()
+        physics?.setCollisionHandler(asObj: physicsHandler)
+        
         levelIndex = index
         self.level = levelArray?[index]
         level?.setFrame(frameRect: frame)
         level?.addChildren()
         marioSprite?.move(toParent: level!)
+    
         for child in level!.children {
+            if child is EndLevelNode {
+                let endLevel = child as! EndLevelNode
+                endLevel.setScene(scene: self)
+            }
             if child.physicsObj != nil {
                 physics?.addObject(object: child.physicsObj!)
             }
-            print(child.physicsObj?.index)
         }
         //physics?.addNodes(collection: level!.children)
         self.addChild(level!)
@@ -113,6 +117,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timer = Timer(timeInterval: 0.05, target: self, selector: #selector(self.timerUpdate), userInfo: nil, repeats: true)
             RunLoop.current.add(timer!, forMode: .commonModes)
         }
+    }
+    
+    func addNodeToPhysics(node : SKNode) {
+        print("added Item")
+        physics?.addObject(object: node.physicsObj!)
     }
     
     @objc func timerUpdate() {

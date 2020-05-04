@@ -50,7 +50,6 @@ class LevelReader: LevelScene {
         if (presetArray.count > 0) {
             for i in 0...(presetArray.count-1) {
                 self.addChild(presetArray[i])
-                presetArray[i].moveAllChildren(toNode: self)
                 
                 /*for j in 0...(presetArray[i].children.count-1) {
                     presetArray[i].children[j].move(toParent: (self.parent)!)
@@ -62,16 +61,24 @@ class LevelReader: LevelScene {
         ground.position = CGPoint(x: rect.midX, y: rect.minY)
         ground.physicsObj = PhysicsObject(withNode: ground, mass: -1)
         
-        /*
-        ground?.physicsBody = SKPhysicsBody(edgeChainFrom: (ground?.path!)!)
-        ground?.physicsBody?.restitution = 0.2
-        ground?.physicsBody?.isDynamic = false
-        */
-        
-        
-        
         ground.name = "ground"
         self.addChild(ground)
+    }
+    
+    override func addChild(_ node: SKNode) {
+        if node is PresetNode {
+            super.addChild(node)
+            let preset = node as! PresetNode
+            preset.moveAllChildren(toNode: self)
+        } else if node is ItemSprite {
+            if self.scene is GameScene {
+                let gameScene = self.scene as! GameScene
+                gameScene.addNodeToPhysics(node: node)
+            }
+            super.addChild(node)
+        } else {
+            super.addChild(node)
+        }
     }
     
     override func setFrame(frameRect: CGRect) {

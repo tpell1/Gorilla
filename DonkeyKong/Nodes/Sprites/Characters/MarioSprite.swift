@@ -60,22 +60,19 @@ class MarioSprite : SKSpriteNode {
     }
     
     // Called by game scene when Mario is node1
-    func collision(contact: SKPhysicsContact) {
-        if (contact.bodyB.node != nil) {
-            let node2 = contact.bodyB.node!
+    func collision(contact: PhysicsCollision) {
+        if (contact.manifold.b.node != nil) {
+            let node2 = contact.manifold.a.node
             if node2 is BreakableBlockSprite { // Break block
                 if(((self.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-20)) {
                     let block = node2 as! BreakableBlockSprite
-                }
-                /*if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) { // Postive velocities are negative?
-                    let block = node2 as! BreakableBlockSprite
                     block.breakBlock()
-                }*/
+                }
             } else if node2 is ItemSprite { // Use item and then remove item
                 let item = node2 as! ItemSprite
                 item.collision(node: self)
             } else if node2 is ItemBlockSprite { // Spawn an item
-                if((self.physicsBody?.velocity.dy)! < CGFloat(-20)) {
+                if((self.physicsObj?.physicsBody.velocity.dy)! < CGFloat(-20)) {
                     let block = node2 as! ItemBlockSprite
                     block.spawnItem()
                 }
@@ -101,12 +98,12 @@ class MarioSprite : SKSpriteNode {
                 self.run(playJumpSound)
             }
             jumpCount += 1
-            self.physicsObj?.applyForce(dx: 0, dy: 30000)
+            self.physicsObj?.applyForce(dx: 0, dy: 50000)
         } else if (jumpCount == 1 && (physicsObj?.verticalVelocityIsZero())!) {
             if (jumpSound) {
                 self.run(playJumpSound)
             }
-            self.physicsObj?.applyImpulse(dx: 0, dy: 300)
+            self.physicsObj?.applyImpulse(dx: 0, dy: 40000)
             jumpCount += 1
         }
         
@@ -135,6 +132,11 @@ class MarioSprite : SKSpriteNode {
         let fire = FireEntityItem(x: getPositionInScene().x, y: getPositionInScene().y)
         self.addChild(fire)
         fire.shoot(inDirection: dir, toNode: (self.parent)!)
+    }
+    
+    override func removeFromParent() {
+        super.removeFromParent()
+        physicsObj?.index = -1
     }
     
     // Kill Mario and restart level

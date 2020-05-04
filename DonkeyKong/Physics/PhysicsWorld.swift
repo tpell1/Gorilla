@@ -18,6 +18,7 @@ struct ManifoldStruct {
 
 class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
+    private var handler : PhysicsCollisionHandler?
     static var GRAVITY : CGFloat = 2600
     static var DELTA_T : Double = 0.01
     //private var timer : Timer?
@@ -28,8 +29,17 @@ class PhysicsWorld {
     
     func simulate(TimeSinceLastUpdate dt : TimeInterval) {
         var collisions : [PhysicsCollision] = []
+        var i=0
         for obj in physicsObjects {
-            obj.updatePosition()
+            if (obj.index == -1) {
+                removeObject(ObjectIndex: i)
+            } else {
+                if (obj.node.children.count > 0) {
+                    let children = obj.node.children
+                }
+                obj.updatePosition()
+            }
+            i += 1
         }
         for i in 0...(physicsObjects.count-2) {
             for j in i+1...(physicsObjects.count-1) {
@@ -52,6 +62,7 @@ class PhysicsWorld {
         }
         for collision in collisions {
             collision.positionalCorrection()
+            handler?.handleCollision(collision: collision)
         }
         for obj in physicsObjects {
             obj.physicsBody.force = CGVector(dx: 0, dy: 0)
@@ -65,14 +76,25 @@ class PhysicsWorld {
         return i
     }
     
+    func setCollisionHandler(asObj obj : PhysicsCollisionHandler) {
+        handler = obj
+    }
+    
     func addNodes(collection : [SKNode]) {
         for i in 0...collection.count-1 {
             physicsObjects.append(collection[i].physicsObj!)
         }
     }
     
-    func removeObject(Object obj : PhysicsObject) {
-        physicsObjects.remove(at: obj.index)
+    func removeObject(ObjectIndex obj : Int) {
+        physicsObjects.remove(at: obj)
+        updateIndexes()
+    }
+    
+    private func updateIndexes() {
+        for i in 0...physicsObjects.count-1 {
+            physicsObjects[i].index = i
+        }
     }
     
     private func collision(withObject1 i : Int, object2 j : Int) -> Bool {

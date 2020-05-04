@@ -9,6 +9,10 @@
 import Foundation
 import SpriteKit
 
+protocol PhysicsCollisionHandler {
+    func handleCollision(collision : PhysicsCollision)
+}
+
 class PhysicsCollision {
     var manifold : ManifoldStruct
     

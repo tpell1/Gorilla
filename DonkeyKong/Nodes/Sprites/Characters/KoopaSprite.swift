@@ -65,7 +65,7 @@ class KoopaSprite: SKSpriteNode {
     
     override func removeFromParent() {
         super.removeFromParent()
-        timer?.invalidate() // Memory management
+        physicsObj?.index = -1
     }
     
     func timerWalk(timer: Timer) {
@@ -79,12 +79,11 @@ class KoopaSprite: SKSpriteNode {
         iteration = iteration + 1
     }
     
-    func collision(contact: SKPhysicsContact) {
-        if let node = contact.bodyB.node {
-            if (node is MarioSprite) {
-                let mario = contact.bodyB.node as! MarioSprite
-                mario.shrink()
-            }
+    func collision(contact: PhysicsCollision) {
+        let node = contact.manifold.a.node
+        if (node is MarioSprite) {
+            let mario = contact.manifold.a.node as! MarioSprite
+            mario.shrink()
         }
     }
     
