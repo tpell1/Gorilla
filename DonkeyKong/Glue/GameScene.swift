@@ -290,7 +290,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Restart level when mario is killed
     func restartLevel(lives: Int) {
         marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
-
+        addNodeToPhysics(node: marioSprite!)
         self.addChild((marioSprite)!) // Spawn mario
         
         // Update config and then write to file

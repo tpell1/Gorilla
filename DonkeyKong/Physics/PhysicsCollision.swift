@@ -9,17 +9,31 @@
 import Foundation
 import SpriteKit
 
+/**
+ Protocol making sure that the class designated to handle collisions can do so.
+ */
 protocol PhysicsCollisionHandler {
     func handleCollision(collision : PhysicsCollision)
 }
 
+/**
+ Represents a collision between two objects.
+ */
 class PhysicsCollision {
     var manifold : ManifoldStruct
     
+    /**
+     initialises the object with the properties required
+     - parameters:
+        - m: The manifold that holds all the properties of the collision
+     */
     init(withManifold m : ManifoldStruct) {
         manifold = m
     }
     
+    /**
+     Applies the normal force to the object and prevents it from vibrating.
+     */
     func positionalCorrection() {
         let percent = CGFloat(0.8)
         let slop = CGFloat(0.01)
@@ -44,16 +58,15 @@ class PhysicsCollision {
         manifold.b.setPosition(x: manifold.b.getPosition().x/*-(bInvertedMass*correction*manifold.normal.dx)*/, y: manifold.b.getPosition().y+(bInvertedMass*correction*manifold.normal.dy))
     }
     
+    /**
+     Resolve the collision.
+     
+     Calculates the impulse required to prevent the objects from sinking into each other.
+     */
     func resolve() {
         let a = manifold.a.physicsBody
         let b = manifold.b.physicsBody
         let normal = manifold.normal
-        
-        if (manifold.a.node is MarioSprite && manifold.b.node.name == "ground") {
-            print("collision")
-        } else if (manifold.a.node.name == "ground" && manifold.b.node is MarioSprite) {
-            print("collision")
-        }
         
         let rv = CGVector(dx: b.velocity.dx-a.velocity.dx, dy: b.velocity.dy-a.velocity.dy)
         

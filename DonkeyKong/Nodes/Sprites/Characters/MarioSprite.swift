@@ -14,6 +14,11 @@
 import Foundation
 import SpriteKit
 
+/**
+ Represents the main character of the game.
+ 
+ Contains parts of the collision logic, delegated to by `PhysicsHandler`. And also has the game logic which allows mario to move, jump, and die.
+ */
 class MarioSprite : SKSpriteNode {
     private var jumpCount = 0
     private var lives = 1
@@ -26,29 +31,31 @@ class MarioSprite : SKSpriteNode {
     private var jumpSound = true
     static var DEFAULT_MOVE_SPEED: CGFloat = 100
     
-    // Default constructor, creates a main character with one life
+    /**
+     Default constructor, creates a main character with one life
+     - parameters:
+        - x: The x coordinate to spawn Mario
+        - y: The y coordinate to spawn Mario
+     */
     init(x: CGFloat, y: CGFloat) {
         let texture = SKTexture(imageNamed: "mario.png") // Use the mario texture
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
         
-        //////// SpriteKit Physics //////////
-        /*
-        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
-        self.name = "Mario"
-        self.physicsBody?.friction = 0
-        self.physicsBody?.linearDamping = 0
-        */
         ////////// My Physics /////////////
         physicsObj = PhysicsObject(withNode: self)
         
         jumpSound = ConfigData.read().SoundOn
     }
     
-    // Constructor which gives choice of lives for Mario to be instantiated with
+    /**
+     Constructor which gives choice of lives for Mario to be instantiated with
+    - parameters:
+        - x: The x coordinate to spawn Mario
+        - y: The y coordinate to spawn Mario
+        - lives: The number of lives that Mario has
+     */
     convenience init(x: CGFloat, y: CGFloat, lives: Int) {
         self.init(x: x, y: y)
 
@@ -59,7 +66,12 @@ class MarioSprite : SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
-    // Called by game scene when Mario is node1
+    /**
+    Called by game scene when Mario is node1
+     
+     - parameters:
+        - contact: The collision object
+     */
     func collision(contact: PhysicsCollision) {
         if (contact.manifold.b.node != nil) {
             let node2 = contact.manifold.a.node
@@ -85,7 +97,11 @@ class MarioSprite : SKSpriteNode {
         }
     }
     
-    // Allows single and double jumps
+    /**
+     Allows Mario to jump.
+     
+     Can do single and double jumps
+     */
     func jump() {
         let playJumpSound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
         //print(String(describing: self.physicsBody?.velocity.dy))
@@ -106,27 +122,13 @@ class MarioSprite : SKSpriteNode {
             self.physicsObj?.applyImpulse(dx: 0, dy: 40000)
             jumpCount += 1
         }
-        
-        /* SpriteKit code
-        if ((self.physicsBody?.velocity.dy.isLessThanOrEqualTo(CGFloat(0.1)))!) {
-            jumpCount = 0
-        }
-        if (jumpCount == 0 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
-            if (jumpSound) {
-                self.run(playJumpSound)
-            }
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
-            jumpCount += 1
-        } else if (jumpCount == 1 && (self.physicsBody?.velocity.dy)! >= CGFloat(0)) {
-            if (jumpSound) {
-                self.run(playJumpSound)
-            }
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
-            jumpCount += 1
-        }
-         */
     }
     
+    /**
+     Contains the logic for mario to shoot fire balls
+     - parameters:
+        - dir: The direction to shoot the fireballs
+     */
     func shoot(direction dir: CGVector) {
         
         let fire = FireEntityItem(x: getPositionInScene().x, y: getPositionInScene().y)
@@ -134,12 +136,15 @@ class MarioSprite : SKSpriteNode {
         fire.shoot(inDirection: dir, toNode: (self.parent)!)
     }
     
+    // Removes object from Physics World as well
     override func removeFromParent() {
         super.removeFromParent()
         physicsObj?.index = -1
     }
     
-    // Kill Mario and restart level
+    /**
+     Kills Mario and restarts level of game
+     */
     func die() {
         lives -= 1
         if self.scene is GameScene {
@@ -149,10 +154,17 @@ class MarioSprite : SKSpriteNode {
         self.removeFromParent()
     }
     
+    /**
+     Get the position of Mario in the scene
+     - returns: `CGPoint` - The position of Mario
+     */
     func getPositionInScene() -> CGPoint {
         return self.convert(self.position, to: scene!)
     }
     
+    /**
+     Change Mario into fire costume
+     */
     func fireItem() {
         grow()
         self.texture = SKTexture(imageNamed: "marioFire.png")
@@ -160,11 +172,19 @@ class MarioSprite : SKSpriteNode {
         shootable = true
     }
     
+    /**
+     Grow Mario
+     */
     func grow() {
         scale = 2
         reDo()
     }
     
+    /**
+     Shrink Mario.
+     
+     Shrinks if Mario is scaled up, otherwise Mario dies.
+     */
     func shrink() {
         scale -= 1
         if (scale < 1) {
@@ -173,14 +193,27 @@ class MarioSprite : SKSpriteNode {
         reDo()
     }
     
+    /**
+     Increase the lives of Mario
+     - parameters:
+        - amountToInc: The amount to increase lives by
+     */
     func incLives(amountToInc: Int) {
         lives += amountToInc
     }
     
+    /**
+     Get the number of lives that Mario has left.
+      - returns: `Int` - The number of lives.
+     */
     func getLives() -> Int {
         return lives
     }
     
+    /**
+     Get the speed of the Mario object
+     - returns: `CGFloat` - The speed of Mario
+     */
     func getSpeed() -> CGFloat {
         return MarioSprite.DEFAULT_MOVE_SPEED * moveSpeedMultiplier
     }

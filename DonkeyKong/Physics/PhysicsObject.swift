@@ -23,6 +23,9 @@ extension SKNode {
     }
 }
 
+/**
+ Class representing the mathematical properties of the physics object
+ */
 class PhysicsBody {
     var min : CGPoint
     var max : CGPoint
@@ -40,8 +43,11 @@ class PhysicsBody {
     }
 }
 
+/**
+ Class representing an object in the physics world
+ */
 class PhysicsObject {
-    var index : Int
+    var index : Int /// The index of the object in the collection of `PhysicsObjects` in `PhysicsWorld`
     var node : SKNode
     var physicsBody : PhysicsBody
     var isObjectAwake = true
@@ -61,20 +67,38 @@ class PhysicsObject {
         physicsBody = PhysicsBody(min: min, max: max, mass: mass)
     }
     
+    /**
+     Set the index of the object in the `PhysicsWorld` collection of objects
+     - parameters:
+        - i : The index to set
+     */
     func setIndex(index i : Int) {
         index = i
     }
     
+    /**
+     Get the position of the node
+     - returns: `CGPoint`: The current location
+     */
     func getPosition() -> CGPoint {
         return node.position
     }
     
+    /**
+     Updates the bounds of the physics object using the nodes position
+     */
     func updatePosition() {
         let boundingBox = node.calculateAccumulatedFrame()
         physicsBody.min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
         physicsBody.max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
     }
     
+    /**
+     Sets the position of the node
+     - parameters:
+        - x: The x coordinate
+        - y: The y coordinate
+     */
     func setPosition(x: CGFloat, y: CGFloat) {
         previousPos = node.position
         node.position = CGPoint(x: x, y: y)
@@ -86,6 +110,10 @@ class PhysicsObject {
         physicsBody.max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
     }
     
+    /**
+     Determines if the objects functional velocity is zero
+     - returns: `Bool`
+     */
     func velocityIsZero() -> Bool {
         let dx = node.position.x - previousPos.x
         let dy = node.position.y - previousPos.y
@@ -96,8 +124,8 @@ class PhysicsObject {
         return false
     }
     
-    /// VerticalVelocityIsZero()
-    /// -return whether a physics object is functionally zero
+    ///  whether a physics object's vertical velocity is functionally zero
+    /// - returns: `Bool`
     func verticalVelocityIsZero() -> Bool {
         let dy = node.position.y - previousPos.y
         if (abs(dy) > 0.3) {
@@ -106,16 +134,35 @@ class PhysicsObject {
         return true
     }
     
+    /**
+     Apply an impulse to the PhysicsObject
+     - parameters:
+        - dx: the horizontal component of the impulse
+        - dy: the vertical component of the impulse
+     */
     func applyImpulse(dx: CGFloat, dy : CGFloat) {
         physicsBody.velocity.dx += dx/physicsBody.mass
         physicsBody.velocity.dy += dy/physicsBody.mass
     }
     
+    /**
+     Apply a force to the PhysicsObject
+     - parameters:
+        - dx: The horizontal component of the force applied
+        - dy: The vertical componenent of the force applied
+     */
     func applyForce(dx: CGFloat, dy: CGFloat) {
         physicsBody.force.dx += dx
         physicsBody.force.dy += dy
     }
     
+    /**
+     Integrate the forces applied to the object in this current simulation round.
+     
+     This converts forces into velocities, it also adds gravity
+     - parameters:
+        - t: The interval of time between the last round of simulation.
+     */
     func integrateForces(timeInterval t : TimeInterval) {
         if (physicsBody.mass == -1) {
             return
@@ -124,28 +171,21 @@ class PhysicsObject {
             print(physicsBody.force)
         }
         physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat()
-        /*if (self.verticalVelocityIsZero()) {
-            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass))*CGFloat(t)
-        } else {*/
+
         physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t)
-        //}
     }
     
+    /**
+     Integrate the objects current velocities to calculate where the objects next position should be.
+     - parameters:
+        - t: The interval of time between now and the last round of simulation.
+     */
     func integrateVelocity(timeInterval t : TimeInterval) {
         let b = physicsBody
         if (b.mass == -1) {
             return
         }
-        /*if(isObjectAwake == true) {
-            if (abs(b.velocity.dy/10) < 2.8 )
-            {
-                b.velocity.dy = 0.0;
-                isObjectAwake = false
-            }
-            else
-            {*/
         setPosition(x: getPosition().x + b.velocity.dx*CGFloat(t), y: getPosition().y+b.velocity.dy*CGFloat(t))
         integrateForces(timeInterval: t)
-            //}
     }
 }

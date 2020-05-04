@@ -9,34 +9,35 @@
 import Foundation
 import SpriteKit
 
-// List of all item types
+/**
+ The type of the item
+ */
 enum ItemType: String {
 	case STAR, FIRE, ONEUP, MUSHROOM, SHELL
 }
 
+/**
+ Super class for all Items, also is by default `ItemType.ONEUP`
+ */
 class ItemSprite: SKSpriteNode {
     internal var texture1 : SKTexture?
     internal var itemUsed : Bool = false
     static var ITEM_SPEED = 50
     internal var direction : CGFloat = 1
     
+    /**
+     Constructor for `ItemSprite`
+     - parameters:
+        - x: The x coordinate of the instance
+        - y: The y coordinate of the instance
+        - itemType: the type of item
+     */
     init(x: CGFloat, y: CGFloat, itemType: ItemType) {
         texture1 = SKTexture(imageNamed: (itemType.rawValue + ".png"))
         super.init(texture: texture1, color: UIColor.clear, size: (texture1?.size())!)
         super.scale(to: CGSize(width: 20, height: 20))
         self.position = CGPoint(x: x, y: y)
         
-        ////////// SpriteKit Physics ////////////////
-        /*
-        self.physicsBody = SKPhysicsBody(texture: (self.texture1)!, size: CGSize(width: CGFloat(20.0), height: CGFloat(20.0)))
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
-		self.physicsBody?.affectedByGravity = true
-        self.physicsBody?.linearDamping = 0 // Item should not slow down
-        self.physicsBody?.friction = 0 // Item should not slow down
-		self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!
-        */
-        //////// My Physics ////////////
         physicsObj = PhysicsObject(withNode: self)
 
     }
