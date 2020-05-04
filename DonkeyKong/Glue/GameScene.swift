@@ -25,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     internal var leftArrow : SKShapeNode?
     internal var rightArrow : SKShapeNode?
+    private var jumpBtn : SKShapeNode?
     internal var livesLbl : SKLabelNode?
     private var levelLbl : SKLabelNode?
     private var pauseBtn : SKShapeNode?
@@ -62,6 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         livesLbl = self.childNode(withName: "//livesLbl") as? SKLabelNode
         nameNode = self.childNode(withName: "//node")
         pauseBtn = self.childNode(withName: "//pauseBtn") as? SKShapeNode
+        jumpBtn = self.childNode(withName: "//jumpBtn") as? SKShapeNode
         
         print("Frame x: " + String(describing: frame.minX))
         
@@ -176,7 +178,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Called when the user presses down on screen
     func touchDown(atPoint pos : CGPoint) {
         if (gameStatus == GameStatus.PLAYING) {
-            if (marioSprite?.contains(pos))! {
+            if (jumpBtn?.contains(pos))! {
                 marioSprite?.jump()
             } else if (leftArrow?.contains(pos))! {
                 //marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
@@ -326,6 +328,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         livesLbl?.position.x = frame.minX + 80
         levelLbl?.position.x = frame.midX
         pauseBtn?.position.x = frame.minX + 30
+        jumpBtn?.position.x = frame.midX
         //if (gameStatus == GameStatus.PAUSED) {
             pauseNode?.update(phoneFrame: frame)
         //}

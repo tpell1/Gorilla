@@ -21,6 +21,56 @@
 					<key>itemType</key>
 					<string></string>
 				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>solid</string>
+					<key>blockX</key>
+					<integer>-310</integer>
+					<key>blockY</key>
+					<integer>75</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>breakable</string>
+					<key>blockX</key>
+					<integer>-270</integer>
+					<key>blockY</key>
+					<integer>75</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>breakable</string>
+					<key>blockX</key>
+					<integer>-230</integer>
+					<key>blockY</key>
+					<integer>75</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>item</string>
+					<key>blockX</key>
+					<integer>-190</integer>
+					<key>blockY</key>
+					<integer>75</integer>
+					<key>itemType</key>
+					<string>oneup</string>
+				</dict>
+				<dict>
+					<key>blockType</key>
+					<string>solid</string>
+					<key>blockX</key>
+					<integer>-350</integer>
+					<key>blockY</key>
+					<integer>75</integer>
+					<key>itemType</key>
+					<string></string>
+				</dict>
 			</array>
 			<key>presets</key>
 			<array>
@@ -30,7 +80,7 @@
 					<key>presetX</key>
 					<integer>400</integer>
 					<key>presetY</key>
-					<integer>0</integer>
+					<integer>-10</integer>
 					<key>presetSize</key>
 					<integer>3</integer>
 				</dict>
@@ -49,7 +99,7 @@
 					<key>blockX</key>
 					<integer>0</integer>
 					<key>blockY</key>
-					<integer>150</integer>
+					<integer>170</integer>
 					<key>itemType</key>
 					<string></string>
 				</dict>
@@ -59,9 +109,9 @@
 					<key>blockX</key>
 					<integer>160</integer>
 					<key>blockY</key>
-					<integer>150</integer>
+					<integer>170</integer>
 					<key>itemType</key>
-					<string></string>
+					<string>oneup</string>
 				</dict>
 				<dict>
 					<key>blockType</key>
@@ -112,7 +162,7 @@
 					<key>presetX</key>
 					<integer>400</integer>
 					<key>presetY</key>
-					<integer>0</integer>
+					<integer>-10</integer>
 					<key>presetSize</key>
 					<integer>3</integer>
 				</dict>
@@ -174,7 +224,7 @@
 					<key>presetX</key>
 					<integer>400</integer>
 					<key>presetY</key>
-					<integer>20</integer>
+					<integer>-10</integer>
 					<key>presetSize</key>
 					<integer>4</integer>
 				</dict>
@@ -255,7 +305,7 @@
 					<key>presetX</key>
 					<integer>400</integer>
 					<key>presetY</key>
-					<integer>20</integer>
+					<integer>-10</integer>
 					<key>presetSize</key>
 					<integer>4</integer>
 				</dict>

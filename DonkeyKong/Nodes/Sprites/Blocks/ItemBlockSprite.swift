@@ -36,9 +36,9 @@ class ItemBlockSprite: BlockSprite {
 	func spawnItem() -> ItemSprite? {
         if (!itemUsed) {
             itemUsed = true
-            let item = ItemSprite(x: self.position.x, y: self.position.y+30, itemType: itemType)
+            let item = ItemSprite(x: self.position.x, y: self.position.y+20, itemType: itemType)
             self.parent?.addChild(item)
-            let riseUpAction = SKAction.move(to: CGPoint(x: self.position.x, y: self.position.y+50), duration: 1.5)
+            let riseUpAction = SKAction.move(to: CGPoint(x: self.position.x, y: self.position.y+30), duration: 1.5)
             item.run(riseUpAction, completion: item.move)
             return item
         }

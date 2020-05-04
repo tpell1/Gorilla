@@ -24,8 +24,8 @@ class MarioSprite : SKSpriteNode {
     private var lives = 1
     private var moveSpeedMultiplier: CGFloat = 1
     private var health = 1
-    private var width = 50
-    private var height = 60
+    private var width = 45
+    private var height = 55
     private var scale = 1
     private var shootable = true
     private var jumpSound = true
@@ -114,8 +114,8 @@ class MarioSprite : SKSpriteNode {
                 self.run(playJumpSound)
             }
             jumpCount += 1
-            self.physicsObj?.applyForce(dx: 0, dy: 50000)
-        } else if (jumpCount == 1 && (physicsObj?.verticalVelocityIsZero())!) {
+            self.physicsObj?.applyForce(dx: 0, dy: 65000)
+        } else if (jumpCount == 1 && ((physicsObj?.physicsBody.velocity.dy)! >= CGFloat(0))) {
             if (jumpSound) {
                 self.run(playJumpSound)
             }

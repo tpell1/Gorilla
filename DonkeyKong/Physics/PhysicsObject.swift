@@ -128,7 +128,7 @@ class PhysicsObject {
     /// - returns: `Bool`
     func verticalVelocityIsZero() -> Bool {
         let dy = node.position.y - previousPos.y
-        if (abs(dy) > 0.3) {
+        if (abs(dy) > 0.01) {
             return false
         }
         return true
@@ -170,7 +170,7 @@ class PhysicsObject {
         if (node is MarioSprite) {
             print(physicsBody.force)
         }
-        physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat()
+        physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat(t)
 
         physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t)
     }

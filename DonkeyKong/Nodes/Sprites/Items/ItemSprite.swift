@@ -71,6 +71,7 @@ class ItemSprite: SKSpriteNode {
     
     func move() {
         //self.physicsBody?.velocity = CGVector(dx: ItemSprite.ITEM_SPEED, dy: 0)
+        physicsObj?.applyForce(dx: 7000, dy: 0)
     }
     
 	func startMove(direction dir : CGFloat) {
