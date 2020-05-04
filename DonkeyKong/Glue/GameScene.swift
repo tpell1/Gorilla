@@ -261,8 +261,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt -= Double(PhysicsWorld.DELTA_T)
         }
         
-        
-        
         // Check if Mario is below ground level
         if ((marioSprite?.position.y)! < frame.minY) {
             marioSprite?.die()

@@ -44,6 +44,7 @@ class PhysicsObject {
     var index : Int
     var node : SKNode
     var physicsBody : PhysicsBody
+    var isObjectAwake = true
     private var previousPos : CGPoint
     
     convenience init(withNode node: SKNode) {
@@ -78,7 +79,7 @@ class PhysicsObject {
         previousPos = node.position
         node.position = CGPoint(x: x, y: y)
         if (node is MarioSprite) {
-            print(node.position)
+            //print(node.position)
         }
         let boundingBox = node.calculateAccumulatedFrame()
         physicsBody.min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
@@ -93,6 +94,17 @@ class PhysicsObject {
             return true
         }
         return false
+    }
+    
+    /// VerticalVelocityIsZero()
+    /// -return whether a physics object is functionally zero
+    func verticalVelocityIsZero() -> Bool {
+        let dy = node.position.y - previousPos.y
+        print(dy)
+        if (abs(dy) > 0.3 || abs(dy) < 0.00001) {
+            return false
+        }
+        return true
     }
     
     func applyImpulse(dx: CGFloat, dy : CGFloat) {
@@ -110,14 +122,14 @@ class PhysicsObject {
             return
         }
         if (node is MarioSprite) {
-            print(physicsBody.force)
+            //print(physicsBody.force)
         }
-        physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat(t/2.0)
-        if (self.velocityIsZero()) {
-            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass))
-        } else {
-            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t/2.0)
-        }
+        physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat()
+        /*if (self.verticalVelocityIsZero()) {
+            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass))*CGFloat(t)
+        } else {*/
+        physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t)
+        //}
     }
     
     func integrateVelocity(timeInterval t : TimeInterval) {
@@ -125,7 +137,16 @@ class PhysicsObject {
         if (b.mass == -1) {
             return
         }
-        setPosition(x: getPosition().x + b.velocity.dx*CGFloat(t), y: getPosition().y + b.velocity.dy*CGFloat(t))
+        /*if(isObjectAwake == true) {
+            if (abs(b.velocity.dy/10) < 2.8 )
+            {
+                b.velocity.dy = 0.0;
+                isObjectAwake = false
+            }
+            else
+            {*/
+        setPosition(x: getPosition().x + b.velocity.dx*CGFloat(t), y: getPosition().y+b.velocity.dy*CGFloat(t))
         integrateForces(timeInterval: t)
+            //}
     }
 }

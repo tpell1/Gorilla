@@ -18,13 +18,11 @@ struct ManifoldStruct {
 
 class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
-    static var GRAVITY : CGFloat = 400
+    static var GRAVITY : CGFloat = 2600
     static var DELTA_T : Double = 0.01
     //private var timer : Timer?
     
     init() {
-        /*timer = Timer(timeInterval: 0.03, target: self, selector: #selector(self.updatePhysics), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer!, forMode: .commonModes)*/
         physicsObjects = []
     }
     
