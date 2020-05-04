@@ -17,8 +17,8 @@ class PhysicsCollision {
     }
     
     func positionalCorrection() {
-        let percent = CGFloat(1.1)
-        let slop = CGFloat(0.2)
+        let percent = CGFloat(0.8)
+        let slop = CGFloat(0.1)
         var aInvertedMass = CGFloat(1)
         var bInvertedMass = CGFloat(1)
         if (manifold.a.physicsBody.mass == -1) {
@@ -35,10 +35,9 @@ class PhysicsCollision {
         if (aInvertedMass == 0 && bInvertedMass == 0) {
             return
         }
-        
-        let correction = (max(manifold.penetration - slop, 0.0) / (aInvertedMass+bInvertedMass)) * percent
+        let correction = (max(manifold.penetration-slop, 0.0) / (aInvertedMass+bInvertedMass)) * percent
         manifold.a.setPosition(x: manifold.a.getPosition().x/*-(aInvertedMass*correction*manifold.normal.dx)*/, y: manifold.a.getPosition().y-(aInvertedMass*correction*manifold.normal.dy))
-        manifold.b.setPosition(x: manifold.b.getPosition().x/*-(bInvertedMass*correction*manifold.normal.dx)*/, y: manifold.b.getPosition().y-(bInvertedMass*correction*manifold.normal.dy))
+        manifold.b.setPosition(x: manifold.b.getPosition().x/*-(bInvertedMass*correction*manifold.normal.dx)*/, y: manifold.b.getPosition().y+(bInvertedMass*correction*manifold.normal.dy))
     }
     
     func resolve() {
@@ -85,7 +84,7 @@ class PhysicsCollision {
         
         let impulse = CGVector(dx: j*normal.dx, dy: 0) //dy is 0 because we dont want any bounce vertically!
         a.velocity = CGVector(dx: a.velocity.dx-((aInvertedMass)*impulse.dx), dy: a.velocity.dy-((aInvertedMass)*impulse.dy))
-        b.velocity = CGVector(dx: b.velocity.dx-((bInvertedMass)*impulse.dx), dy: b.velocity.dy-((bInvertedMass)*impulse.dy))
+        b.velocity = CGVector(dx: b.velocity.dx+((bInvertedMass)*impulse.dx), dy: b.velocity.dy+((bInvertedMass)*impulse.dy))
         if (a.velocity.dx.isNaN) {
             print(a.velocity)
         }

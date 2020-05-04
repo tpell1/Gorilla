@@ -251,13 +251,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         // Calculate time since last update
-        let dt = currentTime - self.lastUpdateTime
+        var dt = currentTime - self.lastUpdateTime
         if ((level?.isCompleted())! && safetyBool) {
             safetyBool = false
             loadNextLevel()
         }
+        while(dt > Double(PhysicsWorld.DELTA_T)) {
+            physics?.simulate(TimeSinceLastUpdate: PhysicsWorld.DELTA_T)
+            dt -= Double(PhysicsWorld.DELTA_T)
+        }
         
-        physics?.simulate(TimeSinceLastUpdate: dt)
+        
         
         // Check if Mario is below ground level
         if ((marioSprite?.position.y)! < frame.minY) {

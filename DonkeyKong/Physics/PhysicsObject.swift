@@ -113,7 +113,11 @@ class PhysicsObject {
             print(physicsBody.force)
         }
         physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat(t/2.0)
-        physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t/2.0)
+        if (self.velocityIsZero()) {
+            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass))
+        } else {
+            physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t/2.0)
+        }
     }
     
     func integrateVelocity(timeInterval t : TimeInterval) {

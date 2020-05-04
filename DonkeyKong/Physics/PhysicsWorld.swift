@@ -18,7 +18,8 @@ struct ManifoldStruct {
 
 class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
-    static var GRAVITY : CGFloat = 98
+    static var GRAVITY : CGFloat = 400
+    static var DELTA_T : Double = 0.01
     //private var timer : Timer?
     
     init() {
@@ -109,14 +110,14 @@ class PhysicsWorld {
             
             if (yOverlap>0) {
                 if (xOverlap<yOverlap) {
-                    if(n.dx<0) {
+                    if(n.dx>0) {
                         m.normal = CGVector(dx: 1, dy: 0)
                     } else {
                         m.normal = CGVector(dx: -1, dy: 0)
                     }
                     m.penetration = xOverlap
                 } else {
-                    if(n.dy<0) {
+                    if(n.dy>0) {
                         m.normal = CGVector(dx: 0, dy: 1)
                     } else {
                         m.normal = CGVector(dx: 0, dy: -1)
