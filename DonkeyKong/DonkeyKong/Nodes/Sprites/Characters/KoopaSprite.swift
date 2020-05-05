@@ -69,13 +69,16 @@ class KoopaSprite: SKSpriteNode {
         physicsObj?.index = -1
     }
     
-    func timerWalk(timer: Timer) {
+    @objc func timerWalk(timer: Timer) {
         if(timerBool) {
             walkBack()
         } else {
             walk()
         }
-        if (canSeeMario() && iteration%3==0) {throwShell()}
+        if (canSeeMario() && iteration%1==0) {
+            throwShell()
+            
+        }
         timerBool = !timerBool
         iteration = iteration + 1
     }
@@ -84,12 +87,16 @@ class KoopaSprite: SKSpriteNode {
         let node = contact.manifold.a.node
         if (node is MarioSprite) {
             let mario = contact.manifold.a.node as! MarioSprite
-            mario.shrink()
+            if ((mario.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-30) {
+                die()
+            } else {
+                mario.shrink()
+            }
         }
     }
     
     func canSeeMario() -> Bool {
-        if let mario = scene?.childNode(withName: "Mario") {
+        if let mario = self.parent?.childNode(withName: "Mario") {
             let marioX = mario.position.x
             if (timerBool) {
                 return marioX < self.position.x
@@ -100,18 +107,24 @@ class KoopaSprite: SKSpriteNode {
         return false
     }
     
+    func die() {
+        removeFromParent()
+    }
+    
     // Basic throw shell in a direction
     func throwShell() {
         let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
         if (!timerBool) {
-            shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            shell.physicsObj?.physicsBody.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x += 5
+            shell.position.y += 100
             self.parent?.addChild(shell)
-            shell.move(toParent: self.scene!)
+            shell.move(toParent: self.parent!)
             shell.startMove(direction: 1)
         } else {
-            shell.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            shell.physicsObj?.physicsBody.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x -= 5
+            shell.position.y += 100
             self.parent?.addChild(shell)
             shell.move(toParent: self.parent!)
             shell.startMove(direction: -1)

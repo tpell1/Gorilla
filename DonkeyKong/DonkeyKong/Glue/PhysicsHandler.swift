@@ -21,7 +21,7 @@ class PhysicsHandler: PhysicsCollisionHandler {
             let node2 = collision.manifold.a.node
             if node2 is MarioSprite {
                 let mario = node2 as! MarioSprite
-                if((mario.physicsObj!.physicsBody.velocity.dy) < CGFloat(-20)) { // Postive velocities are negative?
+                if((mario.physicsObj!.physicsBody.velocity.dy) < CGFloat(-23)) { // Postive velocities are negative?
                     let block = node1 as! BreakableBlockSprite
                     block.breakBlock()
                 }
@@ -29,8 +29,11 @@ class PhysicsHandler: PhysicsCollisionHandler {
         } else if node1 is ItemBlockSprite {
             let node2 = collision.manifold.a.node
             if node2 is MarioSprite {
-                let block = node1 as! ItemBlockSprite
-                block.spawnItem()
+                let mario = node2 as! MarioSprite
+                if((mario.physicsObj!.physicsBody.velocity.dy) < CGFloat(-23)) { // Postive velocities are negative?
+                    let block = node1 as! ItemBlockSprite
+                    block.spawnItem()
+                }
             }
         } else if node1 is KoopaSprite{
             let koopa = node1 as! KoopaSprite

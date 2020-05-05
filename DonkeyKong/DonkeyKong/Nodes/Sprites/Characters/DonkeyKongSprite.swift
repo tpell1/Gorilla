@@ -13,6 +13,9 @@ import Physics
 class DonkeyKongSprite: SKSpriteNode {
     private var height = 100
     private var width = 80
+    private var health = 10
+    private var hitTimer : Timer?
+    private var isHit = false
     
     // Default constructor, creates a koopa character with one life
     init(x: CGFloat, y: CGFloat) {
@@ -24,6 +27,7 @@ class DonkeyKongSprite: SKSpriteNode {
         self.zPosition = 10
         ///////// My physics //////////
         physicsObj = PhysicsObject(withNode: self, mass: 3)
+        physicsObj?.setRestitution(toValue: 0.4)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +60,31 @@ class DonkeyKongSprite: SKSpriteNode {
         }
     }
 
+    public func hit() {
+        if (!isHit) {
+            health -= 1
+            if (health <= 0) {
+                die()
+            }
+            isHit=true
+            self.hitTimer = Timer(timeInterval: TimeInterval(1.5), repeats: true, block: hitTime)
+            RunLoop.current.add(hitTimer!, forMode: .commonModes)
+        }
+    }
+    
+    @objc func hitTime(timer: Timer) {
+        isHit=false
+        timer.invalidate()
+    }
+    
+    private func die() {
+        removeFromParent()
+    }
+    
+    public func getHealth() -> Int{
+        return health
+    }
+    
     override func removeFromParent() {
         super.removeFromParent()
         physicsObj?.index = -1

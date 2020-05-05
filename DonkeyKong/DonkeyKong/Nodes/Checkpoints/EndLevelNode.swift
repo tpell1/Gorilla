@@ -27,6 +27,7 @@ class EndLevelNode : SKSpriteNode {
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!*/
         self.physicsObj = PhysicsObject(withNode: self, mass: -1)
+        self.physicsObj?.solveCollisions = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,11 +43,9 @@ class EndLevelNode : SKSpriteNode {
     func endLevel() {
         let lbl = SKLabelNode(attributedText: NSAttributedString(string: "Level Complete!"))
         lbl.position = CGPoint(x: frame.midX, y: frame.midY)
-        if self.gameScene! is GameScene {
-            let sceneGame = gameScene!
-            sceneGame.addChild(lbl)
-            sceneGame.getLevel()?.completeLevel()
-        }
+        let sceneGame = gameScene!
+        sceneGame.addChild(lbl)
+        sceneGame.getLevel()?.completeLevel()
     }
     
     override func removeFromParent() {

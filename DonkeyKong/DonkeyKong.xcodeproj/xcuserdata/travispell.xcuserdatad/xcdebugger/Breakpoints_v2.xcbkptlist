@@ -133,8 +133,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -149,8 +149,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "nextLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -245,8 +245,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "setLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -293,8 +293,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -309,8 +309,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -325,8 +325,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "setLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -421,8 +421,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "nextLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -465,8 +465,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "die()"
             landmarkType = "7">
          </BreakpointContent>
@@ -481,8 +481,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -497,8 +497,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -513,8 +513,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -529,8 +529,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "collision(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -785,8 +785,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -801,8 +801,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "touchMoved(toPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -833,8 +833,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -881,8 +881,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -897,8 +897,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
             <Locations>
@@ -1361,8 +1361,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "touchUp(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1377,8 +1377,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "touchUp(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1393,8 +1393,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "GameScene"
             landmarkType = "3">
          </BreakpointContent>
@@ -1585,8 +1585,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "setLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1601,8 +1601,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "setLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1874,8 +1874,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1884,6 +1884,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BF5691E7-F3B3-4761-9E65-49466B04010E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DonkeyKong/Glue/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "touchDown(atPoint:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73680D51-98CC-44B9-A2D3-42A85EB3DDD6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1899,7 +1915,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73680D51-98CC-44B9-A2D3-42A85EB3DDD6"
+            uuid = "88CFEF6B-C055-40A3-9823-50BF84CDC5D8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1915,22 +1931,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "88CFEF6B-C055-40A3-9823-50BF84CDC5D8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DonkeyKong/Glue/GameScene.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "touchDown(atPoint:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3CBC0045-EA78-4F2E-AFE1-953D45DE6025"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1938,8 +1938,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1954,8 +1954,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1970,8 +1970,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "touchDown(atPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2034,8 +2034,8 @@
             filePath = "DonkeyKong/Glue/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "setLevel(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2114,8 +2114,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "jump()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2130,8 +2130,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "jump()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2146,8 +2146,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "jump()"
             landmarkType = "7">
             <Locations>
@@ -2194,8 +2194,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "jump()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2386,8 +2386,8 @@
             filePath = "DonkeyKong/Glue/PhysicsHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "handleCollision(collision:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2402,8 +2402,8 @@
             filePath = "DonkeyKong/Glue/PhysicsHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "handleCollision(collision:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2450,8 +2450,8 @@
             filePath = "DonkeyKong/Glue/PhysicsHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "handleCollision(collision:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2498,25 +2498,9 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "collision(contact:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80CF067D-877C-4F66-8829-A493ECF2502E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DonkeyKong/Glue/GameScene.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "addNodeToPhysics(node:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2562,8 +2546,8 @@
             filePath = "DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "jump()"
             landmarkType = "7">
          </BreakpointContent>

@@ -65,9 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         nameNode = self.childNode(withName: "//node")
         pauseBtn = self.childNode(withName: "//pauseBtn") as? SKShapeNode
         jumpBtn = self.childNode(withName: "//jumpBtn") as? SKShapeNode
-        
-        print("Frame x: " + String(describing: frame.minX))
-        
+                
         // Remove all parts of previous level (no error if level one)
         level?.removeFromParent()
         
@@ -123,7 +121,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addNodeToPhysics(node : SKNode) {
-        print("added Item")
         physics?.addObject(object: node.physicsObj!)
     }
     

@@ -59,8 +59,6 @@ class SaveData {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         let file = configFolder.appendingPathComponent(name + ".plist") // ERROR HERE
-
-        print(file.absoluteString)
         
         if !FileManager.default.fileExists(atPath: configFolder.path) {
             if ((try? FileManager.default.createDirectory(at: configFolder, withIntermediateDirectories: true, attributes: nil)) != nil) {

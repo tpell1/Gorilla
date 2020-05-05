@@ -25,7 +25,7 @@ class MarioSprite : SKSpriteNode {
     private var lives = 1
     private var moveSpeedMultiplier: CGFloat = 1
     private var health = 1
-    private var width = 45
+    private var width = 35
     private var height = 55
     private var scale = 1
     private var shootable = true
@@ -43,9 +43,10 @@ class MarioSprite : SKSpriteNode {
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
-        
+        self.name = "Mario"
         ////////// My Physics /////////////
         physicsObj = PhysicsObject(withNode: self)
+        physicsObj?.setRestitution(toValue: 0.4)
         
         jumpSound = ConfigData.read().SoundOn
     }
@@ -77,7 +78,8 @@ class MarioSprite : SKSpriteNode {
         if (contact.manifold.b.node != nil) {
             let node2 = contact.manifold.a.node
             if node2 is BreakableBlockSprite { // Break block
-                if(((self.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-20)) {
+                let physDbg = physicsObj
+                if(((self.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-30)) {
                     let block = node2 as! BreakableBlockSprite
                     block.breakBlock()
                 }
@@ -85,7 +87,7 @@ class MarioSprite : SKSpriteNode {
                 let item = node2 as! ItemSprite
                 item.collision(node: self)
             } else if node2 is ItemBlockSprite { // Spawn an item
-                if((self.physicsObj?.physicsBody.velocity.dy)! < CGFloat(-20)) {
+                if((self.physicsObj?.physicsBody.velocity.dy)! < CGFloat(-30)) {
                     let block = node2 as! ItemBlockSprite
                     block.spawnItem()
                 }
@@ -93,7 +95,19 @@ class MarioSprite : SKSpriteNode {
                 let node = node2 as! EndLevelNode
                 node.endLevel()
             } else if node2 is KoopaSprite {
-                self.shrink()
+                if ((self.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-30) {
+                    let koopa = node2 as! KoopaSprite
+                    koopa.die()
+                } else {
+                    self.shrink()
+                }
+            } else if node2 is DonkeyKongSprite {
+                if ((self.physicsObj?.physicsBody.velocity.dy)! < CGFloat(-30)) {
+                    let dk = node2 as! DonkeyKongSprite
+                    dk.hit()
+                } else {
+                    self.shrink()
+                }
             }
         }
     }
@@ -105,7 +119,6 @@ class MarioSprite : SKSpriteNode {
      */
     func jump() {
         let playJumpSound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
-        //print(String(describing: self.physicsBody?.velocity.dy))
         let physics = self.physicsObj
         if((((physics?.physicsBody.velocity.dy.isLessThanOrEqualTo(CGFloat(0.1)))!))) {
             jumpCount = 0

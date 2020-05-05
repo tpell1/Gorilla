@@ -45,7 +45,6 @@ class MainMenu: SKNode {
                 if (saveArray[i].contains((scene?.convert(pos, to: self))!)) { // TODO: pos must be replaced with pos relative to grandparent node (aka scene)
                     status = MenuStatus.CONTINUE_SAVE
                     saveNumber = i
-                    print(i)
                 }
             }
         }
