@@ -1,0 +1,2539 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.deviceOrientation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.application(_:supportedInterfaceOrientationsFor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 26,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 31,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/AppDelegate.swift",
+      "line": 44,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 12,
+      "symbol": "GameStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 13,
+      "symbol": "GameStatus.FINISHED",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 13,
+      "symbol": "GameStatus.PAUSED",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 13,
+      "symbol": "GameStatus.PLAYING",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 13,
+      "symbol": "GameStatus.QUIT",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 16,
+      "symbol": "GameScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 17,
+      "symbol": "GameScene.entities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 18,
+      "symbol": "GameScene.graphs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 20,
+      "symbol": "GameScene.marioSprite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 21,
+      "symbol": "GameScene.levelArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 22,
+      "symbol": "GameScene.level",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 23,
+      "symbol": "GameScene.saveData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 24,
+      "symbol": "GameScene.save",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 26,
+      "symbol": "GameScene.leftArrow",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 27,
+      "symbol": "GameScene.rightArrow",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 28,
+      "symbol": "GameScene.jumpBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 29,
+      "symbol": "GameScene.livesLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 30,
+      "symbol": "GameScene.levelLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 31,
+      "symbol": "GameScene.pauseBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 32,
+      "symbol": "GameScene.nameNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 33,
+      "symbol": "GameScene.relativeNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 34,
+      "symbol": "GameScene.pauseNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 36,
+      "symbol": "GameScene.lastUpdateTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 37,
+      "symbol": "GameScene.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 38,
+      "symbol": "GameScene.safetyBool",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 39,
+      "symbol": "GameScene.gameStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 40,
+      "symbol": "GameScene.levelIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 41,
+      "symbol": "GameScene.physics",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 45,
+      "symbol": "GameScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 52,
+      "symbol": "GameScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 59,
+      "symbol": "GameScene.setupLevel(lives:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 94,
+      "symbol": "GameScene.setLevel(index:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 124,
+      "symbol": "GameScene.addNodeToPhysics(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 129,
+      "symbol": "GameScene.timerUpdate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 135,
+      "symbol": "GameScene.getLevel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 139,
+      "symbol": "GameScene.getLevelIndex()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 143,
+      "symbol": "GameScene.setLevelArray(collection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 147,
+      "symbol": "GameScene.setSave(data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 152,
+      "symbol": "GameScene.nextLevel(index:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 167,
+      "symbol": "GameScene.loadNextLevel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 179,
+      "symbol": "GameScene.touchDown(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 208,
+      "symbol": "GameScene.touchMoved(toPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 229,
+      "symbol": "GameScene.touchUp(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 239,
+      "symbol": "GameScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 243,
+      "symbol": "GameScene.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 247,
+      "symbol": "GameScene.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 251,
+      "symbol": "GameScene.touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 256,
+      "symbol": "GameScene.update(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 293,
+      "symbol": "GameScene.restartLevel(lives:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 303,
+      "symbol": "GameScene.getStatus()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 308,
+      "symbol": "GameScene.pauseGame()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 316,
+      "symbol": "GameScene.resumeGame()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameScene.swift",
+      "line": 325,
+      "symbol": "GameScene.setHUD()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 13,
+      "symbol": "GameViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 14,
+      "symbol": "GameViewController.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 15,
+      "symbol": "GameViewController.timer1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 16,
+      "symbol": "GameViewController.sceneNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 17,
+      "symbol": "GameViewController.gameNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 19,
+      "symbol": "GameViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 43,
+      "symbol": "GameViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 48,
+      "symbol": "GameViewController.playGame(newGame:saveGame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 110,
+      "symbol": "GameViewController.update()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 130,
+      "symbol": "GameViewController.updateGame()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 140,
+      "symbol": "GameViewController.shouldAutorotate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 144,
+      "symbol": "GameViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/GameViewController.swift",
+      "line": 149,
+      "symbol": "GameViewController.prefersStatusBarHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 13,
+      "symbol": "MenuStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.CONTINUE_SAVE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.NEW_GAME_WAITING",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.NEW_SAVE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.OPTIONS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.REPLACE_SAVE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 14,
+      "symbol": "MenuStatus.WAITING",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 17,
+      "symbol": "MenuScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 18,
+      "symbol": "MenuScene.entities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 19,
+      "symbol": "MenuScene.graphs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 21,
+      "symbol": "MenuScene.menuStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 22,
+      "symbol": "MenuScene.previousState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 24,
+      "symbol": "MenuScene.saveNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 25,
+      "symbol": "MenuScene.lastUpdateTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 27,
+      "symbol": "MenuScene.menu",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 28,
+      "symbol": "MenuScene.replace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 29,
+      "symbol": "MenuScene.options",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 30,
+      "symbol": "MenuScene.playLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 31,
+      "symbol": "MenuScene.newGameLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 34,
+      "symbol": "MenuScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 47,
+      "symbol": "MenuScene.update(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 87,
+      "symbol": "MenuScene.replaceSave()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 98,
+      "symbol": "MenuScene.mainMenu()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 108,
+      "symbol": "MenuScene.optionsMenu()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 121,
+      "symbol": "MenuScene.touchDown(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 148,
+      "symbol": "MenuScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 152,
+      "symbol": "MenuScene.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 156,
+      "symbol": "MenuScene.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/MenuScene.swift",
+      "line": 160,
+      "symbol": "MenuScene.touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/PhysicsHandler.swift",
+      "line": 12,
+      "symbol": "PhysicsHandler",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Glue/PhysicsHandler.swift",
+      "line": 13,
+      "symbol": "PhysicsHandler.handleCollision(collision:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 12,
+      "symbol": "LevelReader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 13,
+      "symbol": "LevelReader.fileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 14,
+      "symbol": "LevelReader.blockArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 15,
+      "symbol": "LevelReader.enemyArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 16,
+      "symbol": "LevelReader.presetArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 17,
+      "symbol": "LevelReader.levelData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 18,
+      "symbol": "LevelReader.zeroY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 20,
+      "symbol": "LevelReader.init(title:levelData:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 32,
+      "symbol": "LevelReader.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 36,
+      "symbol": "LevelReader.addChildren()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 68,
+      "symbol": "LevelReader.addChild(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 84,
+      "symbol": "LevelReader.setFrame(frameRect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 91,
+      "symbol": "LevelReader.readInBlocks()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 116,
+      "symbol": "LevelReader.readInEnemies()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 129,
+      "symbol": "LevelReader.readInPresets()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelReader.swift",
+      "line": 143,
+      "symbol": "LevelReader.readLevelFile(fileName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 17,
+      "symbol": "LevelScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 18,
+      "symbol": "LevelScene.GROUND_HEIGHT",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 20,
+      "symbol": "LevelScene.blockSprite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 21,
+      "symbol": "LevelScene.breakableBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 22,
+      "symbol": "LevelScene.itemBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 23,
+      "symbol": "LevelScene.endNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 24,
+      "symbol": "LevelScene.rect",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 25,
+      "symbol": "LevelScene.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 26,
+      "symbol": "LevelScene.complete",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 36,
+      "symbol": "LevelScene.init(title:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 44,
+      "symbol": "LevelScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 50,
+      "symbol": "LevelScene.addChildren()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 68,
+      "symbol": "LevelScene.setFrame(frameRect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 72,
+      "symbol": "LevelScene.getTitle()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 76,
+      "symbol": "LevelScene.completeLevel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Levels/LevelScene.swift",
+      "line": 80,
+      "symbol": "LevelScene.isCompleted()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 15,
+      "symbol": "EndLevelNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 16,
+      "symbol": "EndLevelNode.levelComplete",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 17,
+      "symbol": "EndLevelNode.gameScene",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 18,
+      "symbol": "EndLevelNode.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 31,
+      "symbol": "EndLevelNode.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 35,
+      "symbol": "EndLevelNode.setScene(scene:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 41,
+      "symbol": "EndLevelNode.endLevel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Checkpoints/EndLevelNode.swift",
+      "line": 51,
+      "symbol": "EndLevelNode.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 12,
+      "symbol": "MainMenu",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 13,
+      "symbol": "MainMenu.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 14,
+      "symbol": "MainMenu.saveNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 16,
+      "symbol": "MainMenu.saveArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 18,
+      "symbol": "MainMenu.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 36,
+      "symbol": "MainMenu.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MainMenu.swift",
+      "line": 40,
+      "symbol": "MainMenu.touchDown(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 12,
+      "symbol": "MenuButton",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 13,
+      "symbol": "MenuButton.buttonSprite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 14,
+      "symbol": "MenuButton.buttonLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 15,
+      "symbol": "MenuButton.HEIGHT",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 16,
+      "symbol": "MenuButton.WIDTH",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 18,
+      "symbol": "MenuButton.init(textForButton:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 32,
+      "symbol": "MenuButton.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/MenuItems/MenuButton.swift",
+      "line": 36,
+      "symbol": "MenuButton.setText(text:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 12,
+      "symbol": "OptionsMenu",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 13,
+      "symbol": "OptionsMenu.sound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 14,
+      "symbol": "OptionsMenu.music",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 16,
+      "symbol": "OptionsMenu.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 17,
+      "symbol": "OptionsMenu.soundFxButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 18,
+      "symbol": "OptionsMenu.musicButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 20,
+      "symbol": "OptionsMenu.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 35,
+      "symbol": "OptionsMenu.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 39,
+      "symbol": "OptionsMenu.touchDown(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 49,
+      "symbol": "OptionsMenu.updateText()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/OptionsMenu.swift",
+      "line": 62,
+      "symbol": "OptionsMenu.writeConfig()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 12,
+      "symbol": "PauseMenu",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 13,
+      "symbol": "PauseMenu.translucentRect",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 14,
+      "symbol": "PauseMenu.returnToMainBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 16,
+      "symbol": "PauseMenu.init(phoneFrame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 33,
+      "symbol": "PauseMenu.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/PauseMenu.swift",
+      "line": 37,
+      "symbol": "PauseMenu.update(phoneFrame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift",
+      "line": 12,
+      "symbol": "ReplaceSaveMenu",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift",
+      "line": 14,
+      "symbol": "ReplaceSaveMenu.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift",
+      "line": 20,
+      "symbol": "ReplaceSaveMenu.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Menus/ReplaceSaveMenu.swift",
+      "line": 24,
+      "symbol": "ReplaceSaveMenu.touchDown(atPoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 15,
+      "symbol": "EndOfLevelNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 16,
+      "symbol": "EndOfLevelNode.endNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 17,
+      "symbol": "EndOfLevelNode.brick1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 18,
+      "symbol": "EndOfLevelNode.brick2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 19,
+      "symbol": "EndOfLevelNode.brick3",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 22,
+      "symbol": "EndOfLevelNode.init(x:y:size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/EndOfLevelNode.swift",
+      "line": 37,
+      "symbol": "EndOfLevelNode.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/KoopaPlatformHelper.swift",
+      "line": 12,
+      "symbol": "KoopaPlatformHelper",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/KoopaPlatformHelper.swift",
+      "line": 13,
+      "symbol": "KoopaPlatformHelper.blockArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/KoopaPlatformHelper.swift",
+      "line": 15,
+      "symbol": "KoopaPlatformHelper.init(x:y:size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/KoopaPlatformHelper.swift",
+      "line": 28,
+      "symbol": "KoopaPlatformHelper.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/PresetNode.swift",
+      "line": 12,
+      "symbol": "PresetNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Presets/PresetNode.swift",
+      "line": 14,
+      "symbol": "PresetNode.moveAllChildren(toNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BlockSprite.swift",
+      "line": 16,
+      "symbol": "BlockSprite",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BlockSprite.swift",
+      "line": 17,
+      "symbol": "BlockSprite.BLOCK_SIZE",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BlockSprite.swift",
+      "line": 19,
+      "symbol": "BlockSprite.init(x:y:imageNamed:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BlockSprite.swift",
+      "line": 28,
+      "symbol": "BlockSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BlockSprite.swift",
+      "line": 32,
+      "symbol": "BlockSprite.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 15,
+      "symbol": "BreakableBlockSprite",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 16,
+      "symbol": "BreakableBlockSprite.texture1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 17,
+      "symbol": "BreakableBlockSprite.texture2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 19,
+      "symbol": "BreakableBlockSprite.init(x:y:texture1Named:texture2Named:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 28,
+      "symbol": "BreakableBlockSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/BreakableBlockSprite.swift",
+      "line": 32,
+      "symbol": "BreakableBlockSprite.breakBlock()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 14,
+      "symbol": "ItemBlockSprite",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 15,
+      "symbol": "ItemBlockSprite.itemType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 16,
+      "symbol": "ItemBlockSprite.itemUsed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 18,
+      "symbol": "ItemBlockSprite.init(x:y:imageNamed:itemType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 26,
+      "symbol": "ItemBlockSprite.init(x:y:imageNamed:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 31,
+      "symbol": "ItemBlockSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Blocks/ItemBlockSprite.swift",
+      "line": 36,
+      "symbol": "ItemBlockSprite.spawnItem()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 12,
+      "symbol": "DonkeyKongSprite",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 13,
+      "symbol": "DonkeyKongSprite.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 14,
+      "symbol": "DonkeyKongSprite.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 17,
+      "symbol": "DonkeyKongSprite.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 36,
+      "symbol": "DonkeyKongSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 40,
+      "symbol": "DonkeyKongSprite.fightMario(marioPos:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 51,
+      "symbol": "DonkeyKongSprite.attack(position:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 55,
+      "symbol": "DonkeyKongSprite.walk(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/DonkeyKongSprite.swift",
+      "line": 59,
+      "symbol": "DonkeyKongSprite.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 12,
+      "symbol": "KoopaSprite",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 13,
+      "symbol": "KoopaSprite.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 14,
+      "symbol": "KoopaSprite.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 15,
+      "symbol": "KoopaSprite.sizeOfPlatform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 16,
+      "symbol": "KoopaSprite.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 17,
+      "symbol": "KoopaSprite.timerBool",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 18,
+      "symbol": "KoopaSprite.shellArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 19,
+      "symbol": "KoopaSprite.iteration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 22,
+      "symbol": "KoopaSprite.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 47,
+      "symbol": "KoopaSprite.init(x:y:sizeOfPlatform:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 52,
+      "symbol": "KoopaSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 56,
+      "symbol": "KoopaSprite.walk()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 61,
+      "symbol": "KoopaSprite.walkBack()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 66,
+      "symbol": "KoopaSprite.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 71,
+      "symbol": "KoopaSprite.timerWalk(timer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 82,
+      "symbol": "KoopaSprite.collision(contact:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 90,
+      "symbol": "KoopaSprite.canSeeMario()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/KoopaSprite.swift",
+      "line": 103,
+      "symbol": "KoopaSprite.throwShell()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 23,
+      "symbol": "MarioSprite.jumpCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 24,
+      "symbol": "MarioSprite.lives",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 25,
+      "symbol": "MarioSprite.moveSpeedMultiplier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 26,
+      "symbol": "MarioSprite.health",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 27,
+      "symbol": "MarioSprite.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 28,
+      "symbol": "MarioSprite.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 29,
+      "symbol": "MarioSprite.scale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 30,
+      "symbol": "MarioSprite.shootable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 31,
+      "symbol": "MarioSprite.jumpSound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 32,
+      "symbol": "MarioSprite.DEFAULT_MOVE_SPEED",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 65,
+      "symbol": "MarioSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 140,
+      "symbol": "MarioSprite.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 221,
+      "symbol": "MarioSprite.getWidth()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 225,
+      "symbol": "MarioSprite.getHeight()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 229,
+      "symbol": "MarioSprite.reDo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Characters/MarioSprite.swift",
+      "line": 234,
+      "symbol": "MarioSprite.isShootable()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireEntityItem.swift",
+      "line": 12,
+      "symbol": "FireEntityItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireEntityItem.swift",
+      "line": 13,
+      "symbol": "FireEntityItem.FIRE_SPEED",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireEntityItem.swift",
+      "line": 15,
+      "symbol": "FireEntityItem.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireEntityItem.swift",
+      "line": 20,
+      "symbol": "FireEntityItem.shoot(inDirection:toNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireItem.swift",
+      "line": 12,
+      "symbol": "FireItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireItem.swift",
+      "line": 14,
+      "symbol": "FireItem.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/FireItem.swift",
+      "line": 19,
+      "symbol": "FireItem.collision(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 16,
+      "symbol": "ItemType.FIRE",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 16,
+      "symbol": "ItemType.MUSHROOM",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 16,
+      "symbol": "ItemType.ONEUP",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 16,
+      "symbol": "ItemType.SHELL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 16,
+      "symbol": "ItemType.STAR",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 23,
+      "symbol": "ItemSprite.texture1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 24,
+      "symbol": "ItemSprite.itemUsed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 25,
+      "symbol": "ItemSprite.ITEM_SPEED",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 26,
+      "symbol": "ItemSprite.direction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 45,
+      "symbol": "ItemSprite.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 49,
+      "symbol": "ItemSprite.removeFromParent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 55,
+      "symbol": "ItemSprite.collision(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 66,
+      "symbol": "ItemSprite.reverseDirection()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 72,
+      "symbol": "ItemSprite.move()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ItemSprite.swift",
+      "line": 77,
+      "symbol": "ItemSprite.startMove(direction:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/MushroomItem.swift",
+      "line": 12,
+      "symbol": "MushroomItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/MushroomItem.swift",
+      "line": 14,
+      "symbol": "MushroomItem.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/MushroomItem.swift",
+      "line": 19,
+      "symbol": "MushroomItem.collision(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ShellItem.swift",
+      "line": 12,
+      "symbol": "ShellItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ShellItem.swift",
+      "line": 13,
+      "symbol": "ShellItem.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ShellItem.swift",
+      "line": 15,
+      "symbol": "ShellItem.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ShellItem.swift",
+      "line": 24,
+      "symbol": "ShellItem.collision(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Nodes/Sprites/Items/ShellItem.swift",
+      "line": 37,
+      "symbol": "ShellItem.update()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsCollision.swift",
+      "line": 16,
+      "symbol": "PhysicsCollisionHandler.handleCollision(collision:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsCollision.swift",
+      "line": 23,
+      "symbol": "PhysicsCollision.manifold",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 13,
+      "symbol": "SKNode.physicsObjStat",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 14,
+      "symbol": "SKNode.physicsObj",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 30,
+      "symbol": "PhysicsBody.min",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 31,
+      "symbol": "PhysicsBody.max",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 32,
+      "symbol": "PhysicsBody.velocity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 33,
+      "symbol": "PhysicsBody.restitution",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 34,
+      "symbol": "PhysicsBody.mass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 35,
+      "symbol": "PhysicsBody.force",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 37,
+      "symbol": "PhysicsBody.init(min:max:mass:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 50,
+      "symbol": "PhysicsObject.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 52,
+      "symbol": "PhysicsObject.physicsBody",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 53,
+      "symbol": "PhysicsObject.isObjectAwake",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 54,
+      "symbol": "PhysicsObject.previousPos",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 56,
+      "symbol": "PhysicsObject.init(withNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsObject.swift",
+      "line": 60,
+      "symbol": "PhysicsObject.init(withNode:mass:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 24,
+      "symbol": "ManifoldStruct.a",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 25,
+      "symbol": "ManifoldStruct.b",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 26,
+      "symbol": "ManifoldStruct.penetration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 27,
+      "symbol": "ManifoldStruct.normal",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 34,
+      "symbol": "PhysicsWorld.physicsObjects",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 35,
+      "symbol": "PhysicsWorld.handler",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 36,
+      "symbol": "PhysicsWorld.GRAVITY",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 37,
+      "symbol": "PhysicsWorld.DELTA_T",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Physics/PhysicsWorld.swift",
+      "line": 145,
+      "symbol": "PhysicsWorld.updateIndexes()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 11,
+      "symbol": "ConfigStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 12,
+      "symbol": "ConfigStruct.SoundOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 13,
+      "symbol": "ConfigStruct.MusicOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 16,
+      "symbol": "ConfigData",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 17,
+      "symbol": "ConfigData.configFolder",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 19,
+      "symbol": "ConfigData.read()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 29,
+      "symbol": "ConfigData.readConfigFromBundle()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 37,
+      "symbol": "ConfigData.configExistsInDocs()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 41,
+      "symbol": "ConfigData.readConfigFromDocs()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/ConfigData.swift",
+      "line": 50,
+      "symbol": "ConfigData.writeConfig(sound:music:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 14,
+      "symbol": "LevelsStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 15,
+      "symbol": "LevelsStruct.levels",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 20,
+      "symbol": "LevelStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 21,
+      "symbol": "LevelStruct.blocks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 22,
+      "symbol": "LevelStruct.enemies",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 23,
+      "symbol": "LevelStruct.presets",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 24,
+      "symbol": "LevelStruct.levelType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 28,
+      "symbol": "BlockStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 29,
+      "symbol": "BlockStruct.blockType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 30,
+      "symbol": "BlockStruct.blockX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 31,
+      "symbol": "BlockStruct.blockY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 32,
+      "symbol": "BlockStruct.itemType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 36,
+      "symbol": "EnemyStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 37,
+      "symbol": "EnemyStruct.enemyType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 38,
+      "symbol": "EnemyStruct.enemyX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 39,
+      "symbol": "EnemyStruct.enemyY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 43,
+      "symbol": "PresetStruct",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 44,
+      "symbol": "PresetStruct.presetType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 45,
+      "symbol": "PresetStruct.presetX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 46,
+      "symbol": "PresetStruct.presetY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 47,
+      "symbol": "PresetStruct.presetSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 50,
+      "symbol": "LevelUtils",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 52,
+      "symbol": "LevelUtils.getLevelArray()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/LevelUtils.swift",
+      "line": 62,
+      "symbol": "LevelUtils.readLevelFile(fileName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 13,
+      "symbol": "SaveStruct.currentLevel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 14,
+      "symbol": "SaveStruct.currentScore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 15,
+      "symbol": "SaveStruct.currentLives",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 18,
+      "symbol": "SaveData",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 19,
+      "symbol": "SaveData.MAX_AMOUNT_OF_SAVES",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 20,
+      "symbol": "SaveData.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 21,
+      "symbol": "SaveData.configFolder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 23,
+      "symbol": "SaveData.init(saveName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 27,
+      "symbol": "SaveData.read()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 37,
+      "symbol": "SaveData.readSaveFromBundle()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 45,
+      "symbol": "SaveData.saveExistsInDocs()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 49,
+      "symbol": "SaveData.readSaveFromDocs()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 58,
+      "symbol": "SaveData.writeSave(saveData:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 83,
+      "symbol": "SaveData.writeSave(level:lives:score:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong/DonkeyKong/Utilities/SaveData.swift",
+      "line": 88,
+      "symbol": "SaveData.getNumberOfSaves()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/travispell/Documents/Uni/Dissertation/code/DonkeyKong"
+}
