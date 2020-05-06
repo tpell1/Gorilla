@@ -20,7 +20,7 @@ class EndOfLevelNode: PresetNode {
     
     // Initializer for basic n.n Pyramid followed by flagpole
     init(x: CGFloat, y: CGFloat, size: Int) {
-        let endNode = EndLevelNode(x: x + CGFloat(size)*BlockSprite.BLOCK_SIZE + 100, y: y)
+        let endNode = EndLevelNode(x: x + CGFloat(size)*BlockSprite.BLOCK_SIZE + 100, y: y+50)
         super.init()
         self.addChild(endNode)
         
