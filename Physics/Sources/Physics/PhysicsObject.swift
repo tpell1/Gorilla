@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 
+/**
+ Adds a PhysicsObject property to all SKNode instances
+ */
 public extension SKNode {
     private static var physicsObjStat : [String:PhysicsObject?] = [:]
     var physicsObj : PhysicsObject? {
@@ -24,38 +27,50 @@ public extension SKNode {
 }
 
 /**
- Class representing the mathematical properties of the physics object
- */
-public class PhysicsBody {
-    internal var min : CGPoint
-    internal var max : CGPoint
-    public var velocity : CGVector
-    public var restitution : CGFloat
-    internal var mass : CGFloat
-    internal var force : CGVector = CGVector(dx: 0, dy: 0)
-    
-    init(min : CGPoint, max : CGPoint, mass : CGFloat) {
-        self.min = min
-        self.max = max
-        self.mass = mass
-        velocity = CGVector(dx: 0, dy: 0)
-        restitution = 0.4
-    }
-}
-
-/**
  Class representing an object in the physics world
  */
 public class PhysicsObject {
     public var index : Int /// The index of the object in the collection of `PhysicsObjects` in `PhysicsWorld`
     public var node : SKNode
-    public var physicsBody : PhysicsBody
     private var previousPos : CGPoint
+    public var solveCollisions : Bool = true
+    internal var min : CGPoint
+    internal var max : CGPoint
+    /**
+     The speed that the object changes position
+     */
+    public var velocity : CGVector
+    /**
+     The coefficient of restitution. This determines how much an object will bounce
+     
+     Maximum value = 1, minimum value = 0
+     */
+    public var restitution : CGFloat
+    internal var mass : CGFloat
+    internal var force : CGVector = CGVector(dx: 0, dy: 0)
     
+    
+    // --------------- Constructors ----------------------------------------
+    
+    /**
+     Constructor which initialises a PhysicsObject with a mass of 1.
+     
+     - parameters:
+        - node: The node that the PhysicsObject should manipulate/use for calculations
+     */
     public convenience init(withNode node: SKNode) {
         self.init(withNode: node, mass: 1)
     }
     
+    /**
+     Construct which initialises a PhysicsObject and calculates in bounding box.
+     
+     The bounding box is the way that the physics engine will determing whether two objects are colliding.
+     
+     - parameters:
+        - node: The node that the PhysicsObject should manipulate/use for calculations
+        - mass: The mass of the object
+     */
     public init(withNode node: SKNode, mass: CGFloat) {
         index = 0
         self.node = node
@@ -63,8 +78,14 @@ public class PhysicsObject {
         let min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
         let max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
         previousPos = node.position
-        physicsBody = PhysicsBody(min: min, max: max, mass: mass)
+        self.min = min
+        self.max = max
+        self.mass = mass
+        velocity = CGVector(dx: 0, dy: 0)
+        restitution = 1
     }
+    
+    // ----------------- Property Methods -----------------------------
     
     /**
      Set the index of the object in the `PhysicsWorld` collection of objects
@@ -88,8 +109,8 @@ public class PhysicsObject {
      */
     func updatePosition() {
         let boundingBox = node.calculateAccumulatedFrame()
-        physicsBody.min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
-        physicsBody.max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
+        min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
+        max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
     }
     
     /**
@@ -102,8 +123,8 @@ public class PhysicsObject {
         previousPos = node.position
         node.position = CGPoint(x: x, y: y)
         let boundingBox = node.calculateAccumulatedFrame()
-        physicsBody.min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
-        physicsBody.max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
+        min = CGPoint(x: boundingBox.minX, y: boundingBox.minY)
+        max = CGPoint(x: boundingBox.maxX, y: boundingBox.maxY)
     }
     
     /**
@@ -130,6 +151,8 @@ public class PhysicsObject {
         return true
     }
     
+    // ------------------- Apply forces/change velocity -----------------
+    
     /**
      Apply an impulse to the PhysicsObject
      - parameters:
@@ -137,8 +160,8 @@ public class PhysicsObject {
         - dy: the vertical component of the impulse
      */
     public func applyImpulse(dx: CGFloat, dy : CGFloat) {
-        physicsBody.velocity.dx += dx/physicsBody.mass
-        physicsBody.velocity.dy += dy/physicsBody.mass
+        velocity.dx += dx/mass
+        velocity.dy += dy/mass
     }
     
     /**
@@ -148,38 +171,39 @@ public class PhysicsObject {
         - dy: The vertical componenent of the force applied
      */
     public func applyForce(dx: CGFloat, dy: CGFloat) {
-        physicsBody.force.dx += dx
-        physicsBody.force.dy += dy
+        force.dx += dx
+        force.dy += dy
     }
     
+    // ----------------- Integration --------------------------------
+    
     /**
-     Integrate the forces applied to the object in this current simulation round.
+     Integrate the forces applied to the object, with respect to time, in this current simulation round.
      
      This converts forces into velocities, it also adds gravity
      - parameters:
         - t: The interval of time between the last round of simulation.
      */
     func integrateForces(timeInterval t : TimeInterval) {
-        if (physicsBody.mass == -1) {
+        if (mass == -1) {
             return
         }
 
-        physicsBody.velocity.dx += (physicsBody.force.dx/physicsBody.mass)*CGFloat(t)
+        velocity.dx += (force.dx/mass)*CGFloat(t) // Apply forces from the x dimension
 
-        physicsBody.velocity.dy += ((physicsBody.force.dy/physicsBody.mass) - PhysicsWorld.GRAVITY)*CGFloat(t)
+        velocity.dy += ((force.dy/mass) - PhysicsWorld.GRAVITY)*CGFloat(t) // Apply forces in the y direction + gravity
     }
     
     /**
-     Integrate the objects current velocities to calculate where the objects next position should be.
+     Integrate the objects current velocities with respect to time, to calculate where the objects next position should be.
      - parameters:
         - t: The interval of time between now and the last round of simulation.
      */
     func integrateVelocity(timeInterval t : TimeInterval) {
-        let b = physicsBody
-        if (b.mass == -1) {
+        if (mass == -1) {
             return
         }
-        setPosition(x: getPosition().x + b.velocity.dx*CGFloat(t), y: getPosition().y+b.velocity.dy*CGFloat(t))
+        setPosition(x: getPosition().x + velocity.dx*CGFloat(t), y: getPosition().y+velocity.dy*CGFloat(t))
         integrateForces(timeInterval: t)
     }
 }

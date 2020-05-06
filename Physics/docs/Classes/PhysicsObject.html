@@ -14,7 +14,7 @@
     <a title="PhysicsObject Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (52% documented)</p>
+        <p><a href="../index.html"> Docs</a> (78% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -30,9 +30,6 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Classes/PhysicsBody.html">PhysicsBody</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Classes/PhysicsCollision.html">PhysicsCollision</a>
               </li>
@@ -57,14 +54,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Protocols/PhysicsCollisionHandler.html">PhysicsCollisionHandler</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Structs.html">Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Structs/ManifoldStruct.html">ManifoldStruct</a>
               </li>
             </ul>
           </li>
@@ -143,9 +132,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Physics0A6ObjectC11physicsBodyAA0aD0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/physicsBody" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Physics0A6ObjectC11physicsBodyAA0aD0Cvp">physicsBody</a>
+                    <a name="/s:7Physics0A6ObjectC15solveCollisionsSbvp"></a>
+                    <a name="//apple_ref/swift/Property/solveCollisions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC15solveCollisionsSbvp">solveCollisions</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -160,7 +149,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">physicsBody</span><span class="p">:</span> <span class="kt"><a href="../Classes/PhysicsBody.html">PhysicsBody</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">solveCollisions</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -170,9 +159,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Physics0A6ObjectC11previousPos33_9D20AB21F2958B8A2892D9D34BB79463LLSo7CGPointVvp"></a>
-                    <a name="//apple_ref/swift/Property/previousPos" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Physics0A6ObjectC11previousPos33_9D20AB21F2958B8A2892D9D34BB79463LLSo7CGPointVvp">previousPos</a>
+                    <a name="/s:7Physics0A6ObjectC3minSo7CGPointVvp"></a>
+                    <a name="//apple_ref/swift/Property/min" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC3minSo7CGPointVvp">min</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -187,7 +176,144 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">previousPos</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">min</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Physics0A6ObjectC3maxSo7CGPointVvp"></a>
+                    <a name="//apple_ref/swift/Property/max" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC3maxSo7CGPointVvp">max</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Physics0A6ObjectC8velocitySo8CGVectorVvp"></a>
+                    <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC8velocitySo8CGVectorVvp">velocity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The speed that the object changes position</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">CGVector</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Physics0A6ObjectC11restitution12CoreGraphics7CGFloatVvp"></a>
+                    <a name="//apple_ref/swift/Property/restitution" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC11restitution12CoreGraphics7CGFloatVvp">restitution</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The coefficient of restitution. This determines how much an object will bounce</p>
+
+<p>Maximum value = 1, minimum value = 0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">restitution</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Physics0A6ObjectC4mass12CoreGraphics7CGFloatVvp"></a>
+                    <a name="//apple_ref/swift/Property/mass" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC4mass12CoreGraphics7CGFloatVvp">mass</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">mass</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Physics0A6ObjectC5forceSo8CGVectorVvp"></a>
+                    <a name="//apple_ref/swift/Property/force" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Physics0A6ObjectC5forceSo8CGVectorVvp">force</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">force</span><span class="p">:</span> <span class="kt">CGVector</span></code></pre>
 
                         </div>
                       </div>
@@ -207,7 +333,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Constructor which initialises a PhysicsObject with a mass of 1.</p>
 
                       </div>
                       <div class="declaration">
@@ -217,6 +343,25 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">withNode</span> <span class="nv">node</span><span class="p">:</span> <span class="kt">SKNode</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>node</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The node that the PhysicsObject should manipulate/use for calculations</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -234,7 +379,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Construct which initialises a PhysicsObject and calculates in bounding box.</p>
+
+<p>The bounding box is the way that the physics engine will determing whether two objects are colliding.</p>
 
                       </div>
                       <div class="declaration">
@@ -244,6 +391,37 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">withNode</span> <span class="nv">node</span><span class="p">:</span> <span class="kt">SKNode</span><span class="p">,</span> <span class="nv">mass</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>node</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The node that the PhysicsObject should manipulate/use for calculations</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mass</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The mass of the object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -601,7 +779,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Integrate the forces applied to the object in this current simulation round.</p>
+                        <p>Integrate the forces applied to the object, with respect to time, in this current simulation round.</p>
 
 <p>This converts forces into velocities, it also adds gravity</p>
 
@@ -649,7 +827,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Integrate the objects current velocities to calculate where the objects next position should be.</p>
+                        <p>Integrate the objects current velocities with respect to time, to calculate where the objects next position should be.</p>
 
                       </div>
                       <div class="declaration">
@@ -687,7 +865,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-05-05)</p>
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-05-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -15,9 +15,13 @@ import SpriteKit
 public class PhysicsWorld {
     private var physicsObjects : [PhysicsObject]
     private var handler : PhysicsCollisionHandler?
+    /** The global constant for gravity.
+     
+Will vary for different requirements.
+     
+     */
     public static var GRAVITY : CGFloat = 2600
     public static var DELTA_T : Double = 0.01
-    //private var timer : Timer?
     
     /**
     `PhysicsWorld` constructor
@@ -74,7 +78,7 @@ public class PhysicsWorld {
             handler?.handleCollision(collision: collision) // Send collision to collision handler for game logic to process
         }
         for obj in physicsObjects {
-            obj.physicsBody.force = CGVector(dx: 0, dy: 0) // Set forces to zero so that they dont carry over to next step of calculations
+            obj.force = CGVector(dx: 0, dy: 0) // Set forces to zero so that they dont carry over to next step of calculations
         }
     }
     
@@ -138,8 +142,8 @@ public class PhysicsWorld {
      - returns: `Bool`: collision = `true`
      */
     private func collision(withObject1 i : Int, object2 j : Int) -> Bool {
-        let a = physicsObjects[i].physicsBody
-        let b = physicsObjects[j].physicsBody
+        let a = physicsObjects[i]
+        let b = physicsObjects[j]
 
         // if bounds of object do not overlap there is no collision
         if (a.max.x < b.min.x || a.min.x > b.max.x) {
@@ -153,47 +157,49 @@ public class PhysicsWorld {
     }
        
     /**
-     Creates `PhysicsCollision` object
+     Creates `PhysicsCollision` object from two object indices. Determines the collision normal and how far they penetrate each other.
      - parameters:
         - i : index of object one in collision
         - j : index of object two in collision
      - returns: `PhysicsCollision`: The collision object
+     
+     Solves collisions between to box-bounded objects.
      */
     private func solveCollision(withObject1 i : Int, object2 j : Int) -> PhysicsCollision{
-        let a = physicsObjects[i].physicsBody
-        let b = physicsObjects[j].physicsBody
-        let aPos = physicsObjects[i].getPosition()
-        let bPos = physicsObjects[j].getPosition()
-        var m = ManifoldStruct(a: physicsObjects[i], b: physicsObjects[j], penetration: 0.0, normal: CGVector(dx: 0, dy: 0))
+        let a = physicsObjects[i]
+        let b = physicsObjects[j]
+        let aPos = a.getPosition()
+        let bPos = b.getPosition()
+        let collision = PhysicsCollision(withObject: a, andObj: b)
         
-        let n = CGVector(dx: bPos.x-aPos.x, dy: bPos.y-aPos.y)
-        var aExtent = (a.max.x - a.min.x)/2
-        var bExtent = (b.max.x - b.min.x)/2
-        let xOverlap = aExtent+bExtent - abs(n.dx)
+        let d = CGVector(dx: bPos.x-aPos.x, dy: bPos.y-aPos.y) // The distance between the two vectors
+        var aSize = (a.max.x - a.min.x)/2 // The width of a
+        var bSize = (b.max.x - b.min.x)/2 // The width of b
+        let xOverlap = aSize+bSize - abs(d.dx) // How much the x axis of the two objects overlap
         
-        if (xOverlap>0) {
-            aExtent = (a.max.y - a.min.y)/2
-            bExtent = (b.max.y - b.min.y)/2
-            let yOverlap = aExtent+bExtent - abs(n.dy)
+        if (xOverlap>0) { // if x axis overlap now repeat and check for y axis overlap
+            aSize = (a.max.y - a.min.y)/2 // The height of a
+            bSize = (b.max.y - b.min.y)/2 // The height of b
+            let yOverlap = aSize+bSize - abs(d.dy) // How much the y axis of the two objects overlap
             
-            if (yOverlap>0) {
-                if (xOverlap<yOverlap) {
-                    if(n.dx>0) {
-                        m.normal = CGVector(dx: 1, dy: 0)
-                    } else {
-                        m.normal = CGVector(dx: -1, dy: 0)
+            if (yOverlap>0) { // if y overlap now calculate what objects have overlapped the most
+                if (xOverlap<yOverlap) { // The collision was largely in the x direction
+                    if(d.dx>0) { // collision normal is positive
+                        collision.normal = CGVector(dx: 1, dy: 0)
+                    } else { // collision normal is negative
+                        collision.normal = CGVector(dx: -1, dy: 0)
                     }
-                    m.penetration = xOverlap
-                } else {
-                    if(n.dy>0) {
-                        m.normal = CGVector(dx: 0, dy: 1)
+                    collision.penetration = xOverlap // Set the penetration of the collision object
+                } else { // The collision was largely in the y direction
+                    if(d.dy>0) {
+                        collision.normal = CGVector(dx: 0, dy: 1)
                     } else {
-                        m.normal = CGVector(dx: 0, dy: -1)
+                        collision.normal = CGVector(dx: 0, dy: -1)
                     }
-                    m.penetration = yOverlap
+                    collision.penetration = yOverlap
                 }
             }
         }
-        return PhysicsCollision(withManifold: m)
+        return collision
     }
 }

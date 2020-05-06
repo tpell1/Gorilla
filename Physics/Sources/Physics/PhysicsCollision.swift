@@ -10,24 +10,6 @@ import Foundation
 import SpriteKit
 
 /**
- Contains details of a collision in the physics engine.
- 
-  `a` - Object a in the collision.
- 
-  `b` - Object B in the collision.
- 
-  `penetration` - How far the objects have penetrated one another.
- 
-  `normal` - The normal of the collision.
- */
-public struct ManifoldStruct {
-    public var a : PhysicsObject
-    public var b : PhysicsObject
-    public var penetration : CGFloat
-    public var normal : CGVector
-}
-
-/**
  Protocol making sure that the class designated to handle collisions can do so.
  */
 public protocol PhysicsCollisionHandler {
@@ -38,15 +20,25 @@ public protocol PhysicsCollisionHandler {
  Represents a collision between two objects.
  */
 public class PhysicsCollision {
-    public var manifold : ManifoldStruct
-    
+    /** The first object involved in the collision */
+    public var a : PhysicsObject
+    /** The second object involved in the collision */
+    public var b : PhysicsObject
+    /**The depth that the two objects have penetrated each other */
+    public var penetration : CGFloat
+    /** The normal vector of the collision*/
+    public var normal : CGVector
     /**
      initialises the object with the properties required
      - parameters:
-        - m: The manifold that holds all the properties of the collision
+        - obj1: The first object in the collision
+        - obj2 : The second object involved in the collision
      */
-    init(withManifold m : ManifoldStruct) {
-        manifold = m
+    init(withObject obj1: PhysicsObject, andObj obj2: PhysicsObject) {
+        a = obj1
+        b = obj2
+        penetration = 0
+        normal = CGVector(dx: 0, dy: 0)
     }
     
     /**
@@ -57,45 +49,49 @@ public class PhysicsCollision {
         let slop = CGFloat(0.01)
         var aInvertedMass = CGFloat(1)
         var bInvertedMass = CGFloat(1)
-        if (manifold.a.physicsBody.mass == -1) {
+        if (a.mass == -1) {
             aInvertedMass = 0
         } else {
-            aInvertedMass = 1/manifold.a.physicsBody.mass
+            aInvertedMass = 1/a.mass
         }
-        if (manifold.b.physicsBody.mass == -1) {
+        if (b.mass == -1) {
             bInvertedMass = 0
         } else {
-            bInvertedMass = 1/manifold.b.physicsBody.mass
+            bInvertedMass = 1/b.mass
         }
         
         if (aInvertedMass == 0 && bInvertedMass == 0) {
             return
         }
-        let correction = (max(manifold.penetration-slop, 0.0) / (aInvertedMass+bInvertedMass)) * percent
-        manifold.a.setPosition(x: manifold.a.getPosition().x/*-(aInvertedMass*correction*manifold.normal.dx)*/, y: manifold.a.getPosition().y-(aInvertedMass*correction*manifold.normal.dy))
-        manifold.b.setPosition(x: manifold.b.getPosition().x/*-(bInvertedMass*correction*manifold.normal.dx)*/, y: manifold.b.getPosition().y+(bInvertedMass*correction*manifold.normal.dy))
+        let correction = (max(penetration-slop, 0.0) / (aInvertedMass+bInvertedMass)) * percent
+        a.setPosition(x: a.getPosition().x/*-(aInvertedMass*correction*normal.dx)*/, y: a.getPosition().y-(aInvertedMass*correction*normal.dy))
+        b.setPosition(x: b.getPosition().x/*-(bInvertedMass*correction*normal.dx)*/, y: b.getPosition().y+(bInvertedMass*correction*normal.dy))
     }
     
     /**
      Resolve the collision.
      
-     Calculates the impulse required to prevent the objects from sinking into each other.
+     Calculates the impulse required to prevent the objects from sinking into each other. Adapted from Chris Hecker's collision response equations found [here](http://www.chrishecker.com/Rigid_Body_Dynamics)
      */
     func resolve() {
-        let a = manifold.a.physicsBody
-        let b = manifold.b.physicsBody
-        let normal = manifold.normal
         
-        let rv = CGVector(dx: b.velocity.dx-a.velocity.dx, dy: b.velocity.dy-a.velocity.dy)
+        // Check if object's collision should be solved, if not return as to not waste calculation
+        if (!(a.solveCollisions && b.solveCollisions)) {
+            return
+        }
         
-        let vecAlongNormal = rv.dx*normal.dx + rv.dy*normal.dy
+        let rVelocity = CGVector(dx: b.velocity.dx-a.velocity.dx, dy: b.velocity.dy-a.velocity.dy) // The relative velocity of the two objects
         
-        if (vecAlongNormal > 0) {
+        let normalVelocity = rVelocity.dx*normal.dx + rVelocity.dy*normal.dy // The velocity along the normal
+        // will be used to calculate the normal force.
+        
+        if (normalVelocity > 0) {
             return;
         }
         
         let e = min(a.restitution, b.restitution)
         
+        // Set the inverted mass of objects, objects with infinite mass (mass=-1) will have an inverse mass of 0
         var aInvertedMass = CGFloat(1)
         var bInvertedMass = CGFloat(1)
         if (a.mass == -1) {
@@ -115,14 +111,11 @@ public class PhysicsCollision {
         
 
         
-        let jx = (-(1 + e) * vecAlongNormal) / (aInvertedMass + bInvertedMass)
-        let jy = (-vecAlongNormal) / (aInvertedMass + bInvertedMass)
+        let jx = (-(1 + e) * normalVelocity) / (aInvertedMass + bInvertedMass) // Calculate normal force + coefficient of restitution
+        let jy = (-normalVelocity) / (aInvertedMass + bInvertedMass) //jy is calculated differently because we do not want restitution to exist in the y plane, we would like all vertical collisions to not have any springiness
         
-        let impulse = CGVector(dx: jx*normal.dx, dy: jy*normal.dy) //dy is 0 because we dont want any bounce vertically!
+        let impulse = CGVector(dx: jx*normal.dx, dy: jy*normal.dy)
         a.velocity = CGVector(dx: a.velocity.dx-((aInvertedMass)*impulse.dx), dy: a.velocity.dy-((aInvertedMass)*impulse.dy))
         b.velocity = CGVector(dx: b.velocity.dx+((bInvertedMass)*impulse.dx), dy: b.velocity.dy+((bInvertedMass)*impulse.dy))
-        if (a.velocity.dx.isNaN) {
-            print(a.velocity)
-        }
     }
 }
