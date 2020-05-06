@@ -66,17 +66,15 @@ class ItemSprite: SKSpriteNode {
     
     func reverseDirection() {
         direction = -direction
-        //self.physicsBody?.velocity.dx = direction*(self.physicsBody?.velocity.dx ?? CGFloat(ItemSprite.ITEM_SPEED))
     }
     
     
     func move() {
-        //self.physicsBody?.velocity = CGVector(dx: ItemSprite.ITEM_SPEED, dy: 0)
         physicsObj?.applyForce(dx: 7000, dy: 0)
     }
     
 	func startMove(direction dir : CGFloat) {
         direction = dir
-        self.physicsObj?.physicsBody.velocity.dx = CGFloat(ItemSprite.ITEM_SPEED*10)*direction
+        self.physicsObj?.velocity.dx = CGFloat(ItemSprite.ITEM_SPEED*10)*direction
     }
 }

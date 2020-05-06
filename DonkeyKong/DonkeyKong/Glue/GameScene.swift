@@ -179,10 +179,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (jumpBtn?.contains(pos))! {
                 marioSprite?.jump()
             } else if (leftArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
                 marioSprite?.physicsObj?.applyImpulse(dx: -(marioSprite?.getSpeed())!, dy: 0)
             } else if (rightArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
                 marioSprite?.physicsObj?.applyImpulse(dx: (marioSprite?.getSpeed())!, dy: 0)
             } else if (pauseBtn?.contains(pos))! {
                 pauseGame()
@@ -206,10 +204,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func touchMoved(toPoint pos : CGPoint) {
         if (gameStatus == GameStatus.PLAYING) {
             if (leftArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.velocity.dx = -(marioSprite?.getSpeed())!
                 marioSprite?.physicsObj?.applyImpulse(dx: -(marioSprite?.getSpeed())!, dy: 0)
             } else if (rightArrow?.contains(pos))! {
-                //marioSprite?.physicsBody?.velocity.dx = (marioSprite?.getSpeed())!
                 marioSprite?.physicsObj?.applyImpulse(dx: (marioSprite?.getSpeed())!, dy: 0)
 
             }
@@ -226,11 +222,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchUp(atPoint pos : CGPoint) {
         if (leftArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.velocity.dx = 0
-            marioSprite?.physicsObj?.physicsBody.velocity.dx = 0
+            marioSprite?.physicsObj?.velocity.dx = 0
         } else if (rightArrow?.contains(pos))! {
-            //marioSprite?.physicsBody?.velocity.dx = 0
-            marioSprite?.physicsObj?.physicsBody.velocity.dx = 0
+            marioSprite?.physicsObj?.velocity.dx = 0
         }
     }
     

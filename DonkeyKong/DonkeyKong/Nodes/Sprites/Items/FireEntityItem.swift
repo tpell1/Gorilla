@@ -19,6 +19,5 @@ class FireEntityItem : ShellItem {
     
     func shoot(inDirection dir: CGVector, toNode node: SKNode) {
         self.move(toParent: node)
-        self.physicsBody?.applyForce(CGVector(dx: dir.dx*FireEntityItem.FIRE_SPEED, dy: dir.dy*FireEntityItem.FIRE_SPEED))
     }
 }

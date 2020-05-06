@@ -27,17 +27,6 @@ class KoopaSprite: SKSpriteNode {
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
         
-        /////////// SpriteKit Physics /////////////////
-        /*
-        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: CGFloat(55.0), height: CGFloat(60.0)))
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
-        self.name = "Koopa"
-        self.physicsBody?.friction = 0
-        self.physicsBody?.linearDamping = 0
-        self.physicsBody?.contactTestBitMask = self.physicsBody!.collisionBitMask
-        */
-        
         ////////////// My Physics ////////
         physicsObj = PhysicsObject(withNode: self)
         
@@ -84,10 +73,10 @@ class KoopaSprite: SKSpriteNode {
     }
     
     func collision(contact: PhysicsCollision) {
-        let node = contact.manifold.a.node
+        let node = contact.a.node
         if (node is MarioSprite) {
-            let mario = contact.manifold.a.node as! MarioSprite
-            if ((mario.physicsObj?.physicsBody.velocity.dy)!) < CGFloat(-30) {
+            let mario = contact.a.node as! MarioSprite
+            if ((mario.physicsObj?.velocity.dy)!) < CGFloat(-30) {
                 die()
             } else {
                 mario.shrink()
@@ -115,14 +104,14 @@ class KoopaSprite: SKSpriteNode {
     func throwShell() {
         let shell = ShellItem(x: CGFloat(self.position.x), y: 60)
         if (!timerBool) {
-            shell.physicsObj?.physicsBody.velocity = CGVector(dx: 0, dy: 0)
+            shell.physicsObj?.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x += 5
             shell.position.y += 100
             self.parent?.addChild(shell)
             shell.move(toParent: self.parent!)
             shell.startMove(direction: 1)
         } else {
-            shell.physicsObj?.physicsBody.velocity = CGVector(dx: 0, dy: 0)
+            shell.physicsObj?.velocity = CGVector(dx: 0, dy: 0)
             shell.position.x -= 5
             shell.position.y += 100
             self.parent?.addChild(shell)

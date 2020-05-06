@@ -27,7 +27,7 @@ class DonkeyKongSprite: SKSpriteNode {
         self.zPosition = 10
         ///////// My physics //////////
         physicsObj = PhysicsObject(withNode: self, mass: 3)
-        physicsObj?.setRestitution(toValue: 0.4)
+        physicsObj?.restitution = 0.4
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,13 +46,13 @@ class DonkeyKongSprite: SKSpriteNode {
     }
     
     private func attack(position: CGPoint) {
-        self.physicsObj?.physicsBody.velocity.dx = 0
+        self.physicsObj?.velocity.dx = 0
         self.physicsObj?.applyForce(dx: 0, dy: 165000)
         walk(to: position)
     }
     
     private func walk(to: CGPoint) {
-        self.physicsObj?.physicsBody.velocity.dx = 0
+        self.physicsObj?.velocity.dx = 0
         if (to.x > position.x) {
             self.physicsObj?.applyImpulse(dx: 850, dy: 0)
         } else {

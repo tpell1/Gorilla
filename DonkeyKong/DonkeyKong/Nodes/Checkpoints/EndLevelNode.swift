@@ -21,11 +21,6 @@ class EndLevelNode : SKSpriteNode {
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: 30, height: 150))
         self.position = CGPoint(x: x, y: y)
-        /*self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: CGSize(width: 10, height: 60))
-        self.physicsBody?.isDynamic = false
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.allowsRotation = false
-        self.physicsBody?.contactTestBitMask = (self.physicsBody?.collisionBitMask)!*/
         self.physicsObj = PhysicsObject(withNode: self, mass: -1)
         self.physicsObj?.solveCollisions = false
     }
