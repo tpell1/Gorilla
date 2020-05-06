@@ -57,7 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // Sets up UI stuff required for all levels (Mario, HUD, etc)
-    func setupLevel(lives: Int) {
+    func setupLevel(lives: Int, scale: Int = 1, shootable: Bool = false) {
         //Initial HUD, load from sks file
         leftArrow = self.childNode(withName: "//leftArrow") as? SKShapeNode
         rightArrow = self.childNode(withName: "//rightArrow") as? SKShapeNode
@@ -77,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pauseNode?.zPosition = 10
 
         // Spawn in mario
-        marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives)
+        marioSprite = MarioSprite(x: frame.midX - frame.maxX, y: frame.midY, lives: lives, scale: scale, shootable: shootable)
         self.addChild((marioSprite)!)
         
         // Display to user what level they are on
@@ -150,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func nextLevel(index: Int) {
         levelLbl?.removeFromParent()
         self.childNode(withName: "Mario")?.removeFromParent()
-        setupLevel(lives: (marioSprite?.getLives())!)
+        setupLevel(lives: (marioSprite?.getLives())!, scale: (marioSprite?.getScale() ?? 0), shootable: marioSprite?.isShootable() ?? false)
         setLevel(index: index)
         safetyBool = true
         
@@ -186,8 +186,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 pauseGame()
             } else {
                 if (marioSprite?.isShootable() ?? false) {
-                    marioSprite?.shoot(direction: CGVector(dx: pos.x/abs(pos.x), dy: pos.y/abs(pos.x)))
-                
+                    marioSprite?.shoot(towardsPoint: CGVector(dx: pos.x, dy: pos.y))
                 }
             }
         } else {

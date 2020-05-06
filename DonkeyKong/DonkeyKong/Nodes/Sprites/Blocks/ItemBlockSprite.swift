@@ -36,7 +36,14 @@ class ItemBlockSprite: BlockSprite {
 	func spawnItem() -> ItemSprite? {
         if (!itemUsed) {
             itemUsed = true
-            let item = ItemSprite(x: self.position.x, y: self.position.y+20, itemType: itemType)
+            var item = ItemSprite(x: self.position.x, y: self.position.y, itemType: itemType)
+            if itemType == ItemType.MUSHROOM {
+                item = MushroomItem(x: self.position.x, y: self.position.y+20)
+            } else if itemType == ItemType.FIRE {
+                item = FireItem(x: self.position.x, y: self.position.y+20)
+            } else if itemType == ItemType.STAR {
+                
+            }
             self.parent?.addChild(item)
             let riseUpAction = SKAction.move(to: CGPoint(x: self.position.x, y: self.position.y+30), duration: 1.5)
             item.run(riseUpAction, completion: item.move)

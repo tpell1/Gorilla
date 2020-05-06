@@ -28,7 +28,7 @@ class MarioSprite : SKSpriteNode {
     private var width = 35
     private var height = 55
     private var scale = 1
-    private var shootable = true
+    private var shootable = false
     private var jumpSound = true
     static var DEFAULT_MOVE_SPEED: CGFloat = 100
     
@@ -62,6 +62,17 @@ class MarioSprite : SKSpriteNode {
         self.init(x: x, y: y)
 
         self.lives = lives
+    }
+    
+    convenience init(x: CGFloat, y: CGFloat, lives: Int, scale: Int, shootable: Bool) {
+        self.init(x: x, y: y, lives: lives)
+        if (scale > self.scale) {
+            grow()
+        }
+        self.shootable = shootable
+        if (shootable) {
+            self.texture = SKTexture(imageNamed: "marioFire.png")
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -140,11 +151,16 @@ class MarioSprite : SKSpriteNode {
      - parameters:
         - dir: The direction to shoot the fireballs
      */
-    func shoot(direction dir: CGVector) {
-        
-        let fire = FireEntityItem(x: getPositionInScene().x, y: getPositionInScene().y)
-        self.addChild(fire)
-        fire.shoot(inDirection: dir, toNode: (self.parent)!)
+    func shoot(towardsPoint dir: CGVector) {
+        var dx = CGFloat(0)
+        if (dir.dx - position.x > 0) {
+            dx = 50
+        } else {
+            dx = -50
+        }
+        let fire = FireEntityItem(x: position.x + dx, y: position.y+20)
+        self.parent!.addChild(fire)
+        fire.shoot(inDirection: dir)
     }
     
     // Removes object from Physics World as well
@@ -179,7 +195,6 @@ class MarioSprite : SKSpriteNode {
     func fireItem() {
         grow()
         self.texture = SKTexture(imageNamed: "marioFire.png")
-        self.scale(to: CGSize(width: width, height: height))
         shootable = true
     }
     
@@ -187,8 +202,11 @@ class MarioSprite : SKSpriteNode {
      Grow Mario
      */
     func grow() {
-        scale = 2
-        reDo()
+        if (scale==1) {
+            let action = SKAction.scale(by: 1.5, duration: 1)
+            self.run(action)
+            scale += 1
+        }
     }
     
     /**
@@ -198,10 +216,14 @@ class MarioSprite : SKSpriteNode {
      */
     func shrink() {
         scale -= 1
+        shootable = false
+        self.texture = SKTexture(imageNamed: "mario.png")
         if (scale < 1) {
             die()
+        } else {
+            let action = SKAction.scale(by: 0.67, duration: 1)
+            self.run(action)
         }
-        reDo()
     }
     
     /**
@@ -237,11 +259,11 @@ class MarioSprite : SKSpriteNode {
         return height
     }
     
-    private func reDo() {
-        self.scale(to: CGSize(width: width, height: height))
-    }
-    
     func isShootable() -> Bool {
         return shootable
+    }
+    
+    func getScale() -> Int {
+        return scale
     }
 }

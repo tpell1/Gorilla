@@ -55,6 +55,8 @@
 		96E3B75F2462E1E5003F8F52 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E3B75E2462E1E5003F8F52 /* ground.png */; };
 		96E3B7612462E3D0003F8F52 /* flagpole.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E3B7602462E3D0003F8F52 /* flagpole.png */; };
 		96E3B7632462E52C003F8F52 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E3B7622462E52C003F8F52 /* flag.png */; };
+		96E3B7652462FAAF003F8F52 /* marioFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E3B7642462FAAF003F8F52 /* marioFire.png */; };
+		96E3B767246303A8003F8F52 /* FIRE.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E3B766246303A8003F8F52 /* FIRE.png */; };
 		96EE2066245ACF9E0015D154 /* buttonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE2065245ACF9E0015D154 /* buttonImage.png */; };
 		96EE2068245AD1780015D154 /* OptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE2067245AD1780015D154 /* OptionsMenu.swift */; };
 		96EE206A245AD68C0015D154 /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE2069245AD68C0015D154 /* ConfigData.swift */; };
@@ -138,6 +140,8 @@
 		96E3B75E2462E1E5003F8F52 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
 		96E3B7602462E3D0003F8F52 /* flagpole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flagpole.png; sourceTree = "<group>"; };
 		96E3B7622462E52C003F8F52 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
+		96E3B7642462FAAF003F8F52 /* marioFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marioFire.png; sourceTree = "<group>"; };
+		96E3B766246303A8003F8F52 /* FIRE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FIRE.png; sourceTree = "<group>"; };
 		96EE2065245ACF9E0015D154 /* buttonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonImage.png; sourceTree = "<group>"; };
 		96EE2067245AD1780015D154 /* OptionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenu.swift; sourceTree = "<group>"; };
 		96EE2069245AD68C0015D154 /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 		9682CBED241E4DE800A0E821 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				96E3B766246303A8003F8F52 /* FIRE.png */,
+				96E3B7642462FAAF003F8F52 /* marioFire.png */,
 				96E3B7622462E52C003F8F52 /* flag.png */,
 				96E3B7602462E3D0003F8F52 /* flagpole.png */,
 				96E3B75E2462E1E5003F8F52 /* ground.png */,
@@ -530,12 +536,14 @@
 				968ECDB22358D92E0029A1A9 /* GameScene.sks in Resources */,
 				96EE2076245AFF730015D154 /* itemBlock.png in Resources */,
 				968ECDBD2358D92E0029A1A9 /* Assets.xcassets in Resources */,
+				96E3B767246303A8003F8F52 /* FIRE.png in Resources */,
 				96E3B7612462E3D0003F8F52 /* flagpole.png in Resources */,
 				968ECDC02358D92E0029A1A9 /* LaunchScreen.storyboard in Resources */,
 				968ECDB42358D92E0029A1A9 /* Actions.sks in Resources */,
 				96EE206C245ADA070015D154 /* Config.plist in Resources */,
 				96EE2074245AFD880015D154 /* solidBlock.png in Resources */,
 				96EE2072245AF9950015D154 /* SHELL.png in Resources */,
+				96E3B7652462FAAF003F8F52 /* marioFire.png in Resources */,
 				96969436241029AC00A266AB /* brickBlock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

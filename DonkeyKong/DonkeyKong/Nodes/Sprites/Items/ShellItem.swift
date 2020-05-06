@@ -11,6 +11,7 @@ import SpriteKit
 
 class ShellItem: ItemSprite {
     private var timer : Timer?
+    internal var itemType : ItemType = ItemType.SHELL
     
     convenience init(x:CGFloat, y: CGFloat) {
         self.init(x: x, y: y, itemType: ItemType.SHELL)
@@ -26,8 +27,12 @@ class ShellItem: ItemSprite {
                 mario.shrink()
             }
             self.removeFromParent()
-        } else {
-            //reverseDirection()
+        } else if (node is KoopaSprite) && itemType != ItemType.SHELL {
+            let koopa = node as! KoopaSprite
+            koopa.removeFromParent()
+        } else if node is DonkeyKongSprite {
+            let dk = node as! DonkeyKongSprite
+            dk.hit()
         }
     }
 }

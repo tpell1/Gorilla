@@ -15,9 +15,14 @@ class FireEntityItem : ShellItem {
      convenience init(x:CGFloat, y: CGFloat) {
         self.init(x: x, y: y, itemType: ItemType.FIRE)
         self.scale(to: CGSize(width: 20, height: 20))
+        self.physicsObj?.solveCollisions = false
+        itemType = ItemType.FIRE
     }
     
-    func shoot(inDirection dir: CGVector, toNode node: SKNode) {
-        self.move(toParent: node)
+    func shoot(inDirection dir: CGVector) {
+        let dx = (dir.dx-position.x)
+        let dy = (dir.dy-position.y)
+        let action = SKAction.move(to: CGPoint(x: dir.dx+dx*10, y: dir.dy+dy*10), duration: 6)
+        self.run(action)
     }
 }

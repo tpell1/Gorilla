@@ -59,7 +59,7 @@
 					<key>blockY</key>
 					<integer>75</integer>
 					<key>itemType</key>
-					<string>oneup</string>
+					<string>fire</string>
 				</dict>
 				<dict>
 					<key>blockType</key>
