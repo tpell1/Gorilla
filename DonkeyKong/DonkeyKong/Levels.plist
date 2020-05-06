@@ -251,7 +251,7 @@
 					<key>enemyX</key>
 					<integer>80</integer>
 					<key>enemyY</key>
-					<integer>50</integer>
+					<integer>30</integer>
 				</dict>
 			</array>
 			<key>blocks</key>

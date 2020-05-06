@@ -29,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var jumpBtn : SKShapeNode?
     internal var livesLbl : SKLabelNode?
     private var levelLbl : SKLabelNode?
+    private var dkLbl : SKLabelNode?
     private var pauseBtn : SKShapeNode?
     internal var nameNode : SKNode?
     private var relativeNode : SKNode?
@@ -52,6 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Called after sceneDidLoad(), allows config to be read and the levels list
     override func didMove(to view: SKView) {
         save = saveData?.read()
+        dkLbl?.isHidden = true
         setupLevel(lives: save!.currentLives)
         setLevel(index: (save?.currentLevel)! - 1)
     }
@@ -65,6 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         nameNode = self.childNode(withName: "//node")
         pauseBtn = self.childNode(withName: "//pauseBtn") as? SKShapeNode
         jumpBtn = self.childNode(withName: "//jumpBtn") as? SKShapeNode
+        dkLbl = self.childNode(withName: "//dkLbl") as? SKLabelNode
                 
         // Remove all parts of previous level (no error if level one)
         level?.removeFromParent()
@@ -112,11 +115,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         //physics?.addNodes(collection: level!.children)
         self.addChild(level!)
-        levelLbl?.text = "Level: " + (level?.getTitle())!
+        levelLbl?.text = (level?.getTitle())!
         
         if (level?.name == "boss_level") {
             timer = Timer(timeInterval: 0.05, target: self, selector: #selector(self.timerUpdate), userInfo: nil, repeats: true)
             RunLoop.current.add(timer!, forMode: .commonModes)
+            dkLbl?.isHidden = false
         }
     }
     
@@ -127,6 +131,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc func timerUpdate() {
         if let donkeyKong = level?.childNode(withName: "donkeyKong") as? DonkeyKongSprite {
             donkeyKong.fightMario(marioPos: marioSprite!.position)
+            dkLbl?.text = "DK's Health: " + String(donkeyKong.getHealth())
+        } else {
+            dkLbl?.text = "DK's Health: Dead"
+            timer?.invalidate()
         }
     }
     
@@ -277,7 +285,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.anchorPoint.x = -(2*(self.convert((marioSprite?.position)!, to: relativeNode!).x) - self.convert(CGPoint(x: frame.maxX, y: 0), to: relativeNode!).x)/900
         self.setHUD()
         self.lastUpdateTime = currentTime
-        livesLbl?.text = String(describing: marioSprite?.getLives())
+        livesLbl?.text = String(marioSprite!.getLives()) + " Lives"
     }
     
     // Restart level when mario is killed
@@ -320,8 +328,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelLbl?.position.x = frame.midX
         pauseBtn?.position.x = frame.minX + 30
         jumpBtn?.position.x = frame.midX
+        dkLbl?.position.x = frame.midX
         //if (gameStatus == GameStatus.PAUSED) {
-            pauseNode?.update(phoneFrame: frame)
+        pauseNode?.update(phoneFrame: frame)
         //}
     }
 }

@@ -44,6 +44,7 @@ class MarioSprite : SKSpriteNode {
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
         self.name = "Mario"
+        self.zPosition=14
         ////////// My Physics /////////////
         physicsObj = PhysicsObject(withNode: self)
         physicsObj?.restitution = 0.4
@@ -111,10 +112,11 @@ class MarioSprite : SKSpriteNode {
                 self.shrink()
             }
         } else if node2 is DonkeyKongSprite {
+            let dk = node2 as! DonkeyKongSprite
             if ((self.physicsObj?.velocity.dy)! < CGFloat(-30)) {
-                let dk = node2 as! DonkeyKongSprite
                 dk.hit()
             } else {
+                dk.reset()
                 self.shrink()
             }
         }

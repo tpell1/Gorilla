@@ -16,10 +16,13 @@ class DonkeyKongSprite: SKSpriteNode {
     private var health = 10
     private var hitTimer : Timer?
     private var isHit = false
+    private var origin : CGPoint
     
     // Default constructor, creates a koopa character with one life
     init(x: CGFloat, y: CGFloat) {
         let texture = SKTexture(imageNamed: "donkeyKong.png") // Use the mario texture
+        self.origin = CGPoint(x: x, y: y)
+
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         self.scale(to: CGSize(width: width, height: height))
         self.position = CGPoint(x: x, y: y)
@@ -37,11 +40,12 @@ class DonkeyKongSprite: SKSpriteNode {
     func fightMario(marioPos: CGPoint) {
         let marioX = marioPos.x
         let marioY = marioPos.y
-        
-        if (abs(marioX - self.position.x) < 100 && abs(marioY - self.position.y) < 30) {
-            attack(position: marioPos)
-        } else {
-            walk(to: marioPos)
+        if (!isHit) {
+            if (abs(marioX - self.position.x) < 100 && abs(marioY - self.position.y) < 30) {
+                attack(position: marioPos)
+            } else {
+                walk(to: marioPos)
+            }
         }
     }
     
@@ -60,6 +64,11 @@ class DonkeyKongSprite: SKSpriteNode {
         }
     }
 
+    public func reset() {
+        let action = SKAction.move(to: origin, duration: 1.5)
+        self.run(action)
+    }
+    
     public func hit() {
         if (!isHit) {
             health -= 1
@@ -67,6 +76,7 @@ class DonkeyKongSprite: SKSpriteNode {
                 die()
             }
             isHit=true
+            reset()
             self.hitTimer = Timer(timeInterval: TimeInterval(1.5), repeats: true, block: hitTime)
             RunLoop.current.add(hitTimer!, forMode: .commonModes)
         }

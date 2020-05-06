@@ -29,7 +29,7 @@ class EndLevelNode : SKSpriteNode {
         flagSprite.scale(to: CGSize(width: 30, height: 30))
         flagSprite.position.y += 60
         flagSprite.position.x += 17
-        flagSprite.zPosition = 15
+        flagSprite.zPosition = 13
         self.addChild(flagSprite)
     }
     
