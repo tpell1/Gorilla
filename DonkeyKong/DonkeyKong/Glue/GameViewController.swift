@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     var timer1: Timer?
     var sceneNode: MenuScene?
     var gameNode: GameScene?
+    var overNode: GameOverScene?
+    var currentSave : Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +71,10 @@ class GameViewController: UIViewController {
                 
                 // Then send the levels to the scene
                 gameNode?.setLevelArray(collection: loadedLevels)
-                
+                gameNode?.resetStatus()
                 // Starts game update loop, called every 10th of a second, used to process and evaluate current game state
-                timer1 = Timer(timeInterval: 0.1, target: self, selector: #selector(self.updateGame), userInfo: nil, repeats: true)
+                self.timer1 = Timer(timeInterval: 0.1, repeats: true, block: updateGame)
+
                 RunLoop.current.add(timer1!, forMode: .commonModes)
                 
                 // Loads or creates new game
@@ -80,10 +83,12 @@ class GameViewController: UIViewController {
                         let saveData = SaveData(saveName: "Save" + String(SaveData.getNumberOfSaves()))
                         saveData.writeSave(level: 1, lives: 3, score: 0)
                         gameNode?.setSave(data: saveData)
+                        currentSave = SaveData.getNumberOfSaves()
                     } else {
                         let saveData = SaveData(saveName: "Save" + String(saveGame))
                         saveData.writeSave(level: 1, lives: 3, score: 0)
                         gameNode?.setSave(data: saveData)
+                        currentSave = saveGame
                     }
                 } else {
                     let saveData = SaveData(saveName: "Save" + String(saveGame))
@@ -98,11 +103,37 @@ class GameViewController: UIViewController {
                     view.presentScene(sceneNode)
                     
                     view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
                 }
             }
+        }
+    }
+    
+    func showGameOverScene(dead: Bool = false) {
+        if let scene = GKScene(fileNamed: "GameOverScene") {
+            if let sceneNode = scene.rootNode as! GameOverScene? {
+                
+                overNode = sceneNode
+                self.timer1 = Timer(timeInterval: 0.1, repeats: true, block: updateGameOverScreen)
+                RunLoop.current.add(timer1!, forMode: .commonModes)
+                if (dead) {
+                    overNode?.isGameCompleted(true: false)
+                } else {
+                    overNode?.isGameCompleted(true: true)
+                }
+                
+                if let view = self.view as! SKView? {
+                    view.presentScene(sceneNode)
+                    view.ignoresSiblingOrder = true
+                }
+            }
+        }
+    }
+    
+    @objc func updateGameOverScreen(timer : Timer) {
+        let status = overNode?.status
+        if (status != MenuStatus.WAITING) {
+            playGame(newGame: true, saveGame: currentSave)
+            timer.invalidate()
         }
     }
     
@@ -113,12 +144,15 @@ class GameViewController: UIViewController {
             if (status == MenuStatus.CONTINUE_SAVE) {
                 playGame(newGame: false, saveGame: sceneNode?.saveNumber ?? 0)
                 timer?.invalidate()
+                timer = nil
             } else if (status == MenuStatus.NEW_SAVE) {
                 playGame(newGame: true)
                 timer?.invalidate()
+                timer = nil
             } else if (status == MenuStatus.REPLACE_SAVE) {
                 playGame(newGame: true, saveGame: sceneNode?.saveNumber ?? 0)
                 timer?.invalidate()
+                timer = nil
             } else {
                 return
             }
@@ -127,13 +161,16 @@ class GameViewController: UIViewController {
     }
     
     // Game update loop, checking status of current game
-    @objc func updateGame() {
+    @objc func updateGame(timer : Timer) {
         if (gameNode?.getStatus() == GameStatus.QUIT) {
             viewDidLoad()
-            timer1?.invalidate()
+            timer.invalidate()
         } else if (gameNode?.getStatus() == GameStatus.FINISHED) {
-            viewDidLoad()
-            timer1?.invalidate()
+            showGameOverScene()
+            timer.invalidate()
+        } else if (gameNode?.getStatus() == GameStatus.DEAD) {
+            showGameOverScene(dead: true)
+            timer.invalidate()
         }
     }
     

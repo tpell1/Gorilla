@@ -11,10 +11,10 @@ import GameplayKit
 import Physics
 
 public enum GameStatus {
-     case PLAYING, PAUSED, QUIT, FINISHED
+     case PLAYING, PAUSED, QUIT, FINISHED, DEAD
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -281,6 +281,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entity.update(deltaTime: dt)
         }
         
+        if (marioSprite!.getLives() < 0) {
+            gameStatus = GameStatus.DEAD
+        }
+        
         // Forces camera to move with Mario (Allows scrolling)
         self.anchorPoint.x = -(2*(self.convert((marioSprite?.position)!, to: relativeNode!).x) - self.convert(CGPoint(x: frame.maxX, y: 0), to: relativeNode!).x)/900
         self.setHUD()
@@ -301,6 +305,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func getStatus() -> GameStatus {
         return gameStatus
+    }
+    
+    func resetStatus() {
+        gameStatus = GameStatus.PLAYING
     }
     
     // Show pause menu and stop all movement in level
