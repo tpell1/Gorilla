@@ -58,7 +58,7 @@ class LevelReader: LevelScene {
             }
         }
         let ground = SKSpriteNode(imageNamed: "ground.png")
-        ground.scale(to: CGSize(width: rect.maxX*5, height: 20))
+        ground.scale(to: CGSize(width: rect.maxX*50, height: 20))
         ground.position = CGPoint(x: rect.midX, y: rect.minY)
         ground.physicsObj = PhysicsObject(withNode: ground, mass: -1)
         

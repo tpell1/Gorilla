@@ -92,6 +92,7 @@ class GameViewController: UIViewController {
                     }
                 } else {
                     let saveData = SaveData(saveName: "Save" + String(saveGame))
+                    currentSave = saveGame
                     gameNode?.setSave(data: saveData)
                 }
                 
@@ -167,9 +168,11 @@ class GameViewController: UIViewController {
             timer.invalidate()
         } else if (gameNode?.getStatus() == GameStatus.FINISHED) {
             showGameOverScene()
+            gameNode?.resetStatus()
             timer.invalidate()
         } else if (gameNode?.getStatus() == GameStatus.DEAD) {
             showGameOverScene(dead: true)
+            gameNode?.resetStatus()
             timer.invalidate()
         }
     }

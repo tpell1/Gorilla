@@ -18,7 +18,7 @@ struct SaveStruct: Codable {
 class SaveData {
     static var MAX_AMOUNT_OF_SAVES: Int = 5
     private var name: String
-    private var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("saves/")
+    private static var configFolder: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("saves/")
     
     init(saveName: String = "Save") {
         name = saveName
@@ -43,11 +43,11 @@ class SaveData {
     }
     
     private func saveExistsInDocs() -> Bool {
-        return FileManager.default.fileExists(atPath: configFolder.appendingPathComponent(name + ".plist").path)
+        return FileManager.default.fileExists(atPath: SaveData.configFolder.appendingPathComponent(name + ".plist").path)
     }
     
     private func readSaveFromDocs() -> SaveStruct? {
-        let file = configFolder.appendingPathComponent(name + ".plist").path
+        let file = SaveData.configFolder.appendingPathComponent(name + ".plist").path
         if let plist = FileManager.default.contents(atPath: file), let config = try? PropertyListDecoder().decode(SaveStruct.self, from: plist) {
             return config
         } else {
@@ -58,10 +58,10 @@ class SaveData {
     func writeSave(saveData: SaveStruct) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
-        let file = configFolder.appendingPathComponent(name + ".plist") // ERROR HERE
+        let file = SaveData.configFolder.appendingPathComponent(name + ".plist") // ERROR HERE
         
-        if !FileManager.default.fileExists(atPath: configFolder.path) {
-            if ((try? FileManager.default.createDirectory(at: configFolder, withIntermediateDirectories: true, attributes: nil)) != nil) {
+        if !FileManager.default.fileExists(atPath: SaveData.configFolder.path) {
+            if ((try? FileManager.default.createDirectory(at: SaveData.configFolder, withIntermediateDirectories: true, attributes: nil)) != nil) {
                 
             } else {
                 print ("Couldnt create folder")
@@ -84,7 +84,7 @@ class SaveData {
     }
     
     static func getNumberOfSaves() -> Int{
-        if let contents =  try? FileManager.default.contentsOfDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("configs/").path) {
+        if let contents =  try? FileManager.default.contentsOfDirectory(atPath: SaveData.configFolder.path) {
             return contents.count
         } else {
             return 0

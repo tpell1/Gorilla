@@ -53,7 +53,6 @@ class GameScene: SKScene {
     // Called after sceneDidLoad(), allows config to be read and the levels list
     override func didMove(to view: SKView) {
         save = saveData?.read()
-        dkLbl?.isHidden = true
         setupLevel(lives: save!.currentLives)
         setLevel(index: (save?.currentLevel)! - 1)
     }
@@ -68,7 +67,8 @@ class GameScene: SKScene {
         pauseBtn = self.childNode(withName: "//pauseBtn") as? SKShapeNode
         jumpBtn = self.childNode(withName: "//jumpBtn") as? SKShapeNode
         dkLbl = self.childNode(withName: "//dkLbl") as? SKLabelNode
-                
+        dkLbl?.isHidden = true
+
         // Remove all parts of previous level (no error if level one)
         level?.removeFromParent()
         
