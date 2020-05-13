@@ -5,6 +5,6 @@
       location = "group:Physics">
    </FileRef>
    <FileRef
-      location = "container:DonkeyKong/DonkeyKong.xcodeproj">
+      location = "container:Gorilla/Gorilla.xcodeproj">
    </FileRef>
 </Workspace>

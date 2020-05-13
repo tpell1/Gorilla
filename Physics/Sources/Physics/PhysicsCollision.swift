@@ -1,6 +1,6 @@
 //
 //  PhysicsCollision.swift
-//  DonkeyKong
+//  Gorilla
 //
 //  Created by Travis Pell on 03/05/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
@@ -45,8 +45,8 @@ public class PhysicsCollision {
      Applies the normal force to the object and prevents it from vibrating.
      */
     func positionalCorrection() {
-        let percent = CGFloat(0.8)
-        let slop = CGFloat(0.01)
+        let percentToCorrectBy = CGFloat(0.8)
+        let maximumSinking = CGFloat(0.01)
         var aInvertedMass = CGFloat(1)
         var bInvertedMass = CGFloat(1)
         if (a.mass == -1) {
@@ -63,7 +63,7 @@ public class PhysicsCollision {
         if (aInvertedMass == 0 && bInvertedMass == 0) {
             return
         }
-        let correction = (max(penetration-slop, 0.0) / (aInvertedMass+bInvertedMass)) * percent
+        let correction = (max(penetration-maximumSinking, 0.0) / (aInvertedMass+bInvertedMass)) * percentToCorrectBy
         a.setPosition(x: a.getPosition().x/*-(aInvertedMass*correction*normal.dx)*/, y: a.getPosition().y-(aInvertedMass*correction*normal.dy))
         b.setPosition(x: b.getPosition().x/*-(bInvertedMass*correction*normal.dx)*/, y: b.getPosition().y+(bInvertedMass*correction*normal.dy))
     }
