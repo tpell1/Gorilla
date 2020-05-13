@@ -1,6 +1,6 @@
 //
 //  PhysicsObject.swift
-//  DonkeyKong
+//  Gorilla
 //
 //  Created by Travis Pell on 30/04/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.

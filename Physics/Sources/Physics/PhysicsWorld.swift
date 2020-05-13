@@ -1,6 +1,6 @@
 //
 //  PhysicsWorld.swift
-//  DonkeyKong
+//  Gorilla
 //
 //  Created by Travis Pell on 30/04/2020.
 //  Copyright © 2020 Travis Pell. All rights reserved.
@@ -32,6 +32,7 @@ Will vary for different requirements.
         physicsObjects = []
     }
     
+    
     /**
      calculates one step of the physics engine
      - parameters:
@@ -57,8 +58,10 @@ Will vary for different requirements.
         for i in 0...(physicsObjects.count-2) {
             for j in i+1...(physicsObjects.count-1) {
                 if (i != j) {
-                    if (collision(withObject1: i, object2: j)) {
-                        let m = solveCollision(withObject1: i, object2: j)
+                    let a = physicsObjects[i]
+                    let b = physicsObjects[j]
+                    if (collision(withObject1: a, object2: b)) {
+                        let m = solveCollision(withObject1: a, object2: b)
                         collisions.append(m)
                     }
                 }
@@ -141,10 +144,7 @@ Will vary for different requirements.
         - j : index of object two
      - returns: `Bool`: collision = `true`
      */
-    private func collision(withObject1 i : Int, object2 j : Int) -> Bool {
-        let a = physicsObjects[i]
-        let b = physicsObjects[j]
-
+    private func collision(withObject1 a : PhysicsObject, object2 b : PhysicsObject) -> Bool {
         // if bounds of object do not overlap there is no collision
         if (a.max.x < b.min.x || a.min.x > b.max.x) {
             return false
@@ -165,9 +165,7 @@ Will vary for different requirements.
      
      Solves collisions between to box-bounded objects.
      */
-    private func solveCollision(withObject1 i : Int, object2 j : Int) -> PhysicsCollision{
-        let a = physicsObjects[i]
-        let b = physicsObjects[j]
+    private func solveCollision(withObject1 a : PhysicsObject, object2 b : PhysicsObject) -> PhysicsCollision{
         let aPos = a.getPosition()
         let bPos = b.getPosition()
         let collision = PhysicsCollision(withObject: a, andObj: b)
